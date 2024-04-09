@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <uri id="Imports Wizard Entry" name="http://attack.mitre.org/ns/attack" uri="enterprise-attack-14-1.ttl"/>
+    <uri id="User Entered Import Resolution" name="http://docs.oasis-open.org/tac/ns/tac#" uri="tac.owl"/>
+    <uri id="User Entered Import Resolution" name="http://docs.oasis-open.org/cti/ns/stix#" uri="stix.owl"/>
+    <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
+        <uri id="Automatically generated entry, Timestamp=1710288265453" name="http://docs.oasis-open.org/cti/ns/stix" uri="stix.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1710288265453" name="http://docs.oasis-open.org/tac/ns/tac" uri="tac.owl"/>
+    </group>
+</catalog>

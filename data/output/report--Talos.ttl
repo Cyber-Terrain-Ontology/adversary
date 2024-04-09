@@ -1,0 +1,181 @@
+@prefix attack: <http://attack.mitre.org/ns/attack#> .
+@prefix example: <http://example/ns/> .
+@prefix fx: <http://sparql.xyz/facade-x/ns/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix stix: <http://docs.oasis-open.org/cti/ns/stix#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix xyz: <http://sparql.xyz/facade-x/data/> .
+
+attack:campaign--c7bb8f6b-0092-49a7-8b88-d356c0ef61ff
+	a stix:StixObject ;
+	stix:alias "Olympic Destroyer Takes Aim At 2018 Winter Olympics" ;
+	stix:created "2020-04-17T15:59:13.57542Z"^^xsd:dateTime ;
+	stix:description """December 2017 through February 2018 intrusions into computers supporting the 2018 PyeongChang Winter Olympic Games, which culminated in the Feb. 9, 2018. A destructive malware attack occurred against the opening ceremony, using malware known as Olympic Destroyer.
+
+Moreover, from December 2017 to February 2018 spearphishing campaigns and malicious mobile applications targeting South Korean citizens and officials were launched against Olympic athletes, partners, and visitors, and International Olympic Committee (IOC) officials.""" ;
+	stix:external_reference attack:external-reference-5ae260d9-e24d-444b-9896-f10c8c07531c ;
+	stix:id "campaign--c7bb8f6b-0092-49a7-8b88-d356c0ef61ff" ;
+	stix:modified "2023-11-27T11:12:48.082189Z"^^xsd:dateTime ;
+	stix:name "Olympic Destroyer Takes Aim At 2018 Winter Olympics" ;
+	stix:objective "Sabotage & espionage" ;
+	stix:spec_version "2.1" ;
+	stix:type "campaign" ;
+	.
+
+attack:external-reference-5ae260d9-e24d-444b-9896-f10c8c07531c
+	a stix:StixObject ;
+	stix:description "" ;
+	stix:source_name "FBI" ;
+	stix:url "https://www.justice.gov/opa/pr/six-russian-gru-officers-charged-connection-worldwide-deployment-destructive-malware-and" ;
+	.
+
+stix:alias
+	a owl:DatatypeProperty ;
+	.
+
+stix:created
+	a owl:DatatypeProperty ;
+	.
+
+stix:description
+	a owl:DatatypeProperty ;
+	.
+
+stix:external-id
+	a owl:DatatypeProperty ;
+	.
+
+stix:external_reference
+	a owl:ObjectProperty ;
+	.
+
+stix:first_seen
+	a owl:DatatypeProperty ;
+	.
+
+stix:goals
+	a owl:DatatypeProperty ;
+	.
+
+stix:id
+	a owl:DatatypeProperty ;
+	.
+
+stix:identity_class
+	a owl:DatatypeProperty ;
+	.
+
+stix:indicates
+	a owl:ObjectProperty ;
+	.
+
+stix:indicator_types
+	a owl:DatatypeProperty ;
+	.
+
+stix:kill_chain_name
+	a owl:DatatypeProperty ;
+	.
+
+stix:kill_chain_phase
+	a owl:ObjectProperty ;
+	.
+
+stix:kill_chain_phase_name
+	a owl:DatatypeProperty ;
+	.
+
+stix:kill_chain_phases
+	a owl:DatatypeProperty ;
+	.
+
+stix:malware_types
+	a owl:DatatypeProperty ;
+	.
+
+stix:modified
+	a owl:DatatypeProperty ;
+	.
+
+stix:name
+	a owl:DatatypeProperty ;
+	.
+
+stix:objective
+	a owl:DatatypeProperty ;
+	.
+
+stix:pattern
+	a owl:DatatypeProperty ;
+	.
+
+stix:pattern_type
+	a owl:DatatypeProperty ;
+	.
+
+stix:primary_motivation
+	a owl:DatatypeProperty ;
+	.
+
+stix:relationship_type
+	a owl:DatatypeProperty ;
+	.
+
+stix:resource_level
+	a owl:DatatypeProperty ;
+	.
+
+stix:roles
+	a owl:DatatypeProperty ;
+	.
+
+stix:secondary_motivations
+	a owl:DatatypeProperty ;
+	.
+
+stix:sectors
+	a owl:DatatypeProperty ;
+	.
+
+stix:sophistication
+	a owl:DatatypeProperty ;
+	.
+
+stix:source_name
+	a owl:DatatypeProperty ;
+	.
+
+stix:source_ref
+	a owl:ObjectProperty ;
+	.
+
+stix:spec_version
+	a owl:DatatypeProperty ;
+	.
+
+stix:target_ref
+	a owl:ObjectProperty ;
+	.
+
+stix:tool_types
+	a owl:DatatypeProperty ;
+	.
+
+stix:type
+	a owl:DatatypeProperty ;
+	.
+
+stix:url
+	a owl:DatatypeProperty ;
+	.
+
+stix:uses
+	a owl:ObjectProperty ;
+	.
+
+stix:valid_from
+	a owl:DatatypeProperty ;
+	.
+

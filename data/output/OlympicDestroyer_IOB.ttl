@@ -1,0 +1,1306 @@
+@prefix attack: <http://attack.mitre.org/ns/attack#> .
+@prefix example: <http://example/ns/> .
+@prefix fx: <http://sparql.xyz/facade-x/ns/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix stix: <http://docs.oasis-open.org/cti/ns/stix#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix xyz: <http://sparql.xyz/facade-x/data/> .
+
+attack:attack-pattern--2b742742-28c3-4e1b-bab7-8350d6300fa7
+	a stix:StixObject ;
+	stix:created "2020-03-02T19:15:44.182Z"^^xsd:dateTime ;
+	stix:description '''Adversaries may send spearphishing emails with a malicious link in an attempt to gain access to victim systems. Spearphishing with a link is a specific variant of spearphishing. It is different from other forms of spearphishing in that it employs the use of links to download malware contained in email, instead of attaching malicious files to the email itself, to avoid defenses that may inspect email attachments. Spearphishing may also involve social engineering techniques, such as posing as a trusted source.
+
+All forms of spearphishing are electronically delivered social engineering targeted at a specific individual, company, or industry. In this case, the malicious emails contain links. Generally, the links will be accompanied by social engineering text and require the user to actively click or copy and paste a URL into a browser, leveraging [User Execution](https://attack.mitre.org/techniques/T1204). The visited website may compromise the web browser using an exploit, or the user will be prompted to download applications, documents, zip files, or even executables depending on the pretext for the email in the first place.
+
+Adversaries may also include links that are intended to interact directly with an email reader, including embedded images intended to exploit the end system directly. Additionally, adversaries may use seemingly benign links that abuse special characters to mimic legitimate websites (known as an "IDN homograph attack").(Citation: CISA IDN ST05-016) URLs may also be obfuscated by taking advantage of quirks in the URL schema, such as the acceptance of integer- or hexadecimal-based hostname formats and the automatic discarding of text before an “@” symbol: for example, `hxxp://google.com@1157586937`.(Citation: Mandiant URL Obfuscation 2023)
+
+Adversaries may also utilize links to perform consent phishing, typically with OAuth 2.0 request URLs that when accepted by the user provide permissions/access for malicious applications, allowing adversaries to  [Steal Application Access Token](https://attack.mitre.org/techniques/T1528)s.(Citation: Trend Micro Pawn Storm OAuth 2017) These stolen access tokens allow the adversary to perform various actions on behalf of the user via API calls. (Citation: Microsoft OAuth 2.0 Consent Phishing 2021)''' ;
+	stix:external_reference
+		attack:external-reference-1276992e-d448-4824-97cc-03607ba68ef2 ,
+		attack:external-reference-1281c8b8-c866-4e1d-8540-a97cbe8f0c77 ,
+		attack:external-reference-28f2a5ee-2c85-43c8-aaf9-22b1cc0b923f ,
+		attack:external-reference-2ef2ce34-e35b-4228-94a8-928726ec6d69 ,
+		attack:external-reference-34fd23c9-ed88-4a85-b5f5-36dd27801fc1 ,
+		attack:external-reference-b53a6cc6-8f9c-4f8f-afd9-525b5d61ea1e ,
+		attack:external-reference-fa84a4de-006b-408b-8d08-9243c16a81c8
+		;
+	stix:id "attack-pattern--2b742742-28c3-4e1b-bab7-8350d6300fa7" ;
+	stix:kill_chain_phase attack:kill-chain-phase-d7779965-6099-4309-9864-cbbf8e6b7340 ;
+	stix:modified "2023-09-06T14:08:51.616Z"^^xsd:dateTime ;
+	stix:name "Spearphishing Link" ;
+	stix:spec_version "2.1" ;
+	stix:type "attack-pattern" ;
+	.
+
+attack:attack-pattern--3731fbcd-0e43-47ae-ae6c-d15e510f0d42
+	a stix:StixObject ;
+	stix:created "2020-02-11T19:05:45.829Z"^^xsd:dateTime ;
+	stix:description """Adversaries may register malicious password filter dynamic link libraries (DLLs) into the authentication process to acquire user credentials as they are validated. 
+
+Windows password filters are password policy enforcement mechanisms for both domain and local accounts. Filters are implemented as DLLs containing a method to validate potential passwords against password policies. Filter DLLs can be positioned on local computers for local accounts and/or domain controllers for domain accounts. Before registering new passwords in the Security Accounts Manager (SAM), the Local Security Authority (LSA) requests validation from each registered filter. Any potential changes cannot take effect until every registered filter acknowledges validation. 
+
+Adversaries can register malicious password filters to harvest credentials from local computers and/or entire domains. To perform proper validation, filters must receive plain-text credentials from the LSA. A malicious password filter would receive these plain-text credentials every time a password request is made.(Citation: Carnal Ownage Password Filters Sept 2013)""" ;
+	stix:external_reference
+		attack:external-reference-38ddfc15-0355-467d-b715-ddd1aac43a5b ,
+		attack:external-reference-d052ea87-3b34-480f-b9c9-bd6e108da84b ,
+		attack:external-reference-d9526427-2593-4119-8a3d-a4ba4e5f9bba
+		;
+	stix:id "attack-pattern--3731fbcd-0e43-47ae-ae6c-d15e510f0d42" ;
+	stix:kill_chain_phase
+		attack:kill-chain-phase-3150a4d7-faa2-4dc2-89d7-156ea997bef3 ,
+		attack:kill-chain-phase-8d8f7519-0593-46a1-a58b-bb865f4785cd ,
+		attack:kill-chain-phase-e850ab72-0323-46b0-8a76-6c6037818b2d
+		;
+	stix:modified "2022-04-25T14:00:00.188Z"^^xsd:dateTime ;
+	stix:name "Password Filter DLL" ;
+	stix:spec_version "2.1" ;
+	stix:type "attack-pattern" ;
+	.
+
+attack:attack-pattern--3d333250-30e4-4a82-9edc-756c68afc529
+	a stix:StixObject ;
+	stix:created "2020-02-21T20:22:13.470Z"^^xsd:dateTime ;
+	stix:description """Adversaries may maliciously modify components of a victim environment in order to hinder or disable defensive mechanisms. This not only involves impairing preventative defenses, such as firewalls and anti-virus, but also detection capabilities that defenders can use to audit activity and identify malicious behavior. This may also span both native defenses as well as supplemental capabilities installed by users and administrators.
+
+Adversaries may also impair routine operations that contribute to defensive hygiene, such as blocking users from logging out of a computer or stopping it from being shut down. These restrictions can further enable malicious operations as well as the continued propagation of incidents.(Citation: Emotet shutdown)
+
+Adversaries could also target event aggregation and analysis mechanisms, or otherwise disrupt these procedures by altering other system components.""" ;
+	stix:external_reference
+		attack:external-reference-3d0e0fae-eb88-4a8d-8a87-cc9e856ea7bf ,
+		attack:external-reference-6a960339-13f5-4003-9689-699b83706138
+		;
+	stix:id "attack-pattern--3d333250-30e4-4a82-9edc-756c68afc529" ;
+	stix:kill_chain_phase attack:kill-chain-phase-294b7b63-faa3-4505-ac60-19e235a77b1a ;
+	stix:modified "2023-10-20T16:43:53.391Z"^^xsd:dateTime ;
+	stix:name "Impair Defenses" ;
+	stix:spec_version "2.1" ;
+	stix:type "attack-pattern" ;
+	.
+
+attack:attack-pattern--86850eff-2729-40c3-b85e-c4af26da4a2d
+	a stix:StixObject ;
+	stix:created "2020-02-18T16:39:06.289Z"^^xsd:dateTime ;
+	stix:description """Adversaries may duplicate then impersonate another user's existing token to escalate privileges and bypass access controls. For example, an adversary can duplicate an existing token using `DuplicateToken` or `DuplicateTokenEx`. The token can then be used with `ImpersonateLoggedOnUser` to allow the calling thread to impersonate a logged on user's security context, or with `SetThreadToken` to assign the impersonated token to a thread.
+
+An adversary may perform [Token Impersonation/Theft](https://attack.mitre.org/techniques/T1134/001) when they have a specific, existing process they want to assign the duplicated token to. For example, this may be useful for when the target user has a non-network logon session on the system.
+
+When an adversary would instead use a duplicated token to create a new process rather than attaching to an existing process, they can additionally [Create Process with Token](https://attack.mitre.org/techniques/T1134/002) using `CreateProcessWithTokenW` or `CreateProcessAsUserW`. [Token Impersonation/Theft](https://attack.mitre.org/techniques/T1134/001) is also distinct from [Make and Impersonate Token](https://attack.mitre.org/techniques/T1134/003) in that it refers to duplicating an existing token, rather than creating a new one.""" ;
+	stix:external_reference
+		attack:external-reference-2604b300-9e67-461b-b872-581d3cf816dc ,
+		attack:external-reference-5abeffeb-8a7e-4443-a567-0aa64c889f16
+		;
+	stix:id "attack-pattern--86850eff-2729-40c3-b85e-c4af26da4a2d" ;
+	stix:kill_chain_phase
+		attack:kill-chain-phase-0f5e1295-5a59-4fb8-b55b-40aa742a4e39 ,
+		attack:kill-chain-phase-e1f36c93-2b8a-4db7-8b64-41022473bc43
+		;
+	stix:modified "2023-09-29T21:08:45.174Z"^^xsd:dateTime ;
+	stix:name "Token Impersonation/Theft" ;
+	stix:spec_version "2.1" ;
+	stix:type "attack-pattern" ;
+	.
+
+attack:attack-pattern--92d7da27-2d91-488e-a00c-059dc162766d
+	a stix:StixObject ;
+	stix:created "2017-05-31T21:30:41.804Z"^^xsd:dateTime ;
+	stix:description "Adversaries may steal data by exfiltrating it over an existing command and control channel. Stolen data is encoded into the normal communications channel using the same protocol as command and control communications." ;
+	stix:external_reference
+		attack:external-reference-73c7299c-cd16-4a8f-a5c5-9df0a7fa1408 ,
+		attack:external-reference-a205da45-a0da-4df8-b838-367854c68489
+		;
+	stix:id "attack-pattern--92d7da27-2d91-488e-a00c-059dc162766d" ;
+	stix:kill_chain_phase attack:kill-chain-phase-cf84a781-49eb-47fb-a4d7-369835ccbfd8 ;
+	stix:modified "2023-05-09T14:00:00.188Z"^^xsd:dateTime ;
+	stix:name "Exfiltration Over C2 Channel" ;
+	stix:spec_version "2.1" ;
+	stix:type "attack-pattern" ;
+	.
+
+attack:attack-pattern--970a3432-3237-47ad-bcca-7d8cbb217736
+	a stix:StixObject ;
+	stix:created "2020-03-09T13:48:55.078Z"^^xsd:dateTime ;
+	stix:description """Adversaries may abuse PowerShell commands and scripts for execution. PowerShell is a powerful interactive command-line interface and scripting environment included in the Windows operating system.(Citation: TechNet PowerShell) Adversaries can use PowerShell to perform a number of actions, including discovery of information and execution of code. Examples include the <code>Start-Process</code> cmdlet which can be used to run an executable and the <code>Invoke-Command</code> cmdlet which runs a command locally or on a remote computer (though administrator permissions are required to use PowerShell to connect to remote systems).
+
+PowerShell may also be used to download and run executables from the Internet, which can be executed from disk or in memory without touching disk.
+
+A number of PowerShell-based offensive testing tools are available, including [Empire](https://attack.mitre.org/software/S0363),  [PowerSploit](https://attack.mitre.org/software/S0194), [PoshC2](https://attack.mitre.org/software/S0378), and PSAttack.(Citation: Github PSAttack)
+
+PowerShell commands/scripts can also be executed without directly invoking the <code>powershell.exe</code> binary through interfaces to PowerShell's underlying <code>System.Management.Automation</code> assembly DLL exposed through the .NET framework and Windows Common Language Interface (CLI).(Citation: Sixdub PowerPick Jan 2016)(Citation: SilentBreak Offensive PS Dec 2015)(Citation: Microsoft PSfromCsharp APR 2014)""" ;
+	stix:external_reference
+		attack:external-reference-1d76018a-eb95-4bdb-8c91-a558faff170e ,
+		attack:external-reference-218dc5c3-80d8-4963-9983-f2c43298b575 ,
+		attack:external-reference-3b6f1016-309d-4756-90f8-bce235195068 ,
+		attack:external-reference-69eb5728-e270-4daf-bf62-66a5c39ad596 ,
+		attack:external-reference-9b5d7759-c282-40cd-bbd5-e759e752ab9e ,
+		attack:external-reference-c2507e43-469d-4c52-8f74-b2f556d57741 ,
+		attack:external-reference-d59f300a-a056-4a65-8ae0-6f969ddbcdb8 ,
+		attack:external-reference-ed6be9e9-f382-4f2e-a231-eda00330b80c ,
+		attack:external-reference-fa6c9e9a-caa6-4d8a-b869-629c42954a64
+		;
+	stix:id "attack-pattern--970a3432-3237-47ad-bcca-7d8cbb217736" ;
+	stix:kill_chain_phase attack:kill-chain-phase-35163a6a-f356-42a0-ba8f-4b34ee57117e ;
+	stix:modified "2023-05-09T14:00:00.188Z"^^xsd:dateTime ;
+	stix:name "PowerShell" ;
+	stix:spec_version "2.1" ;
+	stix:type "attack-pattern" ;
+	.
+
+attack:attack-pattern--d45a3d09-b3cf-48f4-9f0f-f521ee5cb05c
+	a stix:StixObject ;
+	stix:created "2019-03-14T18:47:17.701Z"^^xsd:dateTime ;
+	stix:description """Adversaries may destroy data and files on specific systems or in large numbers on a network to interrupt availability to systems, services, and network resources. Data destruction is likely to render stored data irrecoverable by forensic techniques through overwriting files or data on local and remote drives.(Citation: Symantec Shamoon 2012)(Citation: FireEye Shamoon Nov 2016)(Citation: Palo Alto Shamoon Nov 2016)(Citation: Kaspersky StoneDrill 2017)(Citation: Unit 42 Shamoon3 2018)(Citation: Talos Olympic Destroyer 2018) Common operating system file deletion commands such as <code>del</code> and <code>rm</code> often only remove pointers to files without wiping the contents of the files themselves, making the files recoverable by proper forensic methodology. This behavior is distinct from [Disk Content Wipe](https://attack.mitre.org/techniques/T1561/001) and [Disk Structure Wipe](https://attack.mitre.org/techniques/T1561/002) because individual files are destroyed rather than sections of a storage disk or the disk's logical structure.
+
+Adversaries may attempt to overwrite files and directories with randomly generated data to make it irrecoverable.(Citation: Kaspersky StoneDrill 2017)(Citation: Unit 42 Shamoon3 2018) In some cases politically oriented image files have been used to overwrite data.(Citation: FireEye Shamoon Nov 2016)(Citation: Palo Alto Shamoon Nov 2016)(Citation: Kaspersky StoneDrill 2017)
+
+To maximize impact on the target organization in operations where network-wide availability interruption is the goal, malware designed for destroying data may have worm-like features to propagate across a network by leveraging additional techniques like [Valid Accounts](https://attack.mitre.org/techniques/T1078), [OS Credential Dumping](https://attack.mitre.org/techniques/T1003), and [SMB/Windows Admin Shares](https://attack.mitre.org/techniques/T1021/002).(Citation: Symantec Shamoon 2012)(Citation: FireEye Shamoon Nov 2016)(Citation: Palo Alto Shamoon Nov 2016)(Citation: Kaspersky StoneDrill 2017)(Citation: Talos Olympic Destroyer 2018).
+
+In cloud environments, adversaries may leverage access to delete cloud storage, cloud storage accounts, machine images, and other infrastructure crucial to operations to damage an organization or their customers.(Citation: Data Destruction - Threat Post)(Citation: DOJ  - Cisco Insider)""" ;
+	stix:external_reference
+		attack:external-reference-1edcbad6-d121-4086-8d7a-23ed971abed9 ,
+		attack:external-reference-2c0fc28a-ff4f-4f52-bd6b-d3abfc30f333 ,
+		attack:external-reference-425f144c-5ac1-4583-a985-4384012900df ,
+		attack:external-reference-481509c8-b78c-45b9-bfa4-469143d99715 ,
+		attack:external-reference-71271d70-75de-4461-83d0-22acc1ed0910 ,
+		attack:external-reference-95c2446e-78c6-4de7-bdfe-322069a2013e ,
+		attack:external-reference-b5847f55-9345-4915-abf0-41530fb8ffea ,
+		attack:external-reference-f46e42de-6e01-4b36-b48f-00115edf1247 ,
+		attack:external-reference-f961e15c-59f5-4fd7-aedd-94c6f7c3c7ea
+		;
+	stix:id "attack-pattern--d45a3d09-b3cf-48f4-9f0f-f521ee5cb05c" ;
+	stix:kill_chain_phase attack:kill-chain-phase-4b512265-0f70-4d9c-96b6-5748caa91d4d ;
+	stix:modified "2023-10-03T17:30:32.192Z"^^xsd:dateTime ;
+	stix:name "Data Destruction" ;
+	stix:spec_version "2.1" ;
+	stix:type "attack-pattern" ;
+	.
+
+attack:attack-pattern--ff73aa03-0090-4464-83ac-f89e233c02bc
+	a stix:StixObject ;
+	stix:created "2019-10-04T20:42:28.541Z"^^xsd:dateTime ;
+	stix:description """Adversaries may shutdown/reboot systems to interrupt access to, or aid in the destruction of, those systems. Operating systems may contain commands to initiate a shutdown/reboot of a machine or network device. In some cases, these commands may also be used to initiate a shutdown/reboot of a remote computer or network device via [Network Device CLI](https://attack.mitre.org/techniques/T1059/008) (e.g. <code>reload</code>).(Citation: Microsoft Shutdown Oct 2017)(Citation: alert_TA18_106A)
+
+Shutting down or rebooting systems may disrupt access to computer resources for legitimate users while also impeding incident response/recovery.
+
+Adversaries may attempt to shutdown/reboot a system after impacting it in other ways, such as [Disk Structure Wipe](https://attack.mitre.org/techniques/T1561/002) or [Inhibit System Recovery](https://attack.mitre.org/techniques/T1490), to hasten the intended effects on system availability.(Citation: Talos Nyetya June 2017)(Citation: Talos Olympic Destroyer 2018)""" ;
+	stix:external_reference
+		attack:external-reference-2da34023-768f-44e7-a54b-cdf9f137e93c ,
+		attack:external-reference-70a91972-48e2-4cbc-aee0-677d2cc55d9a ,
+		attack:external-reference-7565896b-05f7-4597-b1dd-9bd8f7f45fee ,
+		attack:external-reference-8d00f471-51c8-45d4-b797-500fe95b79c8 ,
+		attack:external-reference-fbfb21b0-4e20-4de7-b00a-4eca3cc8196b
+		;
+	stix:id "attack-pattern--ff73aa03-0090-4464-83ac-f89e233c02bc" ;
+	stix:kill_chain_phase attack:kill-chain-phase-55760a29-e975-49cc-b7d4-640d88811ecc ;
+	stix:modified "2023-05-09T14:00:00.188Z"^^xsd:dateTime ;
+	stix:name "System Shutdown/Reboot" ;
+	stix:spec_version "2.1" ;
+	stix:type "attack-pattern" ;
+	.
+
+attack:course-of-action--6c3cfc11-efa3-48c4-ae91-0c63fd4a4914
+	a stix:StixObject ;
+	stix:created "2024-02-19T09:00:00.000Z"^^xsd:dateTime ;
+	stix:description "Remediate by quarantining and performing analyst guided steps" ;
+	stix:id "course-of-action--6c3cfc11-efa3-48c4-ae91-0c63fd4a4914" ;
+	stix:modified "2024-02-19T09:00:00.000Z"^^xsd:dateTime ;
+	stix:name "Quarantine and remediate" ;
+	stix:spec_version "2.1" ;
+	stix:type "course-of-action" ;
+	.
+
+attack:course-of-action--6df8c715-0c34-4c62-9a33-0629e2458cef
+	a stix:StixObject ;
+	stix:created "2024-02-19T09:00:00.000Z"^^xsd:dateTime ;
+	stix:description "Correlate Alerts " ;
+	stix:id "course-of-action--6df8c715-0c34-4c62-9a33-0629e2458cef" ;
+	stix:modified "2024-02-19T09:00:00.000Z"^^xsd:dateTime ;
+	stix:name "Correlate Alerts" ;
+	stix:spec_version "2.1" ;
+	stix:triggers attack:course-of-action--6c3cfc11-efa3-48c4-ae91-0c63fd4a4914 ;
+	stix:type "course-of-action" ;
+	stix:uses
+		attack:x-oca-detection--39972fd6-e13c-400e-88a6-916e2f04cd2d ,
+		attack:x-oca-detection--4b9e12a4-5d54-4374-ba92-9e15731511f2 ,
+		attack:x-oca-detection--58834c29-4ceb-42a1-a218-336103021000 ,
+		attack:x-oca-detection--66aa9c25-8b56-4121-8630-dbe457393b27 ,
+		attack:x-oca-detection--9d1b12f4-b1e4-401c-bda4-5e472ef9a76f ,
+		attack:x-oca-detection--a1afab78-e96f-4613-bb79-f1336cb76e8c ,
+		attack:x-oca-detection--f27cb358-d747-47ba-a6c4-e5b8debab157
+		;
+	.
+
+attack:external-reference-1276992e-d448-4824-97cc-03607ba68ef2
+	a stix:StixObject ;
+	stix:external-id "T1566.002" ;
+	stix:source_name "mitre-attack" ;
+	stix:url "https://attack.mitre.org/techniques/T1566/002" ;
+	.
+
+attack:external-reference-1281c8b8-c866-4e1d-8540-a97cbe8f0c77
+	a stix:StixObject ;
+	stix:description "Nick Simonian. (2023, May 22). Don't @ Me: URL Obfuscation Through Schema Abuse. Retrieved August 4, 2023." ;
+	stix:source_name "Mandiant URL Obfuscation 2023" ;
+	stix:url "https://www.mandiant.com/resources/blog/url-obfuscation-schema-abuse" ;
+	.
+
+attack:external-reference-1d76018a-eb95-4bdb-8c91-a558faff170e
+	a stix:StixObject ;
+	stix:description "Babinec, K. (2014, April 28). Executing PowerShell scripts from C#. Retrieved April 22, 2019." ;
+	stix:source_name "Microsoft PSfromCsharp APR 2014" ;
+	stix:url "https://blogs.msdn.microsoft.com/kebab/2014/04/28/executing-powershell-scripts-from-c/" ;
+	.
+
+attack:external-reference-1edcbad6-d121-4086-8d7a-23ed971abed9
+	a stix:StixObject ;
+	stix:description "Symantec. (2012, August 16). The Shamoon Attacks. Retrieved March 14, 2019." ;
+	stix:source_name "Symantec Shamoon 2012" ;
+	stix:url "https://www.symantec.com/connect/blogs/shamoon-attacks" ;
+	.
+
+attack:external-reference-218dc5c3-80d8-4963-9983-f2c43298b575
+	a stix:StixObject ;
+	stix:description "Dunwoody, M. (2016, February 11). GREATER VISIBILITY THROUGH POWERSHELL LOGGING. Retrieved February 16, 2016." ;
+	stix:source_name "FireEye PowerShell Logging 2016" ;
+	stix:url "https://www.fireeye.com/blog/threat-research/2016/02/greater_visibilityt.html" ;
+	.
+
+attack:external-reference-2604b300-9e67-461b-b872-581d3cf816dc
+	a stix:StixObject ;
+	stix:description "Mathers, B. (2017, March 7). Command line process auditing. Retrieved April 21, 2017." ;
+	stix:source_name "Microsoft Command-line Logging" ;
+	stix:url "https://technet.microsoft.com/en-us/windows-server-docs/identity/ad-ds/manage/component-updates/command-line-process-auditing" ;
+	.
+
+attack:external-reference-28f2a5ee-2c85-43c8-aaf9-22b1cc0b923f
+	a stix:StixObject ;
+	stix:description "Hacquebord, F.. (2017, April 25). Pawn Storm Abuses Open Authentication in Advanced Social Engineering Attacks. Retrieved October 4, 2019." ;
+	stix:source_name "Trend Micro Pawn Storm OAuth 2017" ;
+	stix:url "https://blog.trendmicro.com/trendlabs-security-intelligence/pawn-storm-abuses-open-authentication-advanced-social-engineering-attacks" ;
+	.
+
+attack:external-reference-2c0fc28a-ff4f-4f52-bd6b-d3abfc30f333
+	a stix:StixObject ;
+	stix:description "Falcone, R. (2018, December 13). Shamoon 3 Targets Oil and Gas Organization. Retrieved March 14, 2019." ;
+	stix:source_name "Unit 42 Shamoon3 2018" ;
+	stix:url "https://unit42.paloaltonetworks.com/shamoon-3-targets-oil-gas-organization/" ;
+	.
+
+attack:external-reference-2da34023-768f-44e7-a54b-cdf9f137e93c
+	a stix:StixObject ;
+	stix:description 'Chiu, A. (2016, June 27). New Ransomware Variant "Nyetya" Compromises Systems Worldwide. Retrieved March 26, 2019.' ;
+	stix:source_name "Talos Nyetya June 2017" ;
+	stix:url "https://blog.talosintelligence.com/2017/06/worldwide-ransomware-variant.html" ;
+	.
+
+attack:external-reference-2ef2ce34-e35b-4228-94a8-928726ec6d69
+	a stix:StixObject ;
+	stix:description "Australian Cyber Security Centre. (2012, December). Mitigating Spoofed Emails Using Sender Policy Framework. Retrieved October 19, 2020." ;
+	stix:source_name "ACSC Email Spoofing" ;
+	stix:url "https://www.cyber.gov.au/sites/default/files/2019-03/spoof_email_sender_policy_framework.pdf" ;
+	.
+
+attack:external-reference-34fd23c9-ed88-4a85-b5f5-36dd27801fc1
+	a stix:StixObject ;
+	stix:description "Microsoft 365 Defender Threat Intelligence Team. (2021, June 14). Microsoft delivers comprehensive solution to battle rise in consent phishing emails. Retrieved December 13, 2021." ;
+	stix:source_name "Microsoft OAuth 2.0 Consent Phishing 2021" ;
+	stix:url "https://www.microsoft.com/security/blog/2021/07/14/microsoft-delivers-comprehensive-solution-to-battle-rise-in-consent-phishing-emails/" ;
+	.
+
+attack:external-reference-38ddfc15-0355-467d-b715-ddd1aac43a5b
+	a stix:StixObject ;
+	stix:description "Fuller, R. (2013, September 11). Stealing passwords every time they change. Retrieved November 21, 2017." ;
+	stix:source_name "Carnal Ownage Password Filters Sept 2013" ;
+	stix:url "http://carnal0wnage.attackresearch.com/2013/09/stealing-passwords-every-time-they.html" ;
+	.
+
+attack:external-reference-3b6f1016-309d-4756-90f8-bce235195068
+	a stix:StixObject ;
+	stix:description "Malware Archaeology. (2016, June). WINDOWS POWERSHELL LOGGING CHEAT SHEET - Win 7/Win 2008 or later. Retrieved June 24, 2016." ;
+	stix:source_name "Malware Archaeology PowerShell Cheat Sheet" ;
+	stix:url "http://www.malwarearchaeology.com/s/Windows-PowerShell-Logging-Cheat-Sheet-ver-June-2016-v2.pdf" ;
+	.
+
+attack:external-reference-3d0e0fae-eb88-4a8d-8a87-cc9e856ea7bf
+	a stix:StixObject ;
+	stix:external-id "T1562" ;
+	stix:source_name "mitre-attack" ;
+	stix:url "https://attack.mitre.org/techniques/T1562" ;
+	.
+
+attack:external-reference-425f144c-5ac1-4583-a985-4384012900df
+	a stix:StixObject ;
+	stix:description "Mimoso, M.. (2014, June 18). Hacker Puts Hosting Service Code Spaces Out of Business. Retrieved December 15, 2020." ;
+	stix:source_name "Data Destruction - Threat Post" ;
+	stix:url "https://threatpost.com/hacker-puts-hosting-service-code-spaces-out-of-business/106761/" ;
+	.
+
+attack:external-reference-481509c8-b78c-45b9-bfa4-469143d99715
+	a stix:StixObject ;
+	stix:description "FireEye. (2016, November 30). FireEye Responds to Wave of Destructive Cyber Attacks in Gulf Region. Retrieved January 11, 2017." ;
+	stix:source_name "FireEye Shamoon Nov 2016" ;
+	stix:url "https://www.fireeye.com/blog/threat-research/2016/11/fireeye_respondsto.html" ;
+	.
+
+attack:external-reference-5abeffeb-8a7e-4443-a567-0aa64c889f16
+	a stix:StixObject ;
+	stix:external-id "T1134.001" ;
+	stix:source_name "mitre-attack" ;
+	stix:url "https://attack.mitre.org/techniques/T1134/001" ;
+	.
+
+attack:external-reference-69eb5728-e270-4daf-bf62-66a5c39ad596
+	a stix:StixObject ;
+	stix:description "Microsoft. (n.d.). Windows PowerShell Scripting. Retrieved April 28, 2016." ;
+	stix:source_name "TechNet PowerShell" ;
+	stix:url "https://technet.microsoft.com/en-us/scriptcenter/dd742419.aspx" ;
+	.
+
+attack:external-reference-6a960339-13f5-4003-9689-699b83706138
+	a stix:StixObject ;
+	stix:description "The DFIR Report. (2022, November 8). Emotet Strikes Again – LNK File Leads to Domain Wide Ransomware. Retrieved March 6, 2023." ;
+	stix:source_name "Emotet shutdown" ;
+	stix:url "https://thedfirreport.com/2022/11/28/emotet-strikes-again-lnk-file-leads-to-domain-wide-ransomware/" ;
+	.
+
+attack:external-reference-70a91972-48e2-4cbc-aee0-677d2cc55d9a
+	a stix:StixObject ;
+	stix:description "CISA. (2018, April 20). Russian State-Sponsored Cyber Actors Targeting Network Infrastructure Devices. Retrieved February 14, 2022." ;
+	stix:source_name "alert_TA18_106A" ;
+	stix:url "https://www.cisa.gov/uscert/ncas/alerts/TA18-106A" ;
+	.
+
+attack:external-reference-71271d70-75de-4461-83d0-22acc1ed0910
+	a stix:StixObject ;
+	stix:external-id "T1485" ;
+	stix:source_name "mitre-attack" ;
+	stix:url "https://attack.mitre.org/techniques/T1485" ;
+	.
+
+attack:external-reference-73c7299c-cd16-4a8f-a5c5-9df0a7fa1408
+	a stix:StixObject ;
+	stix:description "Gardiner, J.,  Cova, M., Nagaraja, S. (2014, February). Command & Control Understanding, Denying and Detecting. Retrieved April 20, 2016." ;
+	stix:source_name "University of Birmingham C2" ;
+	stix:url "https://arxiv.org/ftp/arxiv/papers/1408/1408.1136.pdf" ;
+	.
+
+attack:external-reference-7565896b-05f7-4597-b1dd-9bd8f7f45fee
+	a stix:StixObject ;
+	stix:description "Microsoft. (2017, October 15). Shutdown. Retrieved October 4, 2019." ;
+	stix:source_name "Microsoft Shutdown Oct 2017" ;
+	stix:url "https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/shutdown" ;
+	.
+
+attack:external-reference-8d00f471-51c8-45d4-b797-500fe95b79c8
+	a stix:StixObject ;
+	stix:external-id "T1529" ;
+	stix:source_name "mitre-attack" ;
+	stix:url "https://attack.mitre.org/techniques/T1529" ;
+	.
+
+attack:external-reference-95c2446e-78c6-4de7-bdfe-322069a2013e
+	a stix:StixObject ;
+	stix:description "Falcone, R.. (2016, November 30). Shamoon 2: Return of the Disttrack Wiper. Retrieved January 11, 2017." ;
+	stix:source_name "Palo Alto Shamoon Nov 2016" ;
+	stix:url "http://researchcenter.paloaltonetworks.com/2016/11/unit42-shamoon-2-return-disttrack-wiper/" ;
+	.
+
+attack:external-reference-9b5d7759-c282-40cd-bbd5-e759e752ab9e
+	a stix:StixObject ;
+	stix:description "Hastings, M. (2014, July 16). Investigating PowerShell Attacks. Retrieved December 1, 2021." ;
+	stix:source_name "inv_ps_attacks" ;
+	stix:url "https://powershellmagazine.com/2014/07/16/investigating-powershell-attacks/" ;
+	.
+
+attack:external-reference-a205da45-a0da-4df8-b838-367854c68489
+	a stix:StixObject ;
+	stix:external-id "T1041" ;
+	stix:source_name "mitre-attack" ;
+	stix:url "https://attack.mitre.org/techniques/T1041" ;
+	.
+
+attack:external-reference-b53a6cc6-8f9c-4f8f-afd9-525b5d61ea1e
+	a stix:StixObject ;
+	stix:description "CISA. (2019, September 27). Security Tip (ST05-016): Understanding Internationalized Domain Names. Retrieved October 20, 2020." ;
+	stix:source_name "CISA IDN ST05-016" ;
+	stix:url "https://us-cert.cisa.gov/ncas/tips/ST05-016" ;
+	.
+
+attack:external-reference-b5847f55-9345-4915-abf0-41530fb8ffea
+	a stix:StixObject ;
+	stix:description "DOJ. (2020, August 26). San Jose Man Pleads Guilty To Damaging Cisco’s Network. Retrieved December 15, 2020." ;
+	stix:source_name "DOJ  - Cisco Insider" ;
+	stix:url "https://www.justice.gov/usao-ndca/pr/san-jose-man-pleads-guilty-damaging-cisco-s-network" ;
+	.
+
+attack:external-reference-c2507e43-469d-4c52-8f74-b2f556d57741
+	a stix:StixObject ;
+	stix:external-id "T1059.001" ;
+	stix:source_name "mitre-attack" ;
+	stix:url "https://attack.mitre.org/techniques/T1059/001" ;
+	.
+
+attack:external-reference-d052ea87-3b34-480f-b9c9-bd6e108da84b
+	a stix:StixObject ;
+	stix:external-id "T1556.002" ;
+	stix:source_name "mitre-attack" ;
+	stix:url "https://attack.mitre.org/techniques/T1556/002" ;
+	.
+
+attack:external-reference-d59f300a-a056-4a65-8ae0-6f969ddbcdb8
+	a stix:StixObject ;
+	stix:description "Warner, J.. (2015, January 6). Inexorable PowerShell – A Red Teamer’s Tale of Overcoming Simple AppLocker Policies. Retrieved December 8, 2018." ;
+	stix:source_name "Sixdub PowerPick Jan 2016" ;
+	stix:url "https://web.archive.org/web/20160327101330/http://www.sixdub.net/?p=367" ;
+	.
+
+attack:external-reference-d9526427-2593-4119-8a3d-a4ba4e5f9bba
+	a stix:StixObject ;
+	stix:description "Bialek, J. (2013, September 15). Intercepting Password Changes With Function Hooking. Retrieved November 21, 2017." ;
+	stix:source_name "Clymb3r Function Hook Passwords Sept 2013" ;
+	stix:url "https://clymb3r.wordpress.com/2013/09/15/intercepting-password-changes-with-function-hooking/" ;
+	.
+
+attack:external-reference-ed6be9e9-f382-4f2e-a231-eda00330b80c
+	a stix:StixObject ;
+	stix:description "Haight, J. (2016, April 21). PS>Attack. Retrieved June 1, 2016." ;
+	stix:source_name "Github PSAttack" ;
+	stix:url "https://github.com/jaredhaight/PSAttack" ;
+	.
+
+attack:external-reference-f46e42de-6e01-4b36-b48f-00115edf1247
+	a stix:StixObject ;
+	stix:description "Kaspersky Lab. (2017, March 7). From Shamoon to StoneDrill: Wipers attacking Saudi organizations and beyond. Retrieved March 14, 2019." ;
+	stix:source_name "Kaspersky StoneDrill 2017" ;
+	stix:url "https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2018/03/07180722/Report_Shamoon_StoneDrill_final.pdf" ;
+	.
+
+attack:external-reference-f961e15c-59f5-4fd7-aedd-94c6f7c3c7ea
+	a stix:StixObject ;
+	stix:description "Mercer, W. and Rascagneres, P. (2018, February 12). Olympic Destroyer Takes Aim At Winter Olympics. Retrieved March 14, 2019." ;
+	stix:source_name "Talos Olympic Destroyer 2018" ;
+	stix:url "https://blog.talosintelligence.com/2018/02/olympic-destroyer.html" ;
+	.
+
+attack:external-reference-fa6c9e9a-caa6-4d8a-b869-629c42954a64
+	a stix:StixObject ;
+	stix:description "Christensen, L.. (2015, December 28). The Evolution of Offensive PowerShell Invocation. Retrieved December 8, 2018." ;
+	stix:source_name "SilentBreak Offensive PS Dec 2015" ;
+	stix:url "https://web.archive.org/web/20190508170150/https://silentbreaksecurity.com/powershell-jobs-without-powershell-exe/" ;
+	.
+
+attack:external-reference-fa84a4de-006b-408b-8d08-9243c16a81c8
+	a stix:StixObject ;
+	stix:description "Microsoft. (2020, October 13). Anti-spoofing protection in EOP. Retrieved October 19, 2020." ;
+	stix:source_name "Microsoft Anti Spoofing" ;
+	stix:url "https://docs.microsoft.com/en-us/microsoft-365/security/office-365-security/anti-spoofing-protection?view=o365-worldwide" ;
+	.
+
+attack:external-reference-fbfb21b0-4e20-4de7-b00a-4eca3cc8196b
+	a stix:StixObject ;
+	stix:description "Mercer, W. and Rascagneres, P. (2018, February 12). Olympic Destroyer Takes Aim At Winter Olympics. Retrieved March 14, 2019." ;
+	stix:source_name "Talos Olympic Destroyer 2018" ;
+	stix:url "https://blog.talosintelligence.com/2018/02/olympic-destroyer.html" ;
+	.
+
+attack:grouping--af0155e3-f7a9-41bc-b118-3bc836e978bc
+	a stix:StixObject ;
+	stix:created "2024-02-20T07:42:44.000Z"^^xsd:dateTime ;
+	stix:description "" ;
+	stix:id "grouping--af0155e3-f7a9-41bc-b118-3bc836e978bc" ;
+	stix:modified "2024-02-20T07:42:44.000Z"^^xsd:dateTime ;
+	stix:name "CASP2024 OD Detections" ;
+	stix:spec_version "2.1" ;
+	stix:type "grouping" ;
+	.
+
+attack:grouping--e3cefc1b-f736-42d1-b137-56c7f4740da2
+	a stix:StixObject ;
+	stix:created "2024-02-20T07:42:44.000Z"^^xsd:dateTime ;
+	stix:description "" ;
+	stix:id "grouping--e3cefc1b-f736-42d1-b137-56c7f4740da2" ;
+	stix:modified "2024-02-20T07:42:44.000Z"^^xsd:dateTime ;
+	stix:name "CASP 2024 Olympic Destroyer Example" ;
+	stix:spec_version "2.1" ;
+	stix:type "grouping" ;
+	.
+
+attack:identity--b085a68a-bf48-4316-9667-37af78cba894
+	a stix:StixObject ;
+	stix:created "2022-03-31T13:00:00.000Z"^^xsd:dateTime ;
+	stix:id "identity--b085a68a-bf48-4316-9667-37af78cba894" ;
+	stix:modified "2023-05-23T10:09:00.000Z"^^xsd:dateTime ;
+	stix:name "OCA" ;
+	stix:spec_version "2.1" ;
+	stix:type "identity" ;
+	.
+
+attack:identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5
+	a stix:StixObject ;
+	stix:created "2017-06-01T00:00:00.000Z"^^xsd:dateTime ;
+	stix:id "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5" ;
+	stix:identity_class "organization" ;
+	stix:modified "2022-04-25T14:00:00.188Z"^^xsd:dateTime ;
+	stix:name "The MITRE Corporation" ;
+	stix:spec_version "2.1" ;
+	stix:type "identity" ;
+	.
+
+attack:kill-chain-phase-0f5e1295-5a59-4fb8-b55b-40aa742a4e39
+	a stix:StixObject ;
+	stix:kill_chain_name "mitre-attack" ;
+	stix:kill_chain_phase_name "privilege-escalation" ;
+	.
+
+attack:kill-chain-phase-294b7b63-faa3-4505-ac60-19e235a77b1a
+	a stix:StixObject ;
+	stix:kill_chain_name "mitre-attack" ;
+	stix:kill_chain_phase_name "defense-evasion" ;
+	.
+
+attack:kill-chain-phase-3150a4d7-faa2-4dc2-89d7-156ea997bef3
+	a stix:StixObject ;
+	stix:kill_chain_name "mitre-attack" ;
+	stix:kill_chain_phase_name "credential-access" ;
+	.
+
+attack:kill-chain-phase-35163a6a-f356-42a0-ba8f-4b34ee57117e
+	a stix:StixObject ;
+	stix:kill_chain_name "mitre-attack" ;
+	stix:kill_chain_phase_name "execution" ;
+	.
+
+attack:kill-chain-phase-4b512265-0f70-4d9c-96b6-5748caa91d4d
+	a stix:StixObject ;
+	stix:kill_chain_name "mitre-attack" ;
+	stix:kill_chain_phase_name "impact" ;
+	.
+
+attack:kill-chain-phase-55760a29-e975-49cc-b7d4-640d88811ecc
+	a stix:StixObject ;
+	stix:kill_chain_name "mitre-attack" ;
+	stix:kill_chain_phase_name "impact" ;
+	.
+
+attack:kill-chain-phase-8d8f7519-0593-46a1-a58b-bb865f4785cd
+	a stix:StixObject ;
+	stix:kill_chain_name "mitre-attack" ;
+	stix:kill_chain_phase_name "defense-evasion" ;
+	.
+
+attack:kill-chain-phase-cf84a781-49eb-47fb-a4d7-369835ccbfd8
+	a stix:StixObject ;
+	stix:kill_chain_name "mitre-attack" ;
+	stix:kill_chain_phase_name "exfiltration" ;
+	.
+
+attack:kill-chain-phase-d7779965-6099-4309-9864-cbbf8e6b7340
+	a stix:StixObject ;
+	stix:kill_chain_name "mitre-attack" ;
+	stix:kill_chain_phase_name "initial-access" ;
+	.
+
+attack:kill-chain-phase-e1f36c93-2b8a-4db7-8b64-41022473bc43
+	a stix:StixObject ;
+	stix:kill_chain_name "mitre-attack" ;
+	stix:kill_chain_phase_name "defense-evasion" ;
+	.
+
+attack:kill-chain-phase-e850ab72-0323-46b0-8a76-6c6037818b2d
+	a stix:StixObject ;
+	stix:kill_chain_name "mitre-attack" ;
+	stix:kill_chain_phase_name "persistence" ;
+	.
+
+attack:relationship--0cc59ab2-738e-46e9-a27f-c30d0b5f12df
+	a stix:StixObject ;
+	stix:created "2024-02-20T12:50:19.252Z"^^xsd:dateTime ;
+	stix:id "relationship--0cc59ab2-738e-46e9-a27f-c30d0b5f12df" ;
+	stix:modified "2024-02-20T12:50:19.252Z"^^xsd:dateTime ;
+	stix:relationship_type "occurs-before" ;
+	stix:source_ref attack:x-oca-behavior--C4CE1F80-F2B7-4F79-A4FA-C9CC419E01B7 ;
+	stix:target_ref attack:x-oca-behavior--AD531DAB-6915-4701-9CC9-CD70027F3AE4 ;
+	stix:type "relationship" ;
+	.
+
+attack:relationship--0f190155-1667-425f-ae9f-e30e6729daef
+	a stix:StixObject ;
+	stix:created "2024-02-20T12:49:51.311Z"^^xsd:dateTime ;
+	stix:id "relationship--0f190155-1667-425f-ae9f-e30e6729daef" ;
+	stix:modified "2024-02-20T12:49:51.313Z"^^xsd:dateTime ;
+	stix:relationship_type "occurs-before" ;
+	stix:source_ref attack:x-oca-behavior--DE81EF18-55E6-4754-A761-6B929BF22395 ;
+	stix:target_ref attack:x-oca-behavior--955168E0-9D15-4D35-88CA-9E9B9BFD220E ;
+	stix:type "relationship" ;
+	.
+
+attack:relationship--108d2b31-4f72-4089-8167-7973e6a1ddda
+	a stix:StixObject ;
+	stix:created "2024-02-20T12:49:16.953Z"^^xsd:dateTime ;
+	stix:id "relationship--108d2b31-4f72-4089-8167-7973e6a1ddda" ;
+	stix:modified "2024-02-20T12:49:16.953Z"^^xsd:dateTime ;
+	stix:relationship_type "occurs-before" ;
+	stix:source_ref attack:x-oca-behavior--edc99806-f8e9-4ee3-b2d4-1234567890dd ;
+	stix:target_ref attack:x-oca-behavior--B9AB3189-EB58-4E6A-9E7F-7364C4BF5762 ;
+	stix:type "relationship" ;
+	.
+
+attack:relationship--2991e212-1fd1-4937-ad5f-68222018b20d
+	a stix:StixObject ;
+	stix:created "2024-02-19T14:12:16.852Z"^^xsd:dateTime ;
+	stix:id "relationship--2991e212-1fd1-4937-ad5f-68222018b20d" ;
+	stix:modified "2024-02-19T14:12:16.852Z"^^xsd:dateTime ;
+	stix:relationship_type "uses" ;
+	stix:source_ref attack:course-of-action--6df8c715-0c34-4c62-9a33-0629e2458cef ;
+	stix:target_ref attack:x-oca-detection--58834c29-4ceb-42a1-a218-336103021000 ;
+	stix:type "relationship" ;
+	.
+
+attack:relationship--2bdef53a-5994-4065-8d65-3a98d9bed089
+	a stix:StixObject ;
+	stix:created "2024-02-19T14:08:50.163Z"^^xsd:dateTime ;
+	stix:id "relationship--2bdef53a-5994-4065-8d65-3a98d9bed089" ;
+	stix:modified "2024-02-19T14:08:50.163Z"^^xsd:dateTime ;
+	stix:relationship_type "uses" ;
+	stix:source_ref attack:x-oca-behavior--DE81EF18-55E6-4754-A761-6B929BF22395 ;
+	stix:target_ref attack:attack-pattern--92d7da27-2d91-488e-a00c-059dc162766d ;
+	stix:type "relationship" ;
+	.
+
+attack:relationship--428decf3-bade-48b1-98e1-36dc41f80409
+	a stix:StixObject ;
+	stix:created "2024-02-19T14:09:33.953Z"^^xsd:dateTime ;
+	stix:id "relationship--428decf3-bade-48b1-98e1-36dc41f80409" ;
+	stix:modified "2024-02-19T14:09:33.953Z"^^xsd:dateTime ;
+	stix:relationship_type "detects" ;
+	stix:source_ref attack:x-oca-detection--66aa9c25-8b56-4121-8630-dbe457393b27 ;
+	stix:target_ref attack:x-oca-behavior--DE81EF18-55E6-4754-A761-6B929BF22395 ;
+	stix:type "relationship" ;
+	.
+
+attack:relationship--486301e1-9e3d-4614-86ec-86e8d1603b10
+	a stix:StixObject ;
+	stix:created "2024-02-19T14:15:43.643Z"^^xsd:dateTime ;
+	stix:id "relationship--486301e1-9e3d-4614-86ec-86e8d1603b10" ;
+	stix:modified "2024-02-19T14:15:43.643Z"^^xsd:dateTime ;
+	stix:relationship_type "triggers" ;
+	stix:source_ref attack:course-of-action--6df8c715-0c34-4c62-9a33-0629e2458cef ;
+	stix:target_ref attack:course-of-action--6c3cfc11-efa3-48c4-ae91-0c63fd4a4914 ;
+	stix:type "relationship" ;
+	.
+
+attack:relationship--507378a5-d4ed-4136-b116-e3b5f8a75efe
+	a stix:StixObject ;
+	stix:created "2024-02-20T12:47:52.772Z"^^xsd:dateTime ;
+	stix:id "relationship--507378a5-d4ed-4136-b116-e3b5f8a75efe" ;
+	stix:modified "2024-02-20T12:47:52.772Z"^^xsd:dateTime ;
+	stix:relationship_type "uses" ;
+	stix:source_ref attack:x-oca-behavior--C4CE1F80-F2B7-4F79-A4FA-C9CC419E01B7 ;
+	stix:target_ref attack:attack-pattern--d45a3d09-b3cf-48f4-9f0f-f521ee5cb05c ;
+	stix:type "relationship" ;
+	.
+
+attack:relationship--60fa6d0c-d216-41b8-9731-1562e883c129
+	a stix:StixObject ;
+	stix:created "2024-02-20T12:47:09.817Z"^^xsd:dateTime ;
+	stix:id "relationship--60fa6d0c-d216-41b8-9731-1562e883c129" ;
+	stix:modified "2024-02-20T12:47:09.818Z"^^xsd:dateTime ;
+	stix:relationship_type "uses" ;
+	stix:source_ref attack:x-oca-behavior--B9AB3189-EB58-4E6A-9E7F-7364C4BF5762 ;
+	stix:target_ref attack:attack-pattern--3731fbcd-0e43-47ae-ae6c-d15e510f0d42 ;
+	stix:type "relationship" ;
+	.
+
+attack:relationship--6a9540d1-4b56-461e-bb44-d72037862dd6
+	a stix:StixObject ;
+	stix:created "2024-02-20T12:56:42.171Z"^^xsd:dateTime ;
+	stix:id "relationship--6a9540d1-4b56-461e-bb44-d72037862dd6" ;
+	stix:modified "2024-02-20T12:56:42.172Z"^^xsd:dateTime ;
+	stix:relationship_type "detects" ;
+	stix:source_ref attack:x-oca-detection--4b9e12a4-5d54-4374-ba92-9e15731511f2 ;
+	stix:target_ref attack:x-oca-behavior--C4CE1F80-F2B7-4F79-A4FA-C9CC419E01B7 ;
+	stix:type "relationship" ;
+	.
+
+attack:relationship--6ac9369b-6824-4c06-8427-cce2bc63ade6
+	a stix:StixObject ;
+	stix:created "2024-02-19T14:09:11.271Z"^^xsd:dateTime ;
+	stix:id "relationship--6ac9369b-6824-4c06-8427-cce2bc63ade6" ;
+	stix:modified "2024-02-19T14:09:11.271Z"^^xsd:dateTime ;
+	stix:relationship_type "detects" ;
+	stix:source_ref attack:x-oca-detection--f27cb358-d747-47ba-a6c4-e5b8debab157 ;
+	stix:target_ref attack:x-oca-behavior--edc99806-f8e9-4ee3-b2d4-1234567890dd ;
+	stix:type "relationship" ;
+	.
+
+attack:relationship--6add22e3-5a04-4759-9e0b-8bf03a8a8595
+	a stix:StixObject ;
+	stix:created "2024-02-19T14:16:38.513Z"^^xsd:dateTime ;
+	stix:id "relationship--6add22e3-5a04-4759-9e0b-8bf03a8a8595" ;
+	stix:modified "2024-02-19T14:16:38.513Z"^^xsd:dateTime ;
+	stix:relationship_type "related-to" ;
+	stix:source_ref attack:x-oca-playbook--1fcf7c76-87b9-4ee4-a33e-95e4d580bbcb ;
+	stix:target_ref attack:course-of-action--6c3cfc11-efa3-48c4-ae91-0c63fd4a4914 ;
+	stix:type "relationship" ;
+	.
+
+attack:relationship--6af7a960-8dea-47d5-89fa-67c514afd6ed
+	a stix:StixObject ;
+	stix:created "2024-02-20T12:50:06.679Z"^^xsd:dateTime ;
+	stix:id "relationship--6af7a960-8dea-47d5-89fa-67c514afd6ed" ;
+	stix:modified "2024-02-20T12:50:06.681Z"^^xsd:dateTime ;
+	stix:relationship_type "occurs-before" ;
+	stix:source_ref attack:x-oca-behavior--955168E0-9D15-4D35-88CA-9E9B9BFD220E ;
+	stix:target_ref attack:x-oca-behavior--C4CE1F80-F2B7-4F79-A4FA-C9CC419E01B7 ;
+	stix:type "relationship" ;
+	.
+
+attack:relationship--7a512974-f1d2-40c8-b71c-30866c58b96f
+	a stix:StixObject ;
+	stix:created "2024-02-19T14:12:41.663Z"^^xsd:dateTime ;
+	stix:id "relationship--7a512974-f1d2-40c8-b71c-30866c58b96f" ;
+	stix:modified "2024-02-19T14:12:41.663Z"^^xsd:dateTime ;
+	stix:relationship_type "uses" ;
+	stix:source_ref attack:course-of-action--6df8c715-0c34-4c62-9a33-0629e2458cef ;
+	stix:target_ref attack:x-oca-detection--66aa9c25-8b56-4121-8630-dbe457393b27 ;
+	stix:type "relationship" ;
+	.
+
+attack:relationship--7fc93d91-9913-4c1b-b45d-f192eaff0207
+	a stix:StixObject ;
+	stix:created "2024-02-19T14:08:22.372Z"^^xsd:dateTime ;
+	stix:id "relationship--7fc93d91-9913-4c1b-b45d-f192eaff0207" ;
+	stix:modified "2024-02-19T14:08:22.372Z"^^xsd:dateTime ;
+	stix:relationship_type "uses" ;
+	stix:source_ref attack:x-oca-behavior--edc99806-f8e9-4ee3-b2d4-1234567890aa ;
+	stix:target_ref attack:attack-pattern--2b742742-28c3-4e1b-bab7-8350d6300fa7 ;
+	stix:type "relationship" ;
+	.
+
+attack:relationship--8494c5fa-ad3d-4b4b-a609-e404a4fea623
+	a stix:StixObject ;
+	stix:created "2024-02-20T12:59:07.041Z"^^xsd:dateTime ;
+	stix:id "relationship--8494c5fa-ad3d-4b4b-a609-e404a4fea623" ;
+	stix:modified "2024-02-20T12:59:07.042Z"^^xsd:dateTime ;
+	stix:relationship_type "uses" ;
+	stix:source_ref attack:course-of-action--6df8c715-0c34-4c62-9a33-0629e2458cef ;
+	stix:target_ref attack:x-oca-detection--9d1b12f4-b1e4-401c-bda4-5e472ef9a76f ;
+	stix:type "relationship" ;
+	.
+
+attack:relationship--872d9959-b709-4369-b9f3-bde747b0879f
+	a stix:StixObject ;
+	stix:created "2024-02-20T12:59:17.542Z"^^xsd:dateTime ;
+	stix:id "relationship--872d9959-b709-4369-b9f3-bde747b0879f" ;
+	stix:modified "2024-02-20T12:59:17.542Z"^^xsd:dateTime ;
+	stix:relationship_type "uses" ;
+	stix:source_ref attack:course-of-action--6df8c715-0c34-4c62-9a33-0629e2458cef ;
+	stix:target_ref attack:x-oca-detection--4b9e12a4-5d54-4374-ba92-9e15731511f2 ;
+	stix:type "relationship" ;
+	.
+
+attack:relationship--8afa4959-2de1-407a-8c59-df0722691cdd
+	a stix:StixObject ;
+	stix:created "2024-02-20T12:49:02.141Z"^^xsd:dateTime ;
+	stix:id "relationship--8afa4959-2de1-407a-8c59-df0722691cdd" ;
+	stix:modified "2024-02-20T12:49:02.141Z"^^xsd:dateTime ;
+	stix:relationship_type "occurs-before" ;
+	stix:source_ref attack:x-oca-behavior--edc99806-f8e9-4ee3-b2d4-1234567890aa ;
+	stix:target_ref attack:x-oca-behavior--edc99806-f8e9-4ee3-b2d4-1234567890dd ;
+	stix:type "relationship" ;
+	.
+
+attack:relationship--912fc532-450a-47a5-ab33-a825c43380bd
+	a stix:StixObject ;
+	stix:created "2024-02-19T14:08:22.372Z"^^xsd:dateTime ;
+	stix:id "relationship--912fc532-450a-47a5-ab33-a825c43380bd" ;
+	stix:modified "2024-02-19T14:08:22.372Z"^^xsd:dateTime ;
+	stix:relationship_type "uses" ;
+	stix:source_ref attack:x-oca-behavior--edc99806-f8e9-4ee3-b2d4-1234567890aa ;
+	stix:target_ref attack:attack-pattern--970a3432-3237-47ad-bcca-7d8cbb217736 ;
+	stix:type "relationship" ;
+	.
+
+attack:relationship--9e414f20-e2f6-42a3-9231-7164fa1d3828
+	a stix:StixObject ;
+	stix:created "2024-02-20T12:55:47.743Z"^^xsd:dateTime ;
+	stix:id "relationship--9e414f20-e2f6-42a3-9231-7164fa1d3828" ;
+	stix:modified "2024-02-20T12:55:47.743Z"^^xsd:dateTime ;
+	stix:relationship_type "detects" ;
+	stix:source_ref attack:x-oca-detection--9d1b12f4-b1e4-401c-bda4-5e472ef9a76f ;
+	stix:target_ref attack:x-oca-behavior--955168E0-9D15-4D35-88CA-9E9B9BFD220E ;
+	stix:type "relationship" ;
+	.
+
+attack:relationship--ab530baa-00cc-49eb-9670-bea6b2f93b3c
+	a stix:StixObject ;
+	stix:created "2024-02-19T14:08:32.183Z"^^xsd:dateTime ;
+	stix:id "relationship--ab530baa-00cc-49eb-9670-bea6b2f93b3c" ;
+	stix:modified "2024-02-19T14:08:32.183Z"^^xsd:dateTime ;
+	stix:relationship_type "uses" ;
+	stix:source_ref attack:x-oca-behavior--edc99806-f8e9-4ee3-b2d4-1234567890dd ;
+	stix:target_ref attack:attack-pattern--86850eff-2729-40c3-b85e-c4af26da4a2d ;
+	stix:type "relationship" ;
+	.
+
+attack:relationship--b72107d8-2895-4ecb-bff9-61d54bd0cda6
+	a stix:StixObject ;
+	stix:created "2024-02-20T12:48:03.322Z"^^xsd:dateTime ;
+	stix:id "relationship--b72107d8-2895-4ecb-bff9-61d54bd0cda6" ;
+	stix:modified "2024-02-20T12:48:03.322Z"^^xsd:dateTime ;
+	stix:relationship_type "uses" ;
+	stix:source_ref attack:x-oca-behavior--AD531DAB-6915-4701-9CC9-CD70027F3AE4 ;
+	stix:target_ref attack:attack-pattern--ff73aa03-0090-4464-83ac-f89e233c02bc ;
+	stix:type "relationship" ;
+	.
+
+attack:relationship--c13f931a-6a5c-4c3f-a05e-223bd0dad4a4
+	a stix:StixObject ;
+	stix:created "2024-02-20T12:58:38.252Z"^^xsd:dateTime ;
+	stix:id "relationship--c13f931a-6a5c-4c3f-a05e-223bd0dad4a4" ;
+	stix:modified "2024-02-20T12:58:38.252Z"^^xsd:dateTime ;
+	stix:relationship_type "uses" ;
+	stix:source_ref attack:course-of-action--6df8c715-0c34-4c62-9a33-0629e2458cef ;
+	stix:target_ref attack:x-oca-detection--39972fd6-e13c-400e-88a6-916e2f04cd2d ;
+	stix:type "relationship" ;
+	.
+
+attack:relationship--da0d3a40-50cc-44a4-a250-0d4eda23b588
+	a stix:StixObject ;
+	stix:created "2024-02-20T12:57:30.221Z"^^xsd:dateTime ;
+	stix:id "relationship--da0d3a40-50cc-44a4-a250-0d4eda23b588" ;
+	stix:modified "2024-02-20T12:57:30.222Z"^^xsd:dateTime ;
+	stix:relationship_type "detects" ;
+	stix:source_ref attack:x-oca-detection--a1afab78-e96f-4613-bb79-f1336cb76e8c ;
+	stix:target_ref attack:x-oca-behavior--AD531DAB-6915-4701-9CC9-CD70027F3AE4 ;
+	stix:type "relationship" ;
+	.
+
+attack:relationship--de0cae21-29e8-4b63-bd77-9584ae3d1655
+	a stix:StixObject ;
+	stix:created "2024-02-20T12:53:29.993Z"^^xsd:dateTime ;
+	stix:id "relationship--de0cae21-29e8-4b63-bd77-9584ae3d1655" ;
+	stix:modified "2024-02-20T12:53:29.993Z"^^xsd:dateTime ;
+	stix:relationship_type "detects" ;
+	stix:source_ref attack:x-oca-detection--39972fd6-e13c-400e-88a6-916e2f04cd2d ;
+	stix:target_ref attack:x-oca-behavior--B9AB3189-EB58-4E6A-9E7F-7364C4BF5762 ;
+	stix:type "relationship" ;
+	.
+
+attack:relationship--ef711280-3b0f-4295-91df-21ec0adf7b60
+	a stix:StixObject ;
+	stix:created "2024-02-20T12:47:42.111Z"^^xsd:dateTime ;
+	stix:id "relationship--ef711280-3b0f-4295-91df-21ec0adf7b60" ;
+	stix:modified "2024-02-20T12:47:42.111Z"^^xsd:dateTime ;
+	stix:relationship_type "uses" ;
+	stix:source_ref attack:x-oca-behavior--955168E0-9D15-4D35-88CA-9E9B9BFD220E ;
+	stix:target_ref attack:attack-pattern--3d333250-30e4-4a82-9edc-756c68afc529 ;
+	stix:type "relationship" ;
+	.
+
+attack:relationship--f0f6aa7e-e120-41f4-b5aa-3ae33be3f64d
+	a stix:StixObject ;
+	stix:created "2024-02-19T14:12:29.553Z"^^xsd:dateTime ;
+	stix:id "relationship--f0f6aa7e-e120-41f4-b5aa-3ae33be3f64d" ;
+	stix:modified "2024-02-19T14:12:29.553Z"^^xsd:dateTime ;
+	stix:relationship_type "uses" ;
+	stix:source_ref attack:course-of-action--6df8c715-0c34-4c62-9a33-0629e2458cef ;
+	stix:target_ref attack:x-oca-detection--f27cb358-d747-47ba-a6c4-e5b8debab157 ;
+	stix:type "relationship" ;
+	.
+
+attack:relationship--f2acc023-3b91-4137-8954-4dbfc8a4a8f3
+	a stix:StixObject ;
+	stix:created "2024-02-19T14:14:34.096Z"^^xsd:dateTime ;
+	stix:id "relationship--f2acc023-3b91-4137-8954-4dbfc8a4a8f3" ;
+	stix:modified "2024-02-19T14:14:34.096Z"^^xsd:dateTime ;
+	stix:relationship_type "related-to" ;
+	stix:source_ref attack:x-oca-playbook--f3700517-14c4-485e-8469-788c27e7264d ;
+	stix:target_ref attack:course-of-action--6df8c715-0c34-4c62-9a33-0629e2458cef ;
+	stix:type "relationship" ;
+	.
+
+attack:relationship--f710717c-3d8e-4136-8fda-3bff2de9f2e4
+	a stix:StixObject ;
+	stix:created "2024-02-20T12:49:29.752Z"^^xsd:dateTime ;
+	stix:id "relationship--f710717c-3d8e-4136-8fda-3bff2de9f2e4" ;
+	stix:modified "2024-02-20T12:49:29.752Z"^^xsd:dateTime ;
+	stix:relationship_type "occurs-before" ;
+	stix:source_ref attack:x-oca-behavior--B9AB3189-EB58-4E6A-9E7F-7364C4BF5762 ;
+	stix:target_ref attack:x-oca-behavior--DE81EF18-55E6-4754-A761-6B929BF22395 ;
+	stix:type "relationship" ;
+	.
+
+attack:relationship--faf53536-af25-4b7e-945f-527de4a42020
+	a stix:StixObject ;
+	stix:created "2024-02-20T12:59:27.504Z"^^xsd:dateTime ;
+	stix:id "relationship--faf53536-af25-4b7e-945f-527de4a42020" ;
+	stix:modified "2024-02-20T12:59:27.504Z"^^xsd:dateTime ;
+	stix:relationship_type "uses" ;
+	stix:source_ref attack:course-of-action--6df8c715-0c34-4c62-9a33-0629e2458cef ;
+	stix:target_ref attack:x-oca-detection--a1afab78-e96f-4613-bb79-f1336cb76e8c ;
+	stix:type "relationship" ;
+	.
+
+attack:relationship--feb81f55-9731-4294-badb-0cd0eee000df
+	a stix:StixObject ;
+	stix:created "2024-02-19T14:09:01.364Z"^^xsd:dateTime ;
+	stix:id "relationship--feb81f55-9731-4294-badb-0cd0eee000df" ;
+	stix:modified "2024-02-19T14:09:01.364Z"^^xsd:dateTime ;
+	stix:relationship_type "detects" ;
+	stix:source_ref attack:x-oca-detection--58834c29-4ceb-42a1-a218-336103021000 ;
+	stix:target_ref attack:x-oca-behavior--edc99806-f8e9-4ee3-b2d4-1234567890aa ;
+	stix:type "relationship" ;
+	.
+
+attack:x-oca-behavior--955168E0-9D15-4D35-88CA-9E9B9BFD220E
+	a stix:StixObject ;
+	stix:created "2024-02-19T13:00:00.000Z"^^xsd:dateTime ;
+	stix:description "Adversary disables windows firewall on target system" ;
+	stix:first_seen "2024-02-19T13:00:00.000Z"^^xsd:dateTime ;
+	stix:id "x-oca-behavior--955168E0-9D15-4D35-88CA-9E9B9BFD220E" ;
+	stix:modified "2024-02-19T13:00:00.000Z"^^xsd:dateTime ;
+	stix:name "Windows Firewall Disabled" ;
+	stix:occurs-before attack:x-oca-behavior--C4CE1F80-F2B7-4F79-A4FA-C9CC419E01B7 ;
+	stix:spec_version "2.1" ;
+	stix:type "x-oca-behavior" ;
+	stix:uses attack:attack-pattern--3d333250-30e4-4a82-9edc-756c68afc529 ;
+	.
+
+attack:x-oca-behavior--AD531DAB-6915-4701-9CC9-CD70027F3AE4
+	a stix:StixObject ;
+	stix:created "2024-02-20T13:00:00.000Z"^^xsd:dateTime ;
+	stix:description "Adversary reboots system" ;
+	stix:first_seen "2024-02-19T13:00:00.000Z"^^xsd:dateTime ;
+	stix:id "x-oca-behavior--AD531DAB-6915-4701-9CC9-CD70027F3AE4" ;
+	stix:modified "2024-02-20T13:00:00.000Z"^^xsd:dateTime ;
+	stix:name "System Reboots" ;
+	stix:spec_version "2.1" ;
+	stix:type "x-oca-behavior" ;
+	stix:uses attack:attack-pattern--ff73aa03-0090-4464-83ac-f89e233c02bc ;
+	.
+
+attack:x-oca-behavior--B9AB3189-EB58-4E6A-9E7F-7364C4BF5762
+	a stix:StixObject ;
+	stix:created "2024-02-19T13:00:00.000Z"^^xsd:dateTime ;
+	stix:description "Adversary uses Mimikatz to extract passowrds (LSASS and WDIGEST)." ;
+	stix:first_seen "2024-02-19T13:00:00.000Z"^^xsd:dateTime ;
+	stix:id "x-oca-behavior--B9AB3189-EB58-4E6A-9E7F-7364C4BF5762" ;
+	stix:modified "2024-02-19T13:00:00.000Z"^^xsd:dateTime ;
+	stix:name "Password stolen via Mimikatz" ;
+	stix:occurs-before attack:x-oca-behavior--DE81EF18-55E6-4754-A761-6B929BF22395 ;
+	stix:spec_version "2.1" ;
+	stix:type "x-oca-behavior" ;
+	stix:uses attack:attack-pattern--3731fbcd-0e43-47ae-ae6c-d15e510f0d42 ;
+	.
+
+attack:x-oca-behavior--C4CE1F80-F2B7-4F79-A4FA-C9CC419E01B7
+	a stix:StixObject ;
+	stix:created "2024-02-20T13:00:00.000Z"^^xsd:dateTime ;
+	stix:description "Adversary deletes logs on target system" ;
+	stix:first_seen "2024-02-19T13:00:00.000Z"^^xsd:dateTime ;
+	stix:id "x-oca-behavior--C4CE1F80-F2B7-4F79-A4FA-C9CC419E01B7" ;
+	stix:modified "2024-02-20T13:00:00.000Z"^^xsd:dateTime ;
+	stix:name "Delete Logs" ;
+	stix:occurs-before attack:x-oca-behavior--AD531DAB-6915-4701-9CC9-CD70027F3AE4 ;
+	stix:spec_version "2.1" ;
+	stix:type "x-oca-behavior" ;
+	stix:uses attack:attack-pattern--d45a3d09-b3cf-48f4-9f0f-f521ee5cb05c ;
+	.
+
+attack:x-oca-behavior--DE81EF18-55E6-4754-A761-6B929BF22395
+	a stix:StixObject ;
+	stix:created "2022-03-31T13:00:00.000Z"^^xsd:dateTime ;
+	stix:description "Adversary exfiltrates data from the target network." ;
+	stix:first_seen "2022-03-31T13:00:00.000Z"^^xsd:dateTime ;
+	stix:id "x-oca-behavior--DE81EF18-55E6-4754-A761-6B929BF22395" ;
+	stix:modified "2022-03-31T13:00:00.000Z"^^xsd:dateTime ;
+	stix:name "Exfiltration Behavior via Beacon" ;
+	stix:occurs-before attack:x-oca-behavior--955168E0-9D15-4D35-88CA-9E9B9BFD220E ;
+	stix:spec_version "2.1" ;
+	stix:type "x-oca-behavior" ;
+	stix:uses attack:attack-pattern--92d7da27-2d91-488e-a00c-059dc162766d ;
+	.
+
+attack:x-oca-behavior--edc99806-f8e9-4ee3-b2d4-1234567890aa
+	a stix:StixObject ;
+	stix:created "2022-03-31T13:00:00.000Z"^^xsd:dateTime ;
+	stix:description "An Office Macro is executing commands. This may be malicious code being executed." ;
+	stix:first_seen "2022-03-31T13:00:00.000Z"^^xsd:dateTime ;
+	stix:id "x-oca-behavior--edc99806-f8e9-4ee3-b2d4-1234567890aa" ;
+	stix:modified "2022-03-31T13:00:00.000Z"^^xsd:dateTime ;
+	stix:name "Office Macro executing commands" ;
+	stix:occurs-before attack:x-oca-behavior--edc99806-f8e9-4ee3-b2d4-1234567890dd ;
+	stix:spec_version "2.1" ;
+	stix:type "x-oca-behavior" ;
+	stix:uses
+		attack:attack-pattern--2b742742-28c3-4e1b-bab7-8350d6300fa7 ,
+		attack:attack-pattern--970a3432-3237-47ad-bcca-7d8cbb217736
+		;
+	.
+
+attack:x-oca-behavior--edc99806-f8e9-4ee3-b2d4-1234567890dd
+	a stix:StixObject ;
+	stix:created "2022-03-31T13:00:00.000Z"^^xsd:dateTime ;
+	stix:description "A privilege escalation has occurred which may indicate adversary activity." ;
+	stix:first_seen "2022-03-31T13:00:00.000Z"^^xsd:dateTime ;
+	stix:id "x-oca-behavior--edc99806-f8e9-4ee3-b2d4-1234567890dd" ;
+	stix:modified "2022-03-31T13:00:00.000Z"^^xsd:dateTime ;
+	stix:name "Secondary Payload Privilege Escalation Behavior" ;
+	stix:occurs-before attack:x-oca-behavior--B9AB3189-EB58-4E6A-9E7F-7364C4BF5762 ;
+	stix:spec_version "2.1" ;
+	stix:type "x-oca-behavior" ;
+	stix:uses attack:attack-pattern--86850eff-2729-40c3-b85e-c4af26da4a2d ;
+	.
+
+attack:x-oca-detection--39972fd6-e13c-400e-88a6-916e2f04cd2d
+	a stix:StixObject ;
+	stix:created "2024-02-20T09:00:00.000Z"^^xsd:dateTime ;
+	stix:detects attack:x-oca-behavior--B9AB3189-EB58-4E6A-9E7F-7364C4BF5762 ;
+	stix:id "x-oca-detection--39972fd6-e13c-400e-88a6-916e2f04cd2d" ;
+	stix:modified "2024-02-20T09:00:00.000Z"^^xsd:dateTime ;
+	stix:name "Mimikatz Detection" ;
+	stix:spec_version "2.1" ;
+	stix:type "x-oca-detection" ;
+	.
+
+attack:x-oca-detection--4b9e12a4-5d54-4374-ba92-9e15731511f2
+	a stix:StixObject ;
+	stix:created "2024-02-20T09:00:00.000Z"^^xsd:dateTime ;
+	stix:detects attack:x-oca-behavior--C4CE1F80-F2B7-4F79-A4FA-C9CC419E01B7 ;
+	stix:id "x-oca-detection--4b9e12a4-5d54-4374-ba92-9e15731511f2" ;
+	stix:modified "2024-02-20T09:00:00.000Z"^^xsd:dateTime ;
+	stix:name "Log Deletion Detection" ;
+	stix:spec_version "2.1" ;
+	stix:type "x-oca-detection" ;
+	.
+
+attack:x-oca-detection--58834c29-4ceb-42a1-a218-336103021000
+	a stix:StixObject ;
+	stix:created "2024-02-20T13:00:00.000Z"^^xsd:dateTime ;
+	stix:detects attack:x-oca-behavior--edc99806-f8e9-4ee3-b2d4-1234567890aa ;
+	stix:id "x-oca-detection--58834c29-4ceb-42a1-a218-336103021000" ;
+	stix:modified "2024-02-20T13:00:00.000Z"^^xsd:dateTime ;
+	stix:name "Macro Execution Detection" ;
+	stix:spec_version "2.1" ;
+	stix:type "x-oca-detection" ;
+	.
+
+attack:x-oca-detection--66aa9c25-8b56-4121-8630-dbe457393b27
+	a stix:StixObject ;
+	stix:created "2024-02-20T13:00:00.000Z"^^xsd:dateTime ;
+	stix:detects attack:x-oca-behavior--DE81EF18-55E6-4754-A761-6B929BF22395 ;
+	stix:id "x-oca-detection--66aa9c25-8b56-4121-8630-dbe457393b27" ;
+	stix:modified "2024-02-20T13:00:00.000Z"^^xsd:dateTime ;
+	stix:name "Data Exfiltration Detection" ;
+	stix:spec_version "2.1" ;
+	stix:type "x-oca-detection" ;
+	.
+
+attack:x-oca-detection--9d1b12f4-b1e4-401c-bda4-5e472ef9a76f
+	a stix:StixObject ;
+	stix:created "2024-02-20T09:00:00.000Z"^^xsd:dateTime ;
+	stix:detects attack:x-oca-behavior--955168E0-9D15-4D35-88CA-9E9B9BFD220E ;
+	stix:id "x-oca-detection--9d1b12f4-b1e4-401c-bda4-5e472ef9a76f" ;
+	stix:modified "2024-02-20T09:00:00.000Z"^^xsd:dateTime ;
+	stix:name "Host FW Change Detection" ;
+	stix:spec_version "2.1" ;
+	stix:type "x-oca-detection" ;
+	.
+
+attack:x-oca-detection--a1afab78-e96f-4613-bb79-f1336cb76e8c
+	a stix:StixObject ;
+	stix:created "2024-02-20T09:00:00.000Z"^^xsd:dateTime ;
+	stix:detects attack:x-oca-behavior--AD531DAB-6915-4701-9CC9-CD70027F3AE4 ;
+	stix:id "x-oca-detection--a1afab78-e96f-4613-bb79-f1336cb76e8c" ;
+	stix:modified "2024-02-20T09:00:00.000Z"^^xsd:dateTime ;
+	stix:name "System Reboot Detection" ;
+	stix:spec_version "2.1" ;
+	stix:type "x-oca-detection" ;
+	.
+
+attack:x-oca-detection--f27cb358-d747-47ba-a6c4-e5b8debab157
+	a stix:StixObject ;
+	stix:created "2024-02-20T13:00:00.000Z"^^xsd:dateTime ;
+	stix:detects attack:x-oca-behavior--edc99806-f8e9-4ee3-b2d4-1234567890dd ;
+	stix:id "x-oca-detection--f27cb358-d747-47ba-a6c4-e5b8debab157" ;
+	stix:modified "2024-02-20T13:00:00.000Z"^^xsd:dateTime ;
+	stix:name "Privilege Escalation Detection" ;
+	stix:spec_version "2.1" ;
+	stix:type "x-oca-detection" ;
+	.
+
+attack:x-oca-playbook--1fcf7c76-87b9-4ee4-a33e-95e4d580bbcb
+	a stix:StixObject ;
+	stix:created "2024-02-20T13:00:00.000Z"^^xsd:dateTime ;
+	stix:description "Remediate by taking the network offline and performing analyst guided steps." ;
+	stix:id "x-oca-playbook--1fcf7c76-87b9-4ee4-a33e-95e4d580bbcb" ;
+	stix:modified "2024-02-20T13:00:00.000Z"^^xsd:dateTime ;
+	stix:name "Quarantine and remediate" ;
+	stix:related-to attack:course-of-action--6c3cfc11-efa3-48c4-ae91-0c63fd4a4914 ;
+	stix:spec_version "2.1" ;
+	stix:type "x-oca-playbook" ;
+	.
+
+attack:x-oca-playbook--f3700517-14c4-485e-8469-788c27e7264d
+	a stix:StixObject ;
+	stix:created "2024-02-19T09:00:00.000Z"^^xsd:dateTime ;
+	stix:description "Correlate Alerts" ;
+	stix:id "x-oca-playbook--f3700517-14c4-485e-8469-788c27e7264d" ;
+	stix:modified "2024-02-19T09:00:00.000Z"^^xsd:dateTime ;
+	stix:name "Correlate Alerts" ;
+	stix:related-to attack:course-of-action--6df8c715-0c34-4c62-9a33-0629e2458cef ;
+	stix:spec_version "2.1" ;
+	stix:type "x-oca-playbook" ;
+	.
+
+stix:alias
+	a owl:DatatypeProperty ;
+	.
+
+stix:created
+	a owl:DatatypeProperty ;
+	.
+
+stix:description
+	a owl:DatatypeProperty ;
+	.
+
+stix:external-id
+	a owl:DatatypeProperty ;
+	.
+
+stix:external_reference
+	a owl:ObjectProperty ;
+	.
+
+stix:first_seen
+	a owl:DatatypeProperty ;
+	.
+
+stix:goals
+	a owl:DatatypeProperty ;
+	.
+
+stix:id
+	a owl:DatatypeProperty ;
+	.
+
+stix:identity_class
+	a owl:DatatypeProperty ;
+	.
+
+stix:indicates
+	a owl:ObjectProperty ;
+	.
+
+stix:indicator_types
+	a owl:DatatypeProperty ;
+	.
+
+stix:kill_chain_name
+	a owl:DatatypeProperty ;
+	.
+
+stix:kill_chain_phase
+	a owl:ObjectProperty ;
+	.
+
+stix:kill_chain_phase_name
+	a owl:DatatypeProperty ;
+	.
+
+stix:kill_chain_phases
+	a owl:DatatypeProperty ;
+	.
+
+stix:malware_types
+	a owl:DatatypeProperty ;
+	.
+
+stix:modified
+	a owl:DatatypeProperty ;
+	.
+
+stix:name
+	a owl:DatatypeProperty ;
+	.
+
+stix:objective
+	a owl:DatatypeProperty ;
+	.
+
+stix:pattern
+	a owl:DatatypeProperty ;
+	.
+
+stix:pattern_type
+	a owl:DatatypeProperty ;
+	.
+
+stix:primary_motivation
+	a owl:DatatypeProperty ;
+	.
+
+stix:relationship_type
+	a owl:DatatypeProperty ;
+	.
+
+stix:resource_level
+	a owl:DatatypeProperty ;
+	.
+
+stix:roles
+	a owl:DatatypeProperty ;
+	.
+
+stix:secondary_motivations
+	a owl:DatatypeProperty ;
+	.
+
+stix:sectors
+	a owl:DatatypeProperty ;
+	.
+
+stix:sophistication
+	a owl:DatatypeProperty ;
+	.
+
+stix:source_name
+	a owl:DatatypeProperty ;
+	.
+
+stix:source_ref
+	a owl:ObjectProperty ;
+	.
+
+stix:spec_version
+	a owl:DatatypeProperty ;
+	.
+
+stix:target_ref
+	a owl:ObjectProperty ;
+	.
+
+stix:tool_types
+	a owl:DatatypeProperty ;
+	.
+
+stix:type
+	a owl:DatatypeProperty ;
+	.
+
+stix:url
+	a owl:DatatypeProperty ;
+	.
+
+stix:uses
+	a owl:ObjectProperty ;
+	.
+
+stix:valid_from
+	a owl:DatatypeProperty ;
+	.
+

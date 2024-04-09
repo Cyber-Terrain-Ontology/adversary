@@ -1,0 +1,2701 @@
+@prefix attack: <http://attack.mitre.org/ns/attack#> .
+@prefix example: <http://example/ns/> .
+@prefix fx: <http://sparql.xyz/facade-x/ns/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix stix: <http://docs.oasis-open.org/cti/ns/stix#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix xyz: <http://sparql.xyz/facade-x/data/> .
+
+attack:attack-pattern--66d581ef-0821-451a-8650-dced303e0c79
+	a stix:StixObject ;
+	stix:created "2022-04-04T17:05:58.569187Z"^^xsd:dateTime ;
+	stix:description """Adversaries may send phishing messages to gain access to victim systems. All forms of phishing are electronically delivered social engineering. Phishing can be targeted, known as spearphishing. In spearphishing, a specific individual, company, or industry will be targeted by the adversary. More generally, adversaries can conduct non-targeted phishing, such as in mass malware spam campaigns.
+
+Adversaries may send victims emails containing malicious attachments or links, typically to execute malicious code on victim systems. Phishing may also be conducted via third-party services, like social media platforms. Phishing may also involve social engineering techniques, such as posing as a trusted source, as well as evasive techniques such as removing or manipulating emails or metadata/headers from compromised accounts being abused to send messages (e.g., Email Hiding Rules). Another way to accomplish this is by forging or spoofing the identity of the sender which can be used to fool both the human recipient as well as automated security tools.
+
+Victims may also receive phishing messages that instruct them to call a phone number where they are directed to visit a malicious URL, download malware, or install adversary-accessible remote management tools onto their computer (i.e., User Execution).""" ;
+	stix:external_reference
+		attack:external-reference-07bba3bd-6bb8-4054-8916-f5b39bd7db0a ,
+		attack:external-reference-0dabe639-eaae-4939-b9dc-f2eae31046d5 ,
+		attack:external-reference-2b6853c3-ff7b-4044-9bc3-765e13ec40cc ,
+		attack:external-reference-3c0b44dd-0e76-4214-9ed8-8f51cf7e4efc ,
+		attack:external-reference-538af4cb-a843-4521-be00-118791ae579d ,
+		attack:external-reference-600ea2d7-cc20-4972-8302-fd80035f8f84 ,
+		attack:external-reference-6b4ad9b7-79ff-4871-850e-65c9f441b419 ,
+		attack:external-reference-71ab3b52-672b-40ae-a67d-9ab026e34388 ,
+		attack:external-reference-75711bd5-4237-42ff-aadc-249e6b231479 ,
+		attack:external-reference-87b2b561-4d2b-4396-9d6d-04b78ae93eed ,
+		attack:external-reference-a3de3194-6875-41ef-897b-86daba2a6f7f ,
+		attack:external-reference-a9397d7e-4e4b-4d2b-95ac-f9bea32146f9 ,
+		attack:external-reference-adf8c8a5-206e-474f-9547-a45690fbf06f ,
+		attack:external-reference-b8e7ca7b-cb95-4c67-9a31-4eb8f24df66b ,
+		attack:external-reference-de36cf10-3a89-424c-98cf-da6d49346edb ,
+		attack:external-reference-e78398e3-5e0e-47be-990a-8bc7d1b801db
+		;
+	stix:id "attack-pattern--66d581ef-0821-451a-8650-dced303e0c79" ;
+	stix:kill_chain_phase
+		attack:kill-chain-phase-b51d397b-a48b-45f1-9440-9f3a046b0b3c ,
+		attack:kill-chain-phase-de6e3f80-4279-422b-9abd-4c49a3bbc37e
+		;
+	stix:modified "2024-01-25T11:34:12.061996Z"^^xsd:dateTime ;
+	stix:name "Phishing" ;
+	stix:spec_version "2.1" ;
+	stix:type "attack-pattern" ;
+	.
+
+attack:attack-pattern--6ea86af9-a6d4-46c3-a61b-ec9be3a87db9
+	a stix:StixObject ;
+	stix:created "2022-04-04T18:22:13.258337Z"^^xsd:dateTime ;
+	stix:description """Adversaries may shutdown/reboot systems to interrupt access to, or aid in the destruction of, those systems. Operating systems may contain commands to initiate a shutdown/reboot of a machine or network device. In some cases, these commands may also be used to initiate a shutdown/reboot of a remote computer or network device via [Network Device CLI](https://attack.mitre.org/techniques/T1059/008) (e.g. <code>reload</code>).(Citation: Microsoft Shutdown Oct 2017)(Citation: alert_TA18_106A)
+
+Shutting down or rebooting systems may disrupt access to computer resources for legitimate users while also impeding incident response/recovery.
+
+Adversaries may attempt to shutdown/reboot a system after impacting it in other ways, such as [Disk Structure Wipe](https://attack.mitre.org/techniques/T1561/002) or [Inhibit System Recovery](https://attack.mitre.org/techniques/T1490), to hasten the intended effects on system availability.(Citation: Talos Nyetya June 2017)(Citation: Talos Olympic Destroyer 2018)""" ;
+	stix:external_reference
+		attack:external-reference-5d4e7acc-e6cb-41a2-aec4-ac3a07fc0faf ,
+		attack:external-reference-8bda1bdb-1e94-47c3-9c7f-bc276959f9b1 ,
+		attack:external-reference-8d504885-b5fb-48f3-a0d5-a4ca381d8974 ,
+		attack:external-reference-aa5f6b7a-c024-4dbf-aa6e-ecace34a1741 ,
+		attack:external-reference-da91448a-05ea-4a85-acaa-f1e96f2c1bac
+		;
+	stix:id "attack-pattern--6ea86af9-a6d4-46c3-a61b-ec9be3a87db9" ;
+	stix:kill_chain_phase attack:kill-chain-phase-4502b079-1a7c-4d27-9586-75714d1e1cf7 ;
+	stix:modified "2024-01-25T08:21:47.087776Z"^^xsd:dateTime ;
+	stix:name "System Shutdown/Reboot" ;
+	stix:spec_version "2.1" ;
+	stix:type "attack-pattern" ;
+	.
+
+attack:attack-pattern--7a335ae0-f3af-4c96-b03e-30b94f4fbf35
+	a stix:StixObject ;
+	stix:created "2022-04-04T17:53:00.974158Z"^^xsd:dateTime ;
+	stix:description """Adversaries may transfer tools or other files between systems in a compromised environment. Once brought into the victim environment (i.e., [Ingress Tool Transfer](https://attack.mitre.org/techniques/T1105)) files may then be copied from one system to another to stage adversary tools or other files over the course of an operation.
+
+Adversaries may copy files between internal victim systems to support lateral movement using inherent file sharing protocols such as file sharing over [SMB/Windows Admin Shares](https://attack.mitre.org/techniques/T1021/002) to connected network shares or with authenticated connections via [Remote Desktop Protocol](https://attack.mitre.org/techniques/T1021/001).(Citation: Unit42 LockerGoga 2019)
+
+Files can also be transferred using native or otherwise present tools on the victim system, such as scp, rsync, curl, sftp, and [ftp](https://attack.mitre.org/software/S0095). In some cases, adversaries may be able to leverage [Web Service](https://attack.mitre.org/techniques/T1102)s such as Dropbox or OneDrive to copy files from one machine to another via shared, automatically synced folders.(Citation: Dropbox Malware Sync)""" ;
+	stix:external_reference
+		attack:external-reference-117c1f00-1b3b-4908-9411-0d29f98abb64 ,
+		attack:external-reference-1ed98591-16fd-47fd-a5d7-038d6290aeee ,
+		attack:external-reference-55f3b412-9fb8-437a-8eb7-25b5a196b9f6 ,
+		attack:external-reference-bd29bd36-8507-4c84-9cb6-b30d0d4cbadf ,
+		attack:external-reference-cd0e25b1-b147-4eb1-aa4f-3f2af92a4b2f
+		;
+	stix:id "attack-pattern--7a335ae0-f3af-4c96-b03e-30b94f4fbf35" ;
+	stix:kill_chain_phase
+		attack:kill-chain-phase-62ff0f18-e005-4730-9180-99e43f183505 ,
+		attack:kill-chain-phase-ce1a1db1-748b-4247-9d39-1f681b52859e
+		;
+	stix:modified "2024-01-25T10:55:00.170414Z"^^xsd:dateTime ;
+	stix:name "Lateral Tool Transfer" ;
+	stix:spec_version "2.1" ;
+	stix:type "attack-pattern" ;
+	.
+
+attack:attack-pattern--9b3c3016-dab4-4295-b44c-fce53123c577
+	a stix:StixObject ;
+	stix:created "2022-04-04T17:42:13.204826Z"^^xsd:dateTime ;
+	stix:description """Adversaries may delete or remove built-in data and turn off services designed to aid in the recovery of a corrupted system to prevent recovery.(Citation: Talos Olympic Destroyer 2018)(Citation: FireEye WannaCry 2017) This may deny access to available backups and recovery options.
+
+Operating systems may contain features that can help fix corrupted systems, such as a backup catalog, volume shadow copies, and automatic repair features. Adversaries may disable or delete system recovery features to augment the effects of [Data Destruction](https://attack.mitre.org/techniques/T1485) and [Data Encrypted for Impact](https://attack.mitre.org/techniques/T1486).(Citation: Talos Olympic Destroyer 2018)(Citation: FireEye WannaCry 2017) Furthermore, adversaries may disable recovery notifications, then corrupt backups.(Citation: disable_notif_synology_ransom)
+
+A number of native Windows utilities have been used by adversaries to disable or delete system recovery features:
+
+* <code>vssadmin.exe</code> can be used to delete all volume shadow copies on a system - <code>vssadmin.exe delete shadows /all /quiet</code>
+* [Windows Management Instrumentation](https://attack.mitre.org/techniques/T1047) can be used to delete volume shadow copies - <code>wmic shadowcopy delete</code>
+* <code>wbadmin.exe</code> can be used to delete the Windows Backup Catalog - <code>wbadmin.exe delete catalog -quiet</code>
+* <code>bcdedit.exe</code> can be used to disable automatic Windows recovery features by modifying boot configuration data - <code>bcdedit.exe /set {default} bootstatuspolicy ignoreallfailures & bcdedit /set {default} recoveryenabled no</code>
+* <code>REAgentC.exe</code> can be used to disable Windows Recovery Environment (WinRE) repair/recovery options of an infected system
+
+On network devices, adversaries may leverage [Disk Wipe](https://attack.mitre.org/techniques/T1561) to delete backup firmware images and reformat the file system, then [System Shutdown/Reboot](https://attack.mitre.org/techniques/T1529) to reload the device. Together this activity may leave network devices completely inoperable and inhibit recovery operations.
+
+Adversaries may also delete “online” backups that are connected to their network – whether via network storage media or through folders that sync to cloud services.(Citation: ZDNet Ransomware Backups 2020) In cloud environments, adversaries may disable versioning and backup policies and delete snapshots, machine images, and prior versions of objects designed to be used in disaster recovery scenarios.(Citation: Dark Reading Code Spaces Cyber Attack)(Citation: Rhino Security Labs AWS S3 Ransomware)""" ;
+	stix:external_reference
+		attack:external-reference-1e2e41a2-0258-44b2-b436-c72424faae5c ,
+		attack:external-reference-31041ece-efff-4f66-8f51-bc6268f49746 ,
+		attack:external-reference-368c107e-d4e3-4759-bf3b-604bcf429046 ,
+		attack:external-reference-54a20fba-cdb1-43da-bf17-72b54d87d69f ,
+		attack:external-reference-a656dff2-9dba-4850-9d0e-5cb03a39ba0a ,
+		attack:external-reference-f7192e93-ea12-4421-b399-329e881c90d2 ,
+		attack:external-reference-fb17894e-00d0-4077-876e-3aa2f19553e1
+		;
+	stix:id "attack-pattern--9b3c3016-dab4-4295-b44c-fce53123c577" ;
+	stix:kill_chain_phase attack:kill-chain-phase-721f2a4f-aaa4-4a29-a140-1b022a12ac7b ;
+	stix:modified "2024-01-25T10:59:06.856725Z"^^xsd:dateTime ;
+	stix:name "Inhibit System Recovery" ;
+	stix:spec_version "2.1" ;
+	stix:type "attack-pattern" ;
+	.
+
+attack:attack-pattern--e0540f19-0e19-4d23-89b2-a63ae4718e34
+	a stix:StixObject ;
+	stix:created "2022-04-04T17:41:37.53612Z"^^xsd:dateTime ;
+	stix:description """Adversaries may destroy data and files on specific systems or in large numbers on a network to interrupt availability to systems, services, and network resources. Data destruction is likely to render stored data irrecoverable by forensic techniques through overwriting files or data on local and remote drives.(Citation: Symantec Shamoon 2012)(Citation: FireEye Shamoon Nov 2016)(Citation: Palo Alto Shamoon Nov 2016)(Citation: Kaspersky StoneDrill 2017)(Citation: Unit 42 Shamoon3 2018)(Citation: Talos Olympic Destroyer 2018) Common operating system file deletion commands such as <code>del</code> and <code>rm</code> often only remove pointers to files without wiping the contents of the files themselves, making the files recoverable by proper forensic methodology. This behavior is distinct from [Disk Content Wipe](https://attack.mitre.org/techniques/T1561/001) and [Disk Structure Wipe](https://attack.mitre.org/techniques/T1561/002) because individual files are destroyed rather than sections of a storage disk or the disk's logical structure.
+
+Adversaries may attempt to overwrite files and directories with randomly generated data to make it irrecoverable.(Citation: Kaspersky StoneDrill 2017)(Citation: Unit 42 Shamoon3 2018) In some cases politically oriented image files have been used to overwrite data.(Citation: FireEye Shamoon Nov 2016)(Citation: Palo Alto Shamoon Nov 2016)(Citation: Kaspersky StoneDrill 2017)
+
+To maximize impact on the target organization in operations where network-wide availability interruption is the goal, malware designed for destroying data may have worm-like features to propagate across a network by leveraging additional techniques like [Valid Accounts](https://attack.mitre.org/techniques/T1078), [OS Credential Dumping](https://attack.mitre.org/techniques/T1003), and [SMB/Windows Admin Shares](https://attack.mitre.org/techniques/T1021/002).(Citation: Symantec Shamoon 2012)(Citation: FireEye Shamoon Nov 2016)(Citation: Palo Alto Shamoon Nov 2016)(Citation: Kaspersky StoneDrill 2017)(Citation: Talos Olympic Destroyer 2018).
+
+In cloud environments, adversaries may leverage access to delete cloud storage, cloud storage accounts, machine images, and other infrastructure crucial to operations to damage an organization or their customers.(Citation: Data Destruction - Threat Post)(Citation: DOJ  - Cisco Insider)""" ;
+	stix:external_reference
+		attack:external-reference-0996d93c-0f23-4630-81c9-b9321409646b ,
+		attack:external-reference-11877e87-198f-4371-9761-ad67ef923a29 ,
+		attack:external-reference-181f781f-991c-4d68-9d39-b2b839de8dc5 ,
+		attack:external-reference-2c8149ab-ce1c-4834-b35f-db799558dbb6 ,
+		attack:external-reference-33465b7e-211c-45bb-96ed-282d7b7b384e ,
+		attack:external-reference-3f1a519b-7cb3-4f4c-8b4c-f7e6c00f0732 ,
+		attack:external-reference-61ddca32-3601-4052-b13c-0fea17951695 ,
+		attack:external-reference-a07b64ee-252c-47db-a6f8-cd94ef81cf30 ,
+		attack:external-reference-a7953e22-a772-49e3-80b5-c70e7072b789 ,
+		attack:external-reference-adbbb0f2-265e-4f38-ab37-392b984a7ab7 ,
+		attack:external-reference-ae002e83-ac68-488c-b61a-c027f2f5d73c ,
+		attack:external-reference-e2d2f8d3-227c-46a3-9989-3b940686c2cc ,
+		attack:external-reference-e7639e8b-5dfb-49d0-95eb-ba191e850df8 ,
+		attack:external-reference-f40bf9d4-dbad-4860-8209-8f97aec5657d
+		;
+	stix:id "attack-pattern--e0540f19-0e19-4d23-89b2-a63ae4718e34" ;
+	stix:kill_chain_phase
+		attack:kill-chain-phase-16dd8e9a-f6ba-4d98-84fb-e05ec8d1a465 ,
+		attack:kill-chain-phase-6ad4689e-7c05-4be2-82bd-a75bd45a3dbd ,
+		attack:kill-chain-phase-cbfeed84-5a8e-4530-91ee-a56ce8ccfe6e
+		;
+	stix:modified "2024-01-25T11:21:38.292045Z"^^xsd:dateTime ;
+	stix:name "Data Destruction" ;
+	stix:spec_version "2.1" ;
+	stix:type "attack-pattern" ;
+	.
+
+attack:attack-pattern--f8410827-7556-4b26-93a5-bf1605c3f4a4
+	a stix:StixObject ;
+	stix:created "2022-04-04T18:04:40.521994Z"^^xsd:dateTime ;
+	stix:description """Adversaries may attempt to access cached domain credentials used to allow authentication to occur in the event a domain controller is unavailable.(Citation: Microsoft - Cached Creds)
+
+On Windows Vista and newer, the hash format is DCC2 (Domain Cached Credentials version 2) hash, also known as MS-Cache v2 hash.(Citation: PassLib mscache) The number of default cached credentials varies and can be altered per system. This hash does not allow pass-the-hash style attacks, and instead requires [Password Cracking](https://attack.mitre.org/techniques/T1110/002) to recover the plaintext password.(Citation: ired mscache)
+
+With SYSTEM access, the tools/utilities such as [Mimikatz](https://attack.mitre.org/software/S0002), [Reg](https://attack.mitre.org/software/S0075), and secretsdump.py can be used to extract the cached credentials.
+
+Note: Cached credentials for Windows Vista are derived using PBKDF2.(Citation: PassLib mscache)""" ;
+	stix:external_reference
+		attack:external-reference-2c56dd95-f3fc-4bdc-985f-8f5d7c3a5660 ,
+		attack:external-reference-5ea62863-68d8-458e-9ee5-f73b5b74d6bc ,
+		attack:external-reference-7a0c5854-2763-4816-8ee7-09adc040dfe9 ,
+		attack:external-reference-8c0dd082-0250-43e9-98ab-958776e0c508 ,
+		attack:external-reference-956cb022-d1cf-4517-8e50-7c2642da3058 ,
+		attack:external-reference-e8d8438c-3502-4833-85c0-c379002c5b27
+		;
+	stix:id "attack-pattern--f8410827-7556-4b26-93a5-bf1605c3f4a4" ;
+	stix:kill_chain_phase attack:kill-chain-phase-491fde32-5314-4c06-a01d-ac5e358ad53a ;
+	stix:modified "2024-01-25T10:55:00.170384Z"^^xsd:dateTime ;
+	stix:name "OS Credential Dumping: Cached Domain Credentials" ;
+	stix:spec_version "2.1" ;
+	stix:type "attack-pattern" ;
+	.
+
+attack:campaign--86b35633-78dc-4a03-90dd-9fc6a6b82e9d
+	a stix:StixObject ;
+	stix:alias "OlympicDestroyerCampaign" ;
+	stix:attributed-to attack:intrusion-set--604abc33-5985-41b3-b72c-222131371916 ;
+	stix:created "2024-01-25T10:34:51.985442Z"^^xsd:dateTime ;
+	stix:id "campaign--86b35633-78dc-4a03-90dd-9fc6a6b82e9d" ;
+	stix:modified "2024-01-25T12:28:31.886261Z"^^xsd:dateTime ;
+	stix:name "OlympicDestroyerCampaign" ;
+	stix:objective "Disrupt Pyeongchang Winter Olympics" ;
+	stix:spec_version "2.1" ;
+	stix:targets attack:location--b9c12531-454c-44a9-8317-63a975993e11 ;
+	stix:type "campaign" ;
+	stix:uses
+		attack:attack-pattern--66d581ef-0821-451a-8650-dced303e0c79 ,
+		attack:malware--85c19b24-1788-419b-9caa-cc64969d9e70 ,
+		attack:tool--2ca94e36-d452-4f69-963e-016c1600524f ,
+		attack:tool--76dd1369-42b2-43dc-ba52-f403f59802bd ,
+		attack:tool--91e8a302-bdaa-4b47-a837-72b6931c8663
+		;
+	.
+
+attack:external-reference-01183b5b-27d0-48f7-81b3-63ab9cd063e8
+	a stix:StixObject ;
+	stix:description "(Citation: Secureworks IRON VIKING )" ;
+	stix:source_name "IRON VIKING" ;
+	.
+
+attack:external-reference-014a1055-6aa6-4efb-8627-8c876b4bc810
+	a stix:StixObject ;
+	stix:description "(Citation: FireEye Clandestine Wolf) (Citation: Recorded Future APT3 May 2017) (Citation: Symantec Buckeye)" ;
+	stix:source_name "UPS Team" ;
+	.
+
+attack:external-reference-058d6de3-bd58-4ade-9c17-8c02dd3c34a1
+	a stix:StixObject ;
+	stix:description "Kaspersky Lab's Global Research and Analysis Team. (2015, December 4). Sofacy APT hits high profile targets with updated toolset. Retrieved December 10, 2015." ;
+	stix:source_name "Kaspersky Sofacy" ;
+	stix:url "https://securelist.com/sofacy-apt-hits-high-profile-targets-with-updated-toolset/72924/" ;
+	.
+
+attack:external-reference-05dcd192-8f3d-4dbe-92bf-46e8e8adb27b
+	a stix:StixObject ;
+	stix:description "Microsoft Threat Intelligence Center (MSTIC). (2020, September 10). STRONTIUM: Detecting new patterns in credential harvesting. Retrieved September 11, 2020." ;
+	stix:source_name "Microsoft STRONTIUM New Patterns Cred Harvesting Sept 2020" ;
+	stix:url "https://www.microsoft.com/security/blog/2020/09/10/strontium-detecting-new-patters-credential-harvesting/" ;
+	.
+
+attack:external-reference-07bba3bd-6bb8-4054-8916-f5b39bd7db0a
+	a stix:StixObject ;
+	stix:description "Itkin, Liora. (2022, September 1). Double-bounced attacks with email spoofing . Retrieved February 24, 2023." ;
+	stix:source_name "cyberproof-double-bounce" ;
+	stix:url "https://blog.cyberproof.com/blog/double-bounced-attacks-with-email-spoofing-2022-trends" ;
+	.
+
+attack:external-reference-0996d93c-0f23-4630-81c9-b9321409646b
+	a stix:StixObject ;
+	stix:description "DOJ. (2020, August 26). San Jose Man Pleads Guilty To Damaging Cisco’s Network. Retrieved December 15, 2020." ;
+	stix:source_name "DOJ  - Cisco Insider" ;
+	stix:url "https://www.justice.gov/usao-ndca/pr/san-jose-man-pleads-guilty-damaging-cisco-s-network" ;
+	.
+
+attack:external-reference-0dabe639-eaae-4939-b9dc-f2eae31046d5
+	a stix:StixObject ;
+	stix:description "CISA. (n.d.). Protecting Against Malicious Use of Remote Monitoring and Management Software. Retrieved February 2, 2023." ;
+	stix:source_name "CISA Remote Monitoring and Management Software" ;
+	stix:url "https://www.cisa.gov/uscert/ncas/alerts/aa23-025a" ;
+	.
+
+attack:external-reference-117c1f00-1b3b-4908-9411-0d29f98abb64
+	a stix:StixObject ;
+	stix:external-id "T1570" ;
+	stix:source_name "mitre-attack" ;
+	stix:url "https://attack.mitre.org/techniques/T1570" ;
+	.
+
+attack:external-reference-11877e87-198f-4371-9761-ad67ef923a29
+	a stix:StixObject ;
+	stix:external-id "T0809" ;
+	stix:source_name "mitre-attack" ;
+	stix:url "https://attack.mitre.org/techniques/T0809" ;
+	.
+
+attack:external-reference-13f53bfe-0c60-4c69-8604-404ef3cb0063
+	a stix:StixObject ;
+	stix:description "Dragos. (2017, January 1). ELECTRUM Threat Profile. Retrieved June 10, 2020." ;
+	stix:source_name "Dragos ELECTRUM" ;
+	stix:url "https://www.dragos.com/resource/electrum/" ;
+	.
+
+attack:external-reference-144a4934-f594-4e59-9f25-af209fc20fd4
+	a stix:StixObject ;
+	stix:description "(Citation: SecureWorks TG-4127)(Citation: ESET Sednit Part 3)(Citation: TrendMicro Pawn Storm Dec 2020) " ;
+	stix:source_name "Pawn Storm" ;
+	.
+
+attack:external-reference-14e2cb3b-8843-46af-bfd2-b4031308cc45
+	a stix:StixObject ;
+	stix:description "MSRC Team. (2019, August 5). Corporate IoT – a path to intrusion. Retrieved August 16, 2019." ;
+	stix:source_name "Microsoft STRONTIUM Aug 2019" ;
+	stix:url "https://msrc-blog.microsoft.com/2019/08/05/corporate-iot-a-path-to-intrusion/" ;
+	.
+
+attack:external-reference-14ebbf4b-b7c3-4e58-9791-2c0eec907d32
+	a stix:StixObject ;
+	stix:description "Symantec Security Response. (2018, October 04). APT28: New Espionage Operations Target Military and Government Organizations. Retrieved November 14, 2018." ;
+	stix:source_name "Symantec APT28 Oct 2018" ;
+	stix:url "https://www.symantec.com/blogs/election-security/apt28-espionage-military-government" ;
+	.
+
+attack:external-reference-15f3829d-6c92-4c7e-b5f6-174b24794799
+	a stix:StixObject ;
+	stix:description "" ;
+	stix:source_name "Dragos ELECTRUM" ;
+	stix:url "https://hub.dragos.com/hubfs/312-Year-in-Review/2022/Dragos_Year-In-Review-Report-2022.pdf?hsLang=en" ;
+	.
+
+attack:external-reference-1782be4c-f0bf-4c6e-8295-1c1c24056644
+	a stix:StixObject ;
+	stix:description "" ;
+	stix:source_name "U.S. Department of Justice indictment (July 2018) " ;
+	stix:url "https://www.justice.gov/file/1080281/download " ;
+	.
+
+attack:external-reference-181f781f-991c-4d68-9d39-b2b839de8dc5
+	a stix:StixObject ;
+	stix:description "Mercer, W. and Rascagneres, P. (2018, February 12). Olympic Destroyer Takes Aim At Winter Olympics. Retrieved March 14, 2019." ;
+	stix:source_name "Talos Olympic Destroyer 2018" ;
+	stix:url "https://blog.talosintelligence.com/2018/02/olympic-destroyer.html" ;
+	.
+
+attack:external-reference-1a8222df-52a5-44fb-b362-91eb0dd10487
+	a stix:StixObject ;
+	stix:description "(Citation: Talos Seduploader Oct 2017)" ;
+	stix:source_name "Group 74" ;
+	.
+
+attack:external-reference-1b789d87-52a8-443a-98a7-e96ed1aa4ebd
+	a stix:StixObject ;
+	stix:description "Hacquebord, F., Remorin, L. (2020, December 17). Pawn Storm’s Lack of Sophistication as a Strategy. Retrieved January 13, 2021." ;
+	stix:source_name "TrendMicro Pawn Storm Dec 2020" ;
+	stix:url "https://www.trendmicro.com/en_us/research/20/l/pawn-storm-lack-of-sophistication-as-a-strategy.html" ;
+	.
+
+attack:external-reference-1d974d36-f996-4acb-af13-81fca06ccdaa
+	a stix:StixObject ;
+	stix:source_name "mitre-attack" ;
+	stix:url "https://attack.mitre.org/groups/G0022" ;
+	.
+
+attack:external-reference-1e2e41a2-0258-44b2-b436-c72424faae5c
+	a stix:StixObject ;
+	stix:description "Mercer, W. and Rascagneres, P. (2018, February 12). Olympic Destroyer Takes Aim At Winter Olympics. Retrieved March 14, 2019." ;
+	stix:source_name "Talos Olympic Destroyer 2018" ;
+	stix:url "https://blog.talosintelligence.com/2018/02/olympic-destroyer.html" ;
+	.
+
+attack:external-reference-1ed98591-16fd-47fd-a5d7-038d6290aeee
+	a stix:StixObject ;
+	stix:description "Harbison, M. (2019, March 26). Born This Way? Origins of LockerGoga. Retrieved April 16, 2019." ;
+	stix:source_name "Unit42 LockerGoga 2019" ;
+	stix:url "https://unit42.paloaltonetworks.com/born-this-way-origins-of-lockergoga/" ;
+	.
+
+attack:external-reference-1fd85434-11ab-4a24-92f3-f9e6bea63ec8
+	a stix:StixObject ;
+	stix:description "CAMPAGNES D'ATTAQUES DU MODE OPÉRATOIRE APT28 DEPUIS 2021" ;
+	stix:source_name "www.cert.ssi.gouv.fr" ;
+	stix:url "https://www.cert.ssi.gouv.fr/uploads/CERTFR-2023-CTI-009.pdf" ;
+	.
+
+attack:external-reference-24045b32-d69e-4595-8800-e496d9d569c3
+	a stix:StixObject ;
+	stix:description "(Citation: iSIGHT Sandworm 2014) (Citation: F-Secure BlackEnergy 2014) (Citation: InfoSecurity Sandworm Oct 2014)" ;
+	stix:source_name "Sandworm Team" ;
+	.
+
+attack:external-reference-25866919-d70e-4e2f-942b-fd0b378eccd9
+	a stix:StixObject ;
+	stix:description "" ;
+	stix:source_name "The Russian ICC (VIII): GRU" ;
+	stix:url "https://www.securityartwork.es/2017/05/10/the-russian-icc-viii-gru/" ;
+	.
+
+attack:external-reference-287e5235-d665-42e9-9b5a-2444119b0874
+	a stix:StixObject ;
+	stix:description "This designation has been used in reporting both to refer to the threat group and its associated malware JHUHUGIT.(Citation: FireEye APT28 January 2017)(Citation: SecureWorks TG-4127)(Citation: Kaspersky Sofacy)(Citation: Ars Technica GRU indictment Jul 2018)" ;
+	stix:source_name "Sednit" ;
+	.
+
+attack:external-reference-2914e6fa-0e58-46da-a4c3-47c649cbec4f
+	a stix:StixObject ;
+	stix:description "" ;
+	stix:source_name "Who is FANCY BEAR (APT28)?" ;
+	stix:url "https://www.crowdstrike.com/blog/who-is-fancy-bear/ " ;
+	.
+
+attack:external-reference-2b6853c3-ff7b-4044-9bc3-765e13ec40cc
+	a stix:StixObject ;
+	stix:description "Indian Ministry of Defense-Themed Trojan: A SideCopy Signature" ;
+	stix:source_name "cyberstanc.com" ;
+	stix:url "https://cyberstanc.com/blog/indian-ministry-of-defense-themed-trojan-a-sidecopy-signature/" ;
+	.
+
+attack:external-reference-2c56dd95-f3fc-4bdc-985f-8f5d7c3a5660
+	a stix:StixObject ;
+	stix:description "Microsfot. (2016, August 21). Cached and Stored Credentials Technical Overview. Retrieved February 21, 2020." ;
+	stix:source_name "Microsoft - Cached Creds" ;
+	stix:url "https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh994565(v%3Dws.11)" ;
+	.
+
+attack:external-reference-2c8149ab-ce1c-4834-b35f-db799558dbb6
+	a stix:StixObject ;
+	stix:description "Enterprise ATT&CK 2018, January 11 File Deletion Retrieved. 2018/05/17 " ;
+	stix:source_name "Enterprise ATT&CK January 2018" ;
+	stix:url "https://attack.mitre.org/wiki/Technique/T1107" ;
+	.
+
+attack:external-reference-2db8b503-cbbf-4d06-acd2-b5a50fa44bcb
+	a stix:StixObject ;
+	stix:description "(Citation: NCSC Sandworm Feb 2020)(Citation: US District Court Indictment GRU Unit 74455 October 2020)(Citation: UK NCSC Olympic Attacks October 2020)" ;
+	stix:source_name "Telebots" ;
+	.
+
+attack:external-reference-31041ece-efff-4f66-8f51-bc6268f49746
+	a stix:StixObject ;
+	stix:external-id "T1490" ;
+	stix:source_name "mitre-attack" ;
+	stix:url "https://attack.mitre.org/techniques/T1490" ;
+	.
+
+attack:external-reference-31c03997-c813-41ac-b9b8-8525b802195a
+	a stix:StixObject ;
+	stix:description "ESET. (2016, October). En Route with Sednit - Part 3: A Mysterious Downloader. Retrieved November 21, 2016." ;
+	stix:source_name "ESET Sednit Part 3" ;
+	stix:url "http://www.welivesecurity.com/wp-content/uploads/2016/10/eset-sednit-part3.pdf" ;
+	.
+
+attack:external-reference-33465b7e-211c-45bb-96ed-282d7b7b384e
+	a stix:StixObject ;
+	stix:description "Falcone, R.. (2016, November 30). Shamoon 2: Return of the Disttrack Wiper. Retrieved January 11, 2017." ;
+	stix:source_name "Palo Alto Shamoon Nov 2016" ;
+	stix:url "http://researchcenter.paloaltonetworks.com/2016/11/unit42-shamoon-2-return-disttrack-wiper/" ;
+	.
+
+attack:external-reference-368c107e-d4e3-4759-bf3b-604bcf429046
+	a stix:StixObject ;
+	stix:description "TheDFIRReport. (2022, March 1). Disabling notifications on Synology servers before ransom. Retrieved October 19, 2022." ;
+	stix:source_name "disable_notif_synology_ransom" ;
+	stix:url "https://twitter.com/TheDFIRReport/status/1498657590259109894" ;
+	.
+
+attack:external-reference-3773a475-f39c-49ea-9bc2-53293f8dffa1
+	a stix:StixObject ;
+	stix:description "(Citation: Recorded Future APT3 May 2017) (Citation: Symantec Buckeye)" ;
+	stix:source_name "Threat Group-0110" ;
+	.
+
+attack:external-reference-3c0b44dd-0e76-4214-9ed8-8f51cf7e4efc
+	a stix:StixObject ;
+	stix:external-id "AUT-9" ;
+	stix:source_name "NIST Mobile Threat Catalogue" ;
+	stix:url "https://pages.nist.gov/mobile-threat-catalogue/authentication-threats/AUT-9.html" ;
+	.
+
+attack:external-reference-3dc9d8c4-7f02-4630-a065-898c310a49ff
+	a stix:StixObject ;
+	stix:description "he four intelligence officers detained by Dutch security services are part of an elite military unit that runs high-risk cyber espionage operations out of a 19th-century barracks in central Moscow.  " ;
+	stix:source_name "What is Unit 26165, Russia's elite military hacking centre? " ;
+	stix:url "https://www.telegraph.co.uk/news/2018/10/04/unit26165-russias-elite-military-hacking-centre/" ;
+	.
+
+attack:external-reference-3dfdd3ee-c9c4-47cf-9d57-bb097a0c472f
+	a stix:StixObject ;
+	stix:description "(Citation: Symantec APT28 Oct 2018)" ;
+	stix:source_name "Swallowtail" ;
+	.
+
+attack:external-reference-3e6f5bfc-b95c-46de-a43d-841e62885709
+	a stix:StixObject ;
+	stix:description "UK NCSC. (2020, October 19). UK exposes series of Russian cyber attacks against Olympic and Paralympic Games . Retrieved November 30, 2020." ;
+	stix:source_name "UK NCSC Olympic Attacks October 2020" ;
+	stix:url "https://www.gov.uk/government/news/uk-exposes-series-of-russian-cyber-attacks-against-olympic-and-paralympic-games" ;
+	.
+
+attack:external-reference-3f1a519b-7cb3-4f4c-8b4c-f7e6c00f0732
+	a stix:StixObject ;
+	stix:description "Symantec. (2012, August 16). The Shamoon Attacks. Retrieved March 14, 2019." ;
+	stix:source_name "Symantec Shamoon 2012" ;
+	stix:url "https://www.symantec.com/connect/blogs/shamoon-attacks" ;
+	.
+
+attack:external-reference-40d20464-15ab-48d6-a6e4-c1dcdb992319
+	a stix:StixObject ;
+	stix:description "" ;
+	stix:source_name "blog.sekoia.io" ;
+	stix:url "https://blog.sekoia.io/one-year-after-the-cyber-implications-of-the-russo-ukrainian-war/" ;
+	.
+
+attack:external-reference-47c124fd-4a5b-4caf-9470-156d1392c895
+	a stix:StixObject ;
+	stix:description "F-Secure Labs. (2014). BlackEnergy & Quedagh: The convergence of crimeware and APT attacks. Retrieved March 24, 2016." ;
+	stix:source_name "F-Secure BlackEnergy 2014" ;
+	stix:url "https://blog-assets.f-secure.com/wp-content/uploads/2019/10/15163408/BlackEnergy_Quedagh.pdf" ;
+	.
+
+attack:external-reference-48a7b568-2c23-44c3-a66f-bbf38916f446
+	a stix:StixObject ;
+	stix:external-id "G0034" ;
+	stix:source_name "mitre-attack" ;
+	stix:url "https://attack.mitre.org/groups/G0034" ;
+	.
+
+attack:external-reference-4a4b1b39-1ba5-4de5-b576-5cd917833f55
+	a stix:StixObject ;
+	stix:description "Alperovitch, D.. (2016, June 15). Bears in the Midst: Intrusion into the Democratic National Committee. Retrieved August 3, 2016." ;
+	stix:source_name "Crowdstrike DNC June 2016" ;
+	stix:url "https://www.crowdstrike.com/blog/bears-midst-intrusion-democratic-national-committee/" ;
+	.
+
+attack:external-reference-4a6fea1d-8ee8-40ae-a95d-852664c48a52
+	a stix:StixObject ;
+	stix:description "(Citation: FireEye APT28) (Citation: SecureWorks TG-4127) (Citation: Crowdstrike DNC June 2016) (Citation: Kaspersky Sofacy) (Citation: ESET Sednit Part 3) (Citation: Ars Technica GRU indictment Jul 2018)(Citation: Talos Seduploader Oct 2017)(Citation: Symantec APT28 Oct 2018)(Citation: Securelist Sofacy Feb 2018)" ;
+	stix:source_name "APT28" ;
+	.
+
+attack:external-reference-4b12f55e-fc7f-4e9d-a041-c6b26e0d3460
+	a stix:StixObject ;
+	stix:description "Accenture Security. (2018, November 29). SNAKEMACKEREL. Retrieved April 15, 2019." ;
+	stix:source_name "Accenture SNAKEMACKEREL Nov 2018" ;
+	stix:url "https://www.accenture.com/t20181129T203820Z__w__/us-en/_acnmedia/PDF-90/Accenture-snakemackerel-delivers-zekapab-malware.pdf#zoom=50" ;
+	.
+
+attack:external-reference-4c48ed72-be5b-4f47-904f-7921199f6900
+	a stix:StixObject ;
+	stix:description "Secureworks. (2020, May 1). IRON VIKING Threat Profile. Retrieved June 10, 2020." ;
+	stix:source_name "Secureworks IRON VIKING " ;
+	stix:url "https://www.secureworks.com/research/threat-profiles/iron-viking" ;
+	.
+
+attack:external-reference-4ccc59fd-c539-46a2-8199-451c46dec3a6
+	a stix:StixObject ;
+	stix:description "(Citation: PWC Pirpi Scanbox)" ;
+	stix:source_name "Pirpi" ;
+	.
+
+attack:external-reference-510f5040-e2d8-4544-8a15-cd3c3d92e77b
+	a stix:StixObject ;
+	stix:description "(Citation: Accenture SNAKEMACKEREL Nov 2018)" ;
+	stix:source_name "SNAKEMACKEREL" ;
+	.
+
+attack:external-reference-5121b539-ecfa-4ae4-96d9-35c1a01099dc
+	a stix:StixObject ;
+	stix:description "(Citation: Dragos ELECTRUM)" ;
+	stix:source_name "ELECTRUM" ;
+	.
+
+attack:external-reference-5138b7ec-836c-4497-a5d7-e2c8b1c9b171
+	a stix:StixObject ;
+	stix:description "(Citation: Crowdstrike DNC June 2016) (Citation: Kaspersky Sofacy) (Citation: ESET Sednit Part 3) (Citation: Ars Technica GRU indictment Jul 2018)(Citation: Talos Seduploader Oct 2017)(Citation: Symantec APT28 Oct 2018)(Citation: Securelist Sofacy Feb 2018)" ;
+	stix:source_name "Fancy Bear" ;
+	.
+
+attack:external-reference-538af4cb-a843-4521-be00-118791ae579d
+	a stix:StixObject ;
+	stix:description "Oren Biderman, Tomer Lahiyani, Noam Lifshitz, Ori Porag. (n.d.). LUNA MOTH: THE THREAT ACTORS BEHIND RECENT FALSE SUBSCRIPTION SCAMS. Retrieved February 2, 2023." ;
+	stix:source_name "sygnia Luna Month" ;
+	stix:url "https://blog.sygnia.co/luna-moth-false-subscription-scams" ;
+	.
+
+attack:external-reference-548ebe20-04ef-4d8a-853c-e58a35389b7a
+	a stix:StixObject ;
+	stix:description "Meyers, A. (2018, January 19). Meet CrowdStrike’s Adversary of the Month for January: VOODOO BEAR. Retrieved May 22, 2018." ;
+	stix:source_name "CrowdStrike VOODOO BEAR" ;
+	stix:url "https://www.crowdstrike.com/blog/meet-crowdstrikes-adversary-of-the-month-for-january-voodoo-bear/" ;
+	.
+
+attack:external-reference-54951242-5fe1-4c8e-bf70-aeb584e5f904
+	a stix:StixObject ;
+	stix:description "(Citation: Dragos ELECTRUM)(Citation: UK NCSC Olympic Attacks October 2020)" ;
+	stix:source_name "ELECTRUM" ;
+	.
+
+attack:external-reference-54a20fba-cdb1-43da-bf17-72b54d87d69f
+	a stix:StixObject ;
+	stix:description "Berry, A., Homan, J., and Eitzman, R. (2017, May 23). WannaCry Malware Profile. Retrieved March 15, 2019." ;
+	stix:source_name "FireEye WannaCry 2017" ;
+	stix:url "https://www.fireeye.com/blog/threat-research/2017/05/wannacry-malware-profile.html" ;
+	.
+
+attack:external-reference-54e13daf-1da6-4692-925f-24db5fd89943
+	a stix:StixObject ;
+	stix:description "Department of Homeland Security and Federal Bureau of Investigation. (2016, December 29). GRIZZLY STEPPE – Russian Malicious Cyber Activity. Retrieved January 11, 2017." ;
+	stix:source_name "GRIZZLY STEPPE JAR" ;
+	stix:url "https://www.us-cert.gov/sites/default/files/publications/JAR_16-20296A_GRIZZLY%20STEPPE-2016-1229.pdf" ;
+	.
+
+attack:external-reference-55095cb3-9509-4f67-a707-1f35b086a255
+	a stix:StixObject ;
+	stix:description "(Citation: PWC Pirpi Scanbox) (Citation: Recorded Future APT3 May 2017) (Citation: Symantec Buckeye)" ;
+	stix:source_name "Gothic Panda" ;
+	.
+
+attack:external-reference-55f3b412-9fb8-437a-8eb7-25b5a196b9f6
+	a stix:StixObject ;
+	stix:external-id "T0867" ;
+	stix:source_name "mitre-attack" ;
+	stix:url "https://attack.mitre.org/techniques/T0867" ;
+	.
+
+attack:external-reference-59d191c0-8f71-4884-80b7-aeac0119cc7d
+	a stix:StixObject ;
+	stix:description "Metcalf, S. (2015, November 13). Unofficial Guide to Mimikatz & Command Reference. Retrieved December 23, 2015." ;
+	stix:source_name "Adsecurity Mimikatz Guide" ;
+	stix:url "https://adsecurity.org/?page_id=1821" ;
+	.
+
+attack:external-reference-5a8867dd-c812-42af-8790-c8be3f9d6d71
+	a stix:StixObject ;
+	stix:description "Insikt Group (Recorded Future). (2017, May 17). Recorded Future Research Concludes Chinese Ministry of State Security Behind APT3. Retrieved June 18, 2017." ;
+	stix:source_name "Recorded Future APT3 May 2017" ;
+	stix:url "https://www.recordedfuture.com/chinese-mss-behind-apt3/" ;
+	.
+
+attack:external-reference-5d376b06-c588-47ec-b00b-5e7cbb3f3243
+	a stix:StixObject ;
+	stix:description "In the footsteps of the Fancy Bear: PowerPoint mouse-over event abused to deliver Graphite implants" ;
+	stix:source_name "DuskRise" ;
+	stix:url "https://blog.cluster25.duskrise.com/2022/09/23/in-the-footsteps-of-the-fancy-bear-powerpoint-graphite/" ;
+	.
+
+attack:external-reference-5d4e7acc-e6cb-41a2-aec4-ac3a07fc0faf
+	a stix:StixObject ;
+	stix:external-id "T1529" ;
+	stix:source_name "mitre-attack" ;
+	stix:url "https://attack.mitre.org/techniques/T1529" ;
+	.
+
+attack:external-reference-5ea62863-68d8-458e-9ee5-f73b5b74d6bc
+	a stix:StixObject ;
+	stix:external-id "T1003.005" ;
+	stix:source_name "mitre-attack" ;
+	stix:url "https://attack.mitre.org/techniques/T1003/005" ;
+	.
+
+attack:external-reference-600ea2d7-cc20-4972-8302-fd80035f8f84
+	a stix:StixObject ;
+	stix:description "Vicky Ray and Rob Downs. (2014, October 29). Examining a VBA-Initiated Infostealer Campaign. Retrieved March 13, 2023." ;
+	stix:source_name "Palo Alto Unit 42 VBA Infostealer 2014" ;
+	stix:url "https://unit42.paloaltonetworks.com/examining-vba-initiated-infostealer-campaign/" ;
+	.
+
+attack:external-reference-61ddca32-3601-4052-b13c-0fea17951695
+	a stix:StixObject ;
+	stix:description "Surana, N., et al. (2022, September 8). How Malicious Actors Abuse Native Linux Tools in Attacks. Retrieved September 26, 2023." ;
+	stix:source_name "abuse_native_linux_tools" ;
+	stix:url "https://www.trendmicro.com/en_za/research/22/i/how-malicious-actors-abuse-native-linux-tools-in-their-attacks.html" ;
+	.
+
+attack:external-reference-63642f9e-4cc8-44cb-89c2-364e1ba78209
+	a stix:StixObject ;
+	stix:source_name "mitre-attack" ;
+	stix:url "https://attack.mitre.org/groups/G0034" ;
+	.
+
+attack:external-reference-64d963f2-389b-4662-9569-437168d83690
+	a stix:StixObject ;
+	stix:description "(Citation: NCSC Sandworm Feb 2020)(Citation: UK NCSC Olympic Attacks October 2020)" ;
+	stix:source_name "BlackEnergy (Group)" ;
+	.
+
+attack:external-reference-661fa1f3-c81c-4781-97f3-c0c914847199
+	a stix:StixObject ;
+	stix:description "he four intelligence officers detained by Dutch security services are part of an elite military unit that runs high-risk cyber espionage operations out of a 19th-century barracks in central Moscow.  " ;
+	stix:source_name "What is Unit 26165, Russia's elite military hacking centre?" ;
+	stix:url "https://www.telegraph.co.uk/news/2018/10/04/unit26165-russias-elite-military-hacking-centre/" ;
+	.
+
+attack:external-reference-66786ebb-8f5d-41c5-8189-6c5e87cf8132
+	a stix:StixObject ;
+	stix:description "This designation has been used in reporting both to refer to the threat group and its associated malware JHUHUGIT. (Citation: FireEye APT28 January 2017) (Citation: SecureWorks TG-4127) (Citation: Kaspersky Sofacy) (Citation: Ars Technica GRU indictment Jul 2018)" ;
+	stix:source_name "Sednit" ;
+	.
+
+attack:external-reference-676c51b5-bb57-4f92-b879-7e0ef0851bc7
+	a stix:StixObject ;
+	stix:description "Symantec Security Response. (2016, September 6). Buckeye cyberespionage group shifts gaze from US to Hong Kong. Retrieved September 26, 2016." ;
+	stix:source_name "Symantec Buckeye" ;
+	stix:url "http://www.symantec.com/connect/blogs/buckeye-cyberespionage-group-shifts-gaze-us-hong-kong" ;
+	.
+
+attack:external-reference-682f4538-a86e-4286-a59d-fe9ff7867ad7
+	a stix:StixObject ;
+	stix:description "Deply, B. (n.d.). Mimikatz. Retrieved September 29, 2015." ;
+	stix:source_name "Deply Mimikatz" ;
+	stix:url "https://github.com/gentilkiwi/mimikatz" ;
+	.
+
+attack:external-reference-6863220d-fd6a-4f3b-a3a8-ddf34765b7ad
+	a stix:StixObject ;
+	stix:description "(Citation: Kaspersky Sofacy)(Citation: ESET Sednit Part 3)(Citation: Microsoft STRONTIUM Aug 2019)(Citation: Microsoft STRONTIUM New Patterns Cred Harvesting Sept 2020)(Citation: TrendMicro Pawn Storm Dec 2020)(Citation: Cybersecurity Advisory GRU Brute Force Campaign July 2021)" ;
+	stix:source_name "STRONTIUM" ;
+	.
+
+attack:external-reference-688d0790-5fae-44c5-94db-a5a980c31b66
+	a stix:StixObject ;
+	stix:description "(Citation: SecureWorks TG-4127)" ;
+	stix:source_name "Threat Group-4127" ;
+	.
+
+attack:external-reference-6b4ad9b7-79ff-4871-850e-65c9f441b419
+	a stix:StixObject ;
+	stix:description "Microsoft. (2023, September 22). Malicious OAuth applications abuse cloud email services to spread spam. Retrieved March 13, 2023." ;
+	stix:source_name "Microsoft OAuth Spam 2022" ;
+	stix:url "https://www.microsoft.com/en-us/security/blog/2022/09/22/malicious-oauth-applications-used-to-compromise-email-servers-and-spread-spam/" ;
+	.
+
+attack:external-reference-6b86dc17-8d70-4750-80ab-c87d98625ecf
+	a stix:StixObject ;
+	stix:description "Gallagher, S. (2018, July 27). How they did it (and will likely try again): GRU hackers vs. US elections. Retrieved September 13, 2018." ;
+	stix:source_name "Ars Technica GRU indictment Jul 2018" ;
+	stix:url "https://arstechnica.com/information-technology/2018/07/from-bitly-to-x-agent-how-gru-hackers-targeted-the-2016-presidential-election/" ;
+	.
+
+attack:external-reference-6c6e63e9-0849-45e1-b946-437e4c5c060d
+	a stix:StixObject ;
+	stix:external-id "G0022" ;
+	stix:source_name "mitre-attack" ;
+	stix:url "https://attack.mitre.org/groups/G0022" ;
+	.
+
+attack:external-reference-6e79a871-df62-4ed4-933e-b25a4b316b66
+	a stix:StixObject ;
+	stix:description "Mueller, R. (2018, July 13). Indictment - United States of America vs. VIKTOR BORISOVICH NETYKSHO, et al. Retrieved September 13, 2018." ;
+	stix:source_name "DOJ GRU Indictment Jul 2018" ;
+	stix:url "https://www.justice.gov/file/1080281/download" ;
+	.
+
+attack:external-reference-7029e451-4e31-4f12-9db5-642a49d1c47e
+	a stix:StixObject ;
+	stix:description "(Citation: Kaspersky Sofacy) (Citation: ESET Sednit Part 3) (Citation: Microsoft STRONTIUM Aug 2019) (Citation: Microsoft STRONTIUM New Patterns Cred Harvesting Sept 2020)" ;
+	stix:source_name "STRONTIUM" ;
+	.
+
+attack:external-reference-70725767-a9a9-4649-9fb1-d6e7cb982bcd
+	a stix:StixObject ;
+	stix:description "Brady, S . (2018, October 3). Indictment - United States vs Aleksei Sergeyevich Morenets, et al.. Retrieved October 1, 2020." ;
+	stix:source_name "US District Court Indictment GRU Oct 2018" ;
+	stix:url "https://www.justice.gov/opa/page/file/1098481/download" ;
+	.
+
+attack:external-reference-719ab9fd-5b56-4704-80ae-0834bd877628
+	a stix:StixObject ;
+	stix:description "APT28 group attacks with the aim of obtaining authentication data for public email services " ;
+	stix:source_name "cert.gov.ua" ;
+	stix:url "https://cert.gov.ua/article/5105791" ;
+	.
+
+attack:external-reference-71ab3b52-672b-40ae-a67d-9ab026e34388
+	a stix:StixObject ;
+	stix:description "Mantis: New Tooling Used in Attacks Against Palestinian Targets" ;
+	stix:source_name "symantec-enterprise-blogs.security.com" ;
+	stix:url "https://symantec-enterprise-blogs.security.com/blogs/threat-intelligence/mantis-palestinian-attacks" ;
+	.
+
+attack:external-reference-71e9dfc4-09fc-4f29-9a5d-128f0bbf6470
+	a stix:StixObject ;
+	stix:description "(Citation: Crowdstrike DNC June 2016)(Citation: Kaspersky Sofacy)(Citation: ESET Sednit Part 3)(Citation: Ars Technica GRU indictment Jul 2018)(Citation: Talos Seduploader Oct 2017)(Citation: Symantec APT28 Oct 2018)(Citation: Securelist Sofacy Feb 2018)(Citation: Cybersecurity Advisory GRU Brute Force Campaign July 2021)" ;
+	stix:source_name "Fancy Bear" ;
+	.
+
+attack:external-reference-7329c4e1-2e9a-43c2-bc49-396ffa0a256a
+	a stix:StixObject ;
+	stix:description "(Citation: SecureWorks TG-4127) (Citation: ESET Sednit Part 3)" ;
+	stix:source_name "Pawn Storm" ;
+	.
+
+attack:external-reference-75711bd5-4237-42ff-aadc-249e6b231479
+	a stix:StixObject ;
+	stix:external-id "T1660" ;
+	stix:source_name "mitre-attack" ;
+	stix:url "https://attack.mitre.org/techniques/T1660" ;
+	.
+
+attack:external-reference-7889a3a5-777b-413b-9926-4173cfe4696a
+	a stix:StixObject ;
+	stix:description "Lee, B., Falcone, R. (2018, June 06). Sofacy Group’s Parallel Attacks. Retrieved June 18, 2018." ;
+	stix:source_name "Palo Alto Sofacy 06-2018" ;
+	stix:url "https://researchcenter.paloaltonetworks.com/2018/06/unit42-sofacy-groups-parallel-attacks/" ;
+	.
+
+attack:external-reference-7a0c5854-2763-4816-8ee7-09adc040dfe9
+	a stix:StixObject ;
+	stix:description "Microsoft. (2016, August 21). Cached and Stored Credentials Technical Overview. Retrieved February 21, 2020." ;
+	stix:source_name "Microsoft - Cached Creds" ;
+	stix:url "https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh994565(v%3Dws.11)" ;
+	.
+
+attack:external-reference-7b424f6a-628f-4d65-80d9-015626da7080
+	a stix:StixObject ;
+	stix:description "(Citation: FireEye Clandestine Wolf) (Citation: Recorded Future APT3 May 2017) (Citation: Symantec Buckeye)" ;
+	stix:source_name "APT3" ;
+	.
+
+attack:external-reference-7bb18fc5-68cb-4263-a594-1e3f8fe8410a
+	a stix:StixObject ;
+	stix:description "" ;
+	stix:source_name "When Fancy Bear isn’t so Fancy: APT group’s ‘crude’ methods continue to work  " ;
+	stix:url "https://www.cyberscoop.com/fancy-bear-trend-micro-russia-espionage/ " ;
+	.
+
+attack:external-reference-7eaaf865-0fb1-4792-bc7e-cf2f3c4a16d9
+	a stix:StixObject ;
+	stix:description "(Citation: Recorded Future APT3 May 2017) (Citation: Symantec Buckeye)" ;
+	stix:source_name "TG-0110" ;
+	.
+
+attack:external-reference-815a9846-8c7e-46e2-9786-ad85b6f8c11d
+	a stix:StixObject ;
+	stix:description "Korban, C, et al. (2017, September). APT3 Adversary Emulation Plan. Retrieved January 16, 2018." ;
+	stix:source_name "APT3 Adversary Emulation Plan" ;
+	stix:url "https://attack.mitre.org/docs/APT3_Adversary_Emulation_Plan.pdf" ;
+	.
+
+attack:external-reference-83853b0c-c50d-4132-a4e2-5337cfcd4b12
+	a stix:StixObject ;
+	stix:description "(Citation: iSIGHT Sandworm 2014) (Citation: F-Secure BlackEnergy 2014) (Citation: InfoSecurity Sandworm Oct 2014)(Citation: US District Court Indictment GRU Unit 74455 October 2020)(Citation: UK NCSC Olympic Attacks October 2020)" ;
+	stix:source_name "Sandworm Team" ;
+	.
+
+attack:external-reference-85e472a6-09e0-4f29-8c26-9cc30d0c7349
+	a stix:StixObject ;
+	stix:description "Hultquist, J.. (2016, January 7). Sandworm Team and the Ukrainian Power Authority Attacks. Retrieved October 6, 2017." ;
+	stix:source_name "iSIGHT Sandworm 2014" ;
+	stix:url "https://www.fireeye.com/blog/threat-research/2016/01/ukraine-and-sandworm-team.html" ;
+	.
+
+attack:external-reference-87b2b561-4d2b-4396-9d6d-04b78ae93eed
+	a stix:StixObject ;
+	stix:description "Transparent Tribe (APT36) | Pakistan-Aligned Threat Actor Expands Interest in Indian Education Sector" ;
+	stix:source_name "sentinelone.com" ;
+	stix:url "https://www.sentinelone.com/labs/transparent-tribe-apt36-pakistan-aligned-threat-actor-expands-interest-in-indian-education-sector/" ;
+	.
+
+attack:external-reference-87c03191-643f-436e-ac49-6f9cc6ab9033
+	a stix:StixObject ;
+	stix:description "SecureWorks Counter Threat Unit Threat Intelligence. (2016, June 16). Threat Group-4127 Targets Hillary Clinton Presidential Campaign. Retrieved August 3, 2016." ;
+	stix:source_name "SecureWorks TG-4127" ;
+	stix:url "https://www.secureworks.com/research/threat-group-4127-targets-hillary-clinton-presidential-campaign" ;
+	.
+
+attack:external-reference-8bda1bdb-1e94-47c3-9c7f-bc276959f9b1
+	a stix:StixObject ;
+	stix:description "Mercer, W. and Rascagneres, P. (2018, February 12). Olympic Destroyer Takes Aim At Winter Olympics. Retrieved March 14, 2019." ;
+	stix:source_name "Talos Olympic Destroyer 2018" ;
+	stix:url "https://blog.talosintelligence.com/2018/02/olympic-destroyer.html" ;
+	.
+
+attack:external-reference-8c0dd082-0250-43e9-98ab-958776e0c508
+	a stix:StixObject ;
+	stix:description "Mantvydas Baranauskas. (2019, November 16). Dumping and Cracking mscash - Cached Domain Credentials. Retrieved February 21, 2020." ;
+	stix:source_name "ired mscache" ;
+	stix:url "https://ired.team/offensive-security/credential-access-and-credential-dumping/dumping-and-cracking-mscash-cached-domain-credentials" ;
+	.
+
+attack:external-reference-8d504885-b5fb-48f3-a0d5-a4ca381d8974
+	a stix:StixObject ;
+	stix:description "Microsoft. (2017, October 15). Shutdown. Retrieved October 4, 2019." ;
+	stix:source_name "Microsoft Shutdown Oct 2017" ;
+	stix:url "https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/shutdown" ;
+	.
+
+attack:external-reference-8f5a1e20-c3b7-4543-a289-a97e0a8553a1
+	a stix:StixObject ;
+	stix:description "Eng, E., Caselden, D.. (2015, June 23). Operation Clandestine Wolf – Adobe Flash Zero-Day in APT3 Phishing Campaign. Retrieved January 14, 2016." ;
+	stix:source_name "FireEye Clandestine Wolf" ;
+	stix:url "https://www.fireeye.com/blog/threat-research/2015/06/operation-clandestine-wolf-adobe-flash-zero-day.html" ;
+	.
+
+attack:external-reference-90aec740-f8bf-4ba4-b392-d242993f5ca9
+	a stix:StixObject ;
+	stix:description "NSA/FBI. (2020, August). Russian GRU 85th GTsSS Deploys Previously Undisclosed Drovorub Malware. Retrieved August 25, 2020." ;
+	stix:source_name "NSA/FBI Drovorub August 2020" ;
+	stix:url "https://media.defense.gov/2020/Aug/13/2002476465/-1/-1/0/CSA_DROVORUB_RUSSIAN_GRU_MALWARE_AUG_2020.PDF" ;
+	.
+
+attack:external-reference-92aa2212-7673-4dcb-80b6-4117022c53a9
+	a stix:StixObject ;
+	stix:external-id "S0002" ;
+	stix:source_name "mitre-attack" ;
+	stix:url "https://attack.mitre.org/software/S0002" ;
+	.
+
+attack:external-reference-9439dcc4-0ca6-4f42-94e2-176023c2dc3c
+	a stix:StixObject ;
+	stix:description "(Citation: CrowdStrike VOODOO BEAR)(Citation: US District Court Indictment GRU Unit 74455 October 2020)(Citation: UK NCSC Olympic Attacks October 2020)" ;
+	stix:source_name "VOODOO BEAR" ;
+	.
+
+attack:external-reference-94a19ec2-5509-4252-9c40-e6be41ddcac4
+	a stix:StixObject ;
+	stix:source_name "mitre-attack" ;
+	stix:url "https://attack.mitre.org/groups/G0007" ;
+	.
+
+attack:external-reference-95023eb8-b0be-467a-90f0-f1b828202f6d
+	a stix:StixObject ;
+	stix:description "(Citation: SecureWorks TG-4127)" ;
+	stix:source_name "TG-4127" ;
+	.
+
+attack:external-reference-956cb022-d1cf-4517-8e50-7c2642da3058
+	a stix:StixObject ;
+	stix:description "PowerSploit. (n.d.). Retrieved December 4, 2014." ;
+	stix:source_name "Powersploit" ;
+	stix:url "https://github.com/mattifestation/PowerSploit" ;
+	.
+
+attack:external-reference-96a84c6b-669f-4381-bd32-64cdf7b1531b
+	a stix:StixObject ;
+	stix:description "UK and allies expose a campaign by the GRU, the Russian military intelligence service, of indiscriminate and reckless cyber attacks." ;
+	stix:source_name "Reckless campaign of cyber attacks by Russian military intelligence service exposed" ;
+	stix:url "https://www.ncsc.gov.uk/news/reckless-campaign-cyber-attacks-russian-military-intelligence-service-exposed" ;
+	.
+
+attack:external-reference-9a72839b-edd2-4613-9f18-eb634a192157
+	a stix:StixObject ;
+	stix:description "FireEye iSIGHT Intelligence. (2017, January 11). APT28: At the Center of the Storm. Retrieved January 11, 2017." ;
+	stix:source_name "FireEye APT28 January 2017" ;
+	stix:url "https://www2.fireeye.com/rs/848-DID-242/images/APT28-Center-of-Storm-2017.pdf" ;
+	.
+
+attack:external-reference-9bad3cf5-711c-47f0-8fb9-bc9aa71afc73
+	a stix:StixObject ;
+	stix:description "NSA, CISA, FBI, NCSC. (2021, July). Russian GRU Conducting Global Brute Force Campaign to Compromise Enterprise and Cloud Environments. Retrieved July 26, 2021." ;
+	stix:source_name "Cybersecurity Advisory GRU Brute Force Campaign July 2021" ;
+	stix:url "https://media.defense.gov/2021/Jul/01/2002753896/-1/-1/1/CSA_GRU_GLOBAL_BRUTE_FORCE_CAMPAIGN_UOO158036-21.PDF" ;
+	.
+
+attack:external-reference-9bfa2c18-27c5-49d3-9259-15fb0e333d0f
+	a stix:StixObject ;
+	stix:description "Pompeo, M. (2020, February 20). The United States Condemns Russian Cyber Attack Against the Country of Georgia. Retrieved June 18, 2020." ;
+	stix:source_name "USDOJ Sandworm Feb 2020" ;
+	stix:url "https://2017-2021.state.gov/the-united-states-condemns-russian-cyber-attack-against-the-country-of-georgia//index.html" ;
+	.
+
+attack:external-reference-a07b64ee-252c-47db-a6f8-cd94ef81cf30
+	a stix:StixObject ;
+	stix:description "FireEye. (2016, November 30). FireEye Responds to Wave of Destructive Cyber Attacks in Gulf Region. Retrieved January 11, 2017." ;
+	stix:source_name "FireEye Shamoon Nov 2016" ;
+	stix:url "https://www.fireeye.com/blog/threat-research/2016/11/fireeye_respondsto.html" ;
+	.
+
+attack:external-reference-a3de3194-6875-41ef-897b-86daba2a6f7f
+	a stix:StixObject ;
+	stix:external-id "CAPEC-98" ;
+	stix:source_name "capec" ;
+	stix:url "https://capec.mitre.org/data/definitions/98.html" ;
+	.
+
+attack:external-reference-a3fe848e-6166-41ae-86a6-b72ada65509d
+	a stix:StixObject ;
+	stix:description "Estonian Foreign Intelligence Service’s third public report which describes the world security environment surrounding Estonia " ;
+	stix:source_name "INTERNATIONAL SECURITY AND ESTONIA2018" ;
+	stix:url "https://www.valisluureamet.ee/pdf/raport-2018-ENG-web.pdf" ;
+	.
+
+attack:external-reference-a583109a-4b88-4eab-913d-8c563e397bc3
+	a stix:StixObject ;
+	stix:description "" ;
+	stix:source_name "(Cyber) GRU (I): Introduction" ;
+	stix:url "https://www.securityartwork.es/2019/01/24/cyber-gru-i-introduction/" ;
+	.
+
+attack:external-reference-a656dff2-9dba-4850-9d0e-5cb03a39ba0a
+	a stix:StixObject ;
+	stix:description "Spencer Gietzen. (n.d.). AWS Simple Storage Service S3 Ransomware Part 2: Prevention and Defense. Retrieved March 21, 2023." ;
+	stix:source_name "Rhino Security Labs AWS S3 Ransomware" ;
+	stix:url "https://rhinosecuritylabs.com/aws/s3-ransomware-part-2-prevention-and-defense/" ;
+	.
+
+attack:external-reference-a6fb9784-faeb-48ef-aac3-7f1a20da06cb
+	a stix:StixObject ;
+	stix:description "Official page" ;
+	stix:source_name "Microsoft" ;
+	stix:url "https://docs.microsoft.com/en-us/sysinternals/downloads/psexec" ;
+	.
+
+attack:external-reference-a7953e22-a772-49e3-80b5-c70e7072b789
+	a stix:StixObject ;
+	stix:description "Falcone, R. (2018, December 13). Shamoon 3 Targets Oil and Gas Organization. Retrieved March 14, 2019." ;
+	stix:source_name "Unit 42 Shamoon3 2018" ;
+	stix:url "https://unit42.paloaltonetworks.com/shamoon-3-targets-oil-gas-organization/" ;
+	.
+
+attack:external-reference-a81c80d9-e32a-4c3e-8df6-ea6ff80e7e57
+	a stix:StixObject ;
+	stix:description "FireEye. (2015). APT28: A WINDOW INTO RUSSIA’S CYBER ESPIONAGE OPERATIONS?. Retrieved August 19, 2015." ;
+	stix:source_name "FireEye APT28" ;
+	stix:url "https://www.fireeye.com/content/dam/fireeye-www/global/en/current-threats/pdfs/rpt-apt28.pdf" ;
+	.
+
+attack:external-reference-a9397d7e-4e4b-4d2b-95ac-f9bea32146f9
+	a stix:StixObject ;
+	stix:description "Kristopher Russo. (n.d.). Luna Moth Callback Phishing Campaign. Retrieved February 2, 2023." ;
+	stix:source_name "Unit42 Luna Moth" ;
+	stix:url "https://unit42.paloaltonetworks.com/luna-moth-callback-phishing/" ;
+	.
+
+attack:external-reference-aa5f6b7a-c024-4dbf-aa6e-ecace34a1741
+	a stix:StixObject ;
+	stix:description 'Chiu, A. (2016, June 27). New Ransomware Variant "Nyetya" Compromises Systems Worldwide. Retrieved March 26, 2019.' ;
+	stix:source_name "Talos Nyetya June 2017" ;
+	stix:url "https://blog.talosintelligence.com/2017/06/worldwide-ransomware-variant.html" ;
+	.
+
+attack:external-reference-ab417af7-c77c-40de-a84d-bf0aa17bfcd6
+	a stix:StixObject ;
+	stix:description "This designation has been used in reporting both to refer to the threat group and its associated malware.(Citation: FireEye APT28)(Citation: SecureWorks TG-4127)(Citation: Crowdstrike DNC June 2016)(Citation: ESET Sednit Part 3)(Citation: Ars Technica GRU indictment Jul 2018)(Citation: Talos Seduploader Oct 2017)" ;
+	stix:source_name "Sofacy" ;
+	.
+
+attack:external-reference-ab4bd483-2adb-41d6-9090-e01eb2e8339f
+	a stix:StixObject ;
+	stix:description "Scott W. Brady. (2020, October 15). United States vs. Yuriy Sergeyevich Andrienko et al.. Retrieved November 25, 2020." ;
+	stix:source_name "US District Court Indictment GRU Unit 74455 October 2020" ;
+	stix:url "https://www.justice.gov/opa/press-release/file/1328521/download" ;
+	.
+
+attack:external-reference-ab6d311f-2cb4-4274-b632-fdf7346fb1fb
+	a stix:StixObject ;
+	stix:description "(Citation: Symantec Buckeye)" ;
+	stix:source_name "Buckeye" ;
+	.
+
+attack:external-reference-abe5f931-dbb8-4331-a504-19df4755e62e
+	a stix:StixObject ;
+	stix:description "Pilkington, M.. (2012, December 17). Protecting Privileged Domain Accounts: PsExec Deep-Dive. Retrieved August 17, 2016." ;
+	stix:source_name "SANS PsExec" ;
+	stix:url "https://digital-forensics.sans.org/blog/2012/12/17/protecting-privileged-domain-accounts-psexec-deep-dive" ;
+	.
+
+attack:external-reference-ad822172-cb10-4a48-a60e-e5ad45ffc4ff
+	a stix:StixObject ;
+	stix:source_name "www.trellix.com" ;
+	stix:url "https://www.trellix.com/en-gb/about/newsroom/stories/threat-labs/prime-ministers-office-compromised.html" ;
+	.
+
+attack:external-reference-adbbb0f2-265e-4f38-ab37-392b984a7ab7
+	a stix:StixObject ;
+	stix:external-id "T1662" ;
+	stix:source_name "mitre-attack" ;
+	stix:url "https://attack.mitre.org/techniques/T1662" ;
+	.
+
+attack:external-reference-adf8c8a5-206e-474f-9547-a45690fbf06f
+	a stix:StixObject ;
+	stix:description "Proofpoint. (n.d.). What Is Email Spoofing?. Retrieved February 24, 2023." ;
+	stix:source_name "Proofpoint-spoof" ;
+	stix:url "https://www.proofpoint.com/us/threat-reference/email-spoofing" ;
+	.
+
+attack:external-reference-ae002e83-ac68-488c-b61a-c027f2f5d73c
+	a stix:StixObject ;
+	stix:description "Hu, W., et al. (2015, December 4). Rootnik Android Trojan Abuses Commercial Rooting Tool and Steals Private Information. Retrieved September 26, 2023." ;
+	stix:source_name "rootnik_rooting_tool" ;
+	stix:url "https://unit42.paloaltonetworks.com/rootnik-android-trojan-abuses-commercial-rooting-tool-and-steals-private-information/" ;
+	.
+
+attack:external-reference-b711adc0-d9f1-48c3-9e2b-4227d2c63165
+	a stix:StixObject ;
+	stix:description "ESET Research. (2019, May 22). A journey to Zebrocy land. Retrieved June 20, 2019." ;
+	stix:source_name "ESET Zebrocy May 2019" ;
+	stix:url "https://www.welivesecurity.com/2019/05/22/journey-zebrocy-land/" ;
+	.
+
+attack:external-reference-b8e7ca7b-cb95-4c67-9a31-4eb8f24df66b
+	a stix:StixObject ;
+	stix:description "Australian Cyber Security Centre. (2012, December). Mitigating Spoofed Emails Using Sender Policy Framework. Retrieved October 19, 2020." ;
+	stix:source_name "ACSC Email Spoofing" ;
+	stix:url "https://www.cyber.gov.au/sites/default/files/2019-03/spoof_email_sender_policy_framework.pdf" ;
+	.
+
+attack:external-reference-b9f6d86f-e6b8-488e-a501-c9a012684344
+	a stix:StixObject ;
+	stix:description "(Citation: Secureworks IRON VIKING )(Citation: US District Court Indictment GRU Unit 74455 October 2020)(Citation: UK NCSC Olympic Attacks October 2020)" ;
+	stix:source_name "IRON VIKING" ;
+	.
+
+attack:external-reference-bd29bd36-8507-4c84-9cb6-b30d0d4cbadf
+	a stix:StixObject ;
+	stix:description "Enterprise ATT&CK Enterprise ATT&CK   Lateral Tool Transfer Retrieved. 2019/10/27  Lateral Tool Transfer Retrieved. 2019/10/27 " ;
+	stix:source_name "Enterprise ATT&CK" ;
+	stix:url "https://attack.mitre.org/techniques/T1570/" ;
+	.
+
+attack:external-reference-bdfdbf7d-069a-4757-a1ad-910870a9fca8
+	a stix:StixObject ;
+	stix:external-id "S0365" ;
+	stix:source_name "mitre-attack" ;
+	stix:url "https://attack.mitre.org/software/S0365" ;
+	.
+
+attack:external-reference-c042024c-231a-4522-b100-e0760a4dc6c5
+	a stix:StixObject ;
+	stix:description "" ;
+	stix:source_name "Who is FANCY BEAR (APT28)? " ;
+	stix:url "https://www.crowdstrike.com/blog/who-is-fancy-bear/ " ;
+	.
+
+attack:external-reference-c0e0f080-df5f-4797-a7a1-3ced6a9bc692
+	a stix:StixObject ;
+	stix:description "Mercer, W. and Rascagneres, P. (2018, February 12). Olympic Destroyer Takes Aim At Winter Olympics. Retrieved March 14, 2019." ;
+	stix:source_name "Talos Olympic Destroyer 2018" ;
+	stix:url "https://blog.talosintelligence.com/2018/02/olympic-destroyer.html" ;
+	.
+
+attack:external-reference-c452ae9b-bb60-4c89-8a57-23eaaab5a3df
+	a stix:StixObject ;
+	stix:description "(Citation: iSIGHT Sandworm 2014) (Citation: F-Secure BlackEnergy 2014)(Citation: UK NCSC Olympic Attacks October 2020)" ;
+	stix:source_name "Quedagh" ;
+	.
+
+attack:external-reference-cd0e25b1-b147-4eb1-aa4f-3f2af92a4b2f
+	a stix:StixObject ;
+	stix:description "David Talbot. (2013, August 21). Dropbox and Similar Services Can Sync Malware. Retrieved May 31, 2023." ;
+	stix:source_name "Dropbox Malware Sync" ;
+	stix:url "https://www.technologyreview.com/2013/08/21/83143/dropbox-and-similar-services-can-sync-malware/" ;
+	.
+
+attack:external-reference-d24b4343-cbd3-4c03-a6e6-faa23fc2e2bc
+	a stix:StixObject ;
+	stix:source_name "mitre-attack" ;
+	stix:url "https://attack.mitre.org/groups/G0007" ;
+	.
+
+attack:external-reference-d2a6c956-ed0c-4d08-b4e2-a84aaa42fc75
+	a stix:StixObject ;
+	stix:description "Brady, S . (2018, October 3). Indictment - United States vs Aleksei Sergeyevich Morenets, et al.. Retrieved October 1, 2020." ;
+	stix:source_name "US District Court Indictment GRU Oct 2018" ;
+	stix:url "https://www.justice.gov/opa/page/file/1098481/download" ;
+	.
+
+attack:external-reference-d2ad6b50-0063-46f1-be9b-0199090da0c1
+	a stix:StixObject ;
+	stix:description "(Citation: ESET Sednit Part 3)(Citation: Talos Seduploader Oct 2017)(Citation: Talos Seduploader Oct 2017)" ;
+	stix:source_name "Tsar Team" ;
+	.
+
+attack:external-reference-d58873d6-b348-4c2d-9e0e-aa9497ea260e
+	a stix:StixObject ;
+	stix:description 'Mercer, W., et al. (2017, October 22). "Cyber Conflict" Decoy Document Used in Real Cyber Conflict. Retrieved November 2, 2018.' ;
+	stix:source_name "Talos Seduploader Oct 2017" ;
+	stix:url "https://blog.talosintelligence.com/2017/10/cyber-conflict-decoy-document.html" ;
+	.
+
+attack:external-reference-d8e3fbb6-616c-4e46-82a2-8053c728698b
+	a stix:StixObject ;
+	stix:description "Based on similarities between TTPs, malware, and targeting, Sandworm Team and Quedagh appear to refer to the same group. (Citation: iSIGHT Sandworm 2014) (Citation: F-Secure BlackEnergy 2014)" ;
+	stix:source_name "Quedagh" ;
+	.
+
+attack:external-reference-da91448a-05ea-4a85-acaa-f1e96f2c1bac
+	a stix:StixObject ;
+	stix:description "CISA. (2018, April 20). Russian State-Sponsored Cyber Actors Targeting Network Infrastructure Devices. Retrieved February 14, 2022." ;
+	stix:source_name "alert_TA18_106A" ;
+	stix:url "https://www.cisa.gov/uscert/ncas/alerts/TA18-106A" ;
+	.
+
+attack:external-reference-daa26990-033a-48e3-8473-5fd58561648c
+	a stix:StixObject ;
+	stix:description "Falcone, R. (2018, March 15). Sofacy Uses DealersChoice to Target European Government Agency. Retrieved June 4, 2018." ;
+	stix:source_name "Sofacy DealersChoice" ;
+	stix:url "https://researchcenter.paloaltonetworks.com/2018/03/unit42-sofacy-uses-dealerschoice-target-european-government-agency/" ;
+	.
+
+attack:external-reference-dc8e59f4-55c9-4d33-859e-fb34509a02bd
+	a stix:StixObject ;
+	stix:description "NCSC. (2020, February 20). NCSC supports US advisory regarding GRU intrusion set Sandworm. Retrieved June 10, 2020." ;
+	stix:source_name "NCSC Sandworm Feb 2020" ;
+	stix:url "https://www.ncsc.gov.uk/news/ncsc-supports-sandworm-advisory" ;
+	.
+
+attack:external-reference-de23cf49-a96c-4e54-bc6c-8b5cd72d35cc
+	a stix:StixObject ;
+	stix:description "" ;
+	stix:source_name "U.S. Department of Justice indictment (July 2018)" ;
+	stix:url "https://www.justice.gov/file/1080281/download " ;
+	.
+
+attack:external-reference-de36cf10-3a89-424c-98cf-da6d49346edb
+	a stix:StixObject ;
+	stix:external-id "T1566" ;
+	stix:source_name "mitre-attack" ;
+	stix:url "https://attack.mitre.org/techniques/T1566" ;
+	.
+
+attack:external-reference-e0e88c8e-0fec-49a7-b068-5ff36d6cd737
+	a stix:StixObject ;
+	stix:description "This designation has been used in reporting both to refer to the threat group and its associated malware. (Citation: FireEye APT28) (Citation: SecureWorks TG-4127) (Citation: Crowdstrike DNC June 2016) (Citation: ESET Sednit Part 3) (Citation: Ars Technica GRU indictment Jul 2018)(Citation: Talos Seduploader Oct 2017)" ;
+	stix:source_name "Sofacy" ;
+	.
+
+attack:external-reference-e17c907e-2bc9-4af9-9a25-26f4f8fd031a
+	a stix:StixObject ;
+	stix:description "Secureworks. (2020, May 1). IRON VIKING Threat Profile. Retrieved June 10, 2020." ;
+	stix:source_name "Secureworks IRON VIKING" ;
+	stix:url "https://www.secureworks.com/research/threat-profiles/iron-viking" ;
+	.
+
+attack:external-reference-e2d2f8d3-227c-46a3-9989-3b940686c2cc
+	a stix:StixObject ;
+	stix:description "Kaspersky Lab. (2017, March 7). From Shamoon to StoneDrill: Wipers attacking Saudi organizations and beyond. Retrieved March 14, 2019." ;
+	stix:source_name "Kaspersky StoneDrill 2017" ;
+	stix:url "https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2018/03/07180722/Report_Shamoon_StoneDrill_final.pdf" ;
+	.
+
+attack:external-reference-e36fdd10-6797-4e7c-9342-6e73c2e07863
+	a stix:StixObject ;
+	stix:description "Pompeo, M. (2020, February 20). The United States Condemns Russian Cyber Attack Against the Country of Georgia. Retrieved June 18, 2020." ;
+	stix:source_name "USDOJ Sandworm Feb 2020" ;
+	stix:url "https://www.state.gov/the-united-states-condemns-russian-cyber-attack-against-the-country-of-georgia/" ;
+	.
+
+attack:external-reference-e4dfccc7-a35d-4365-b108-832a653bb259
+	a stix:StixObject ;
+	stix:description "(Citation: CrowdStrike VOODOO BEAR)" ;
+	stix:source_name "VOODOO BEAR" ;
+	.
+
+attack:external-reference-e5d5d02c-1494-4c63-8043-2917901621ab
+	a stix:StixObject ;
+	stix:description "(Citation: NCSC Sandworm Feb 2020)" ;
+	stix:source_name "BlackEnergy (Group)" ;
+	.
+
+attack:external-reference-e7639e8b-5dfb-49d0-95eb-ba191e850df8
+	a stix:StixObject ;
+	stix:description "Mimoso, M.. (2014, June 18). Hacker Puts Hosting Service Code Spaces Out of Business. Retrieved December 15, 2020." ;
+	stix:source_name "Data Destruction - Threat Post" ;
+	stix:url "https://threatpost.com/hacker-puts-hosting-service-code-spaces-out-of-business/106761/" ;
+	.
+
+attack:external-reference-e78398e3-5e0e-47be-990a-8bc7d1b801db
+	a stix:StixObject ;
+	stix:description "Microsoft. (2020, October 13). Anti-spoofing protection in EOP. Retrieved October 19, 2020." ;
+	stix:source_name "Microsoft Anti Spoofing" ;
+	stix:url "https://docs.microsoft.com/en-us/microsoft-365/security/office-365-security/anti-spoofing-protection?view=o365-worldwide" ;
+	.
+
+attack:external-reference-e878c904-51f1-44b5-9da5-984bd17f24ac
+	a stix:StixObject ;
+	stix:description "Lancaster, T. (2015, July 25). A tale of Pirpi, Scanbox & CVE-2015-3113. Retrieved March 30, 2016." ;
+	stix:source_name "PWC Pirpi Scanbox" ;
+	stix:url "http://pwc.blogs.com/cyber_security_updates/2015/07/pirpi-scanbox.html" ;
+	.
+
+attack:external-reference-e892065d-268e-4248-8f0c-79c103bf833e
+	a stix:StixObject ;
+	stix:description "(Citation: FireEye APT28) (Citation: SecureWorks TG-4127) (Citation: Crowdstrike DNC June 2016) (Citation: Kaspersky Sofacy) (Citation: ESET Sednit Part 3) (Citation: Ars Technica GRU indictment Jul 2018)(Citation: Talos Seduploader Oct 2017)(Citation: Symantec APT28 Oct 2018)(Citation: Securelist Sofacy Feb 2018)(Citation: Cybersecurity Advisory GRU Brute Force Campaign July 2021)" ;
+	stix:source_name "APT28" ;
+	.
+
+attack:external-reference-e8d8438c-3502-4833-85c0-c379002c5b27
+	a stix:StixObject ;
+	stix:description "Eli Collins. (2016, November 25). Windows' Domain Cached Credentials v2. Retrieved February 21, 2020." ;
+	stix:source_name "PassLib mscache" ;
+	stix:url "https://passlib.readthedocs.io/en/stable/lib/passlib.hash.msdcc2.html" ;
+	.
+
+attack:external-reference-ecae79c7-e1ba-4dcd-88f8-5fa4fa028609
+	a stix:StixObject ;
+	stix:description "Moran, N., et al. (2014, November 21). Operation Double Tap. Retrieved January 14, 2016." ;
+	stix:source_name "FireEye Operation Double Tap" ;
+	stix:url "https://www.fireeye.com/blog/threat-research/2014/11/operation_doubletap.html" ;
+	.
+
+attack:external-reference-ee57c6d6-9379-4df2-ae77-6858d8cc62e8
+	a stix:StixObject ;
+	stix:description "" ;
+	stix:source_name "When Fancy Bear isn’t so Fancy: APT group’s ‘crude’ methods continue to work" ;
+	stix:url "https://www.cyberscoop.com/fancy-bear-trend-micro-russia-espionage/ " ;
+	.
+
+attack:external-reference-ef736ee8-04cc-4606-8218-cd15196ca6be
+	a stix:StixObject ;
+	stix:description "(Citation: NCSC Sandworm Feb 2020)" ;
+	stix:source_name "Telebots" ;
+	.
+
+attack:external-reference-f2d76bb2-53ea-4564-b96c-8bd9b9abea0a
+	a stix:StixObject ;
+	stix:description "Kaspersky Lab's Global Research & Analysis Team. (2018, February 20). A Slice of 2017 Sofacy Activity. Retrieved November 27, 2018." ;
+	stix:source_name "Securelist Sofacy Feb 2018" ;
+	stix:url "https://securelist.com/a-slice-of-2017-sofacy-activity/83930/" ;
+	.
+
+attack:external-reference-f40bf9d4-dbad-4860-8209-8f97aec5657d
+	a stix:StixObject ;
+	stix:external-id "T1485" ;
+	stix:source_name "mitre-attack" ;
+	stix:url "https://attack.mitre.org/techniques/T1485" ;
+	.
+
+attack:external-reference-f7192e93-ea12-4421-b399-329e881c90d2
+	a stix:StixObject ;
+	stix:description " Brian Prince. (2014, June 20). Code Hosting Service Shuts Down After Cyber Attack. Retrieved March 21, 2023." ;
+	stix:source_name "Dark Reading Code Spaces Cyber Attack" ;
+	stix:url "https://www.darkreading.com/attacks-breaches/code-hosting-service-shuts-down-after-cyber-attack" ;
+	.
+
+attack:external-reference-f7cf8fa3-f3b7-4a53-bbb4-50d1915a92fb
+	a stix:StixObject ;
+	stix:description "Scott W. Brady. (2020, October 15). United States vs. Yuriy Sergeyevich Andrienko et al.. Retrieved November 25, 2020." ;
+	stix:source_name "US District Court Indictment GRU Unit 74455 October 2020" ;
+	stix:url "https://www.justice.gov/opa/press-release/file/1328521/download" ;
+	.
+
+attack:external-reference-fabcc61b-5b46-45c3-969b-2abe918c1e05
+	a stix:StixObject ;
+	stix:description "Muncaster, P.. (2014, October 14). Microsoft Zero Day Traced to Russian ‘Sandworm’ Hackers. Retrieved October 6, 2017." ;
+	stix:source_name "InfoSecurity Sandworm Oct 2014" ;
+	stix:url "https://www.infosecurity-magazine.com/news/microsoft-zero-day-traced-russian/" ;
+	.
+
+attack:external-reference-fb17894e-00d0-4077-876e-3aa2f19553e1
+	a stix:StixObject ;
+	stix:description "Steve Ranger. (2020, February 27). Ransomware victims thought their backups were safe. They were wrong. Retrieved March 21, 2023." ;
+	stix:source_name "ZDNet Ransomware Backups 2020" ;
+	stix:url "https://www.zdnet.com/article/ransomware-victims-thought-their-backups-were-safe-they-were-wrong/" ;
+	.
+
+attack:external-reference-fcc9dabd-faa3-473c-a4ca-483b9a372d66
+	a stix:StixObject ;
+	stix:description "Russinovich, M. (2014, May 2). Windows Sysinternals PsExec v2.11. Retrieved May 13, 2015." ;
+	stix:source_name "Russinovich Sysinternals" ;
+	stix:url "https://technet.microsoft.com/en-us/sysinternals/bb897553.aspx" ;
+	.
+
+attack:external-reference-fe15ca83-e636-461d-9d61-1367de46a851
+	a stix:StixObject ;
+	stix:description """New “Prestige” ransomware impacts organizations in Ukraine and Poland
+""" ;
+	stix:source_name "Microsoft" ;
+	stix:url "https://www.microsoft.com/security/blog/2022/10/14/new-prestige-ransomware-impacts-organizations-in-ukraine-and-poland/" ;
+	.
+
+attack:indicator--37c8138b-e93a-436e-8c3d-2ad4ee088672
+	a stix:StixObject ;
+	stix:created "2024-01-25T12:24:22.649337Z"^^xsd:dateTime ;
+	stix:id "indicator--37c8138b-e93a-436e-8c3d-2ad4ee088672" ;
+	stix:indicates attack:malware--85c19b24-1788-419b-9caa-cc64969d9e70 ;
+	stix:indicator_types "malicious-activity" ;
+	stix:kill_chain_phase
+		attack:kill-chain-phase-d584bdae-780c-430d-a32f-647ecf467f01 ,
+		attack:kill-chain-phase-f19409d4-71da-4d6a-b7f0-701473f151be
+		;
+	stix:modified "2024-01-25T12:28:31.886338Z"^^xsd:dateTime ;
+	stix:name "a7d6dcdf5ca2c426cc6c447cff76834d97bc1fdff2cd14bad0b7c2817408c334" ;
+	stix:pattern "[file:hashes.'SHA-256' = 'a7d6dcdf5ca2c426cc6c447cff76834d97bc1fdff2cd14bad0b7c2817408c334']" ;
+	stix:pattern_type "stix" ;
+	stix:spec_version "2.1" ;
+	stix:type "indicator" ;
+	stix:valid_from "2024-01-25T00:00:00Z"^^xsd:dateTime ;
+	.
+
+attack:indicator--44fa003b-f177-4788-a141-fc41feb725c0
+	a stix:StixObject ;
+	stix:created "2022-05-02T07:45:28.827136Z"^^xsd:dateTime ;
+	stix:id "indicator--44fa003b-f177-4788-a141-fc41feb725c0" ;
+	stix:indicates attack:malware--85c19b24-1788-419b-9caa-cc64969d9e70 ;
+	stix:indicator_types "malicious-activity" ;
+	stix:kill_chain_phase
+		attack:kill-chain-phase-2f0947b2-cb67-4cde-8f24-3f0392f905bc ,
+		attack:kill-chain-phase-57e0e44b-0d15-4f07-a2bb-738e99b44137 ,
+		attack:kill-chain-phase-a0143bc9-99f4-476c-81fd-8e53cee25de9 ,
+		attack:kill-chain-phase-a0bf4350-fa83-4205-b859-824cc6831f59 ,
+		attack:kill-chain-phase-d4b9dbb2-d2df-4d68-988f-211e564c1f64
+		;
+	stix:modified "2024-01-25T12:28:31.917312Z"^^xsd:dateTime ;
+	stix:name "3e27b6b287f0b9f7e85bfe18901d961110ae969d58b44af15b1d75be749022c2" ;
+	stix:pattern "[file:hashes.'SHA-256' = '3e27b6b287f0b9f7e85bfe18901d961110ae969d58b44af15b1d75be749022c2']" ;
+	stix:pattern_type "stix" ;
+	stix:spec_version "2.1" ;
+	stix:type "indicator" ;
+	stix:valid_from "2020-04-17T00:00:00Z"^^xsd:dateTime ;
+	.
+
+attack:indicator--87bfdd14-a6f5-4a1b-b006-391632a29118
+	a stix:StixObject ;
+	stix:created "2023-07-12T04:45:16.743513Z"^^xsd:dateTime ;
+	stix:id "indicator--87bfdd14-a6f5-4a1b-b006-391632a29118" ;
+	stix:indicator_types "malicious-activity" ;
+	stix:kill_chain_phase attack:kill-chain-phase-ed2cc870-0518-4b66-b001-f56815a6511a ;
+	stix:modified "2024-01-25T12:28:31.9173Z"^^xsd:dateTime ;
+	stix:name "edb1ff2521fb4bf748111f92786d260d40407a2e8463dcd24bb09f908ee13eb9" ;
+	stix:pattern "[file:hashes.MD5 = 'cfdd16225e67471f5ef54cab9b3a5558' OR file:hashes.'SHA-1' = '26de43cc558a4e0e60eddd4dc9321bcb5a0a181c' OR file:hashes.'SHA-256' = 'edb1ff2521fb4bf748111f92786d260d40407a2e8463dcd24bb09f908ee13eb9' OR file:hashes.'SHA-512' = 'e1855a872f4db7c17eb22130d9cb205eddde641f1b39ea5de97dfb762fc97dc2347bc6e6e88b9c5a303e1540b4b4bdb19c839c7d3e237348adbfa4b942f24adb']" ;
+	stix:pattern_type "stix" ;
+	stix:spec_version "2.1" ;
+	stix:type "indicator" ;
+	stix:valid_from "2023-07-12T00:00:00Z"^^xsd:dateTime ;
+	.
+
+attack:indicator--dcbe2279-fe76-4688-b380-8cd032c9c96f
+	a stix:StixObject ;
+	stix:created "2024-01-25T12:22:43.526192Z"^^xsd:dateTime ;
+	stix:id "indicator--dcbe2279-fe76-4688-b380-8cd032c9c96f" ;
+	stix:indicates attack:malware--85c19b24-1788-419b-9caa-cc64969d9e70 ;
+	stix:indicator_types "malicious-activity" ;
+	stix:kill_chain_phase
+		attack:kill-chain-phase-d230fc05-848c-425f-b063-60544e33e800 ,
+		attack:kill-chain-phase-fb4aef95-821f-49c2-b391-e98e17d749f4
+		;
+	stix:modified "2024-01-25T12:28:31.886319Z"^^xsd:dateTime ;
+	stix:name "f188abc33d351c2254d794b525c5a8b79ea78acd3050cd8d27d3ecfc568c2936" ;
+	stix:pattern "[file:hashes.'SHA-256' = 'f188abc33d351c2254d794b525c5a8b79ea78acd3050cd8d27d3ecfc568c2936']" ;
+	stix:pattern_type "stix" ;
+	stix:spec_version "2.1" ;
+	stix:type "indicator" ;
+	stix:valid_from "2024-01-25T00:00:00Z"^^xsd:dateTime ;
+	.
+
+attack:indicator--e2f291c2-96eb-42b5-ad53-f31eb18af2c2
+	a stix:StixObject ;
+	stix:created "2022-05-02T07:45:28.827163Z"^^xsd:dateTime ;
+	stix:id "indicator--e2f291c2-96eb-42b5-ad53-f31eb18af2c2" ;
+	stix:indicator_types "malicious-activity" ;
+	stix:kill_chain_phase
+		attack:kill-chain-phase-0642f06e-20e7-429f-89d8-b9ed3bc60e54 ,
+		attack:kill-chain-phase-29cf7552-ea1b-453f-a88b-7940de348d8c ,
+		attack:kill-chain-phase-753b5384-f7de-46d9-b794-9bf468f6c670 ,
+		attack:kill-chain-phase-9e7fe3be-4014-4f05-8e59-5def9a7b72f3 ,
+		attack:kill-chain-phase-c56e95bf-e5f1-4c47-a823-f24e4439631e
+		;
+	stix:modified "2024-01-25T12:28:31.917251Z"^^xsd:dateTime ;
+	stix:name "28858cc6e05225f7d156d1c6a21ed11188777fa0a752cb7b56038d79a88627cc" ;
+	stix:pattern "[file:hashes.'SHA-256' = '28858cc6e05225f7d156d1c6a21ed11188777fa0a752cb7b56038d79a88627cc']" ;
+	stix:pattern_type "stix" ;
+	stix:spec_version "2.1" ;
+	stix:type "indicator" ;
+	stix:valid_from "2020-04-17T00:00:00Z"^^xsd:dateTime ;
+	.
+
+attack:indicator--f7c9a115-ad93-483c-8859-8f7dcadcfbb2
+	a stix:StixObject ;
+	stix:created "2024-01-25T12:24:54.516241Z"^^xsd:dateTime ;
+	stix:id "indicator--f7c9a115-ad93-483c-8859-8f7dcadcfbb2" ;
+	stix:indicates attack:malware--85c19b24-1788-419b-9caa-cc64969d9e70 ;
+	stix:indicator_types "malicious-activity" ;
+	stix:kill_chain_phase attack:kill-chain-phase-02334ab4-97fc-4398-9ca1-e52e77e2563a ;
+	stix:modified "2024-01-25T12:28:31.886356Z"^^xsd:dateTime ;
+	stix:name "d934cb8d0eadb93f8a57a9b8853c5db218d5db78c16a35f374e413884d915016" ;
+	stix:pattern "[file:hashes.'SHA-256' = 'd934cb8d0eadb93f8a57a9b8853c5db218d5db78c16a35f374e413884d915016']" ;
+	stix:pattern_type "stix" ;
+	stix:spec_version "2.1" ;
+	stix:type "indicator" ;
+	stix:valid_from "2024-01-25T00:00:00Z"^^xsd:dateTime ;
+	.
+
+attack:indicator--fc44bed3-e193-4a84-8974-db9f0ff6bdd7
+	a stix:StixObject ;
+	stix:created "2024-01-25T12:20:47.085601Z"^^xsd:dateTime ;
+	stix:id "indicator--fc44bed3-e193-4a84-8974-db9f0ff6bdd7" ;
+	stix:indicates attack:malware--85c19b24-1788-419b-9caa-cc64969d9e70 ;
+	stix:indicator_types "malicious-activity" ;
+	stix:kill_chain_phase
+		attack:kill-chain-phase-567728e4-1cdf-470e-9cb3-981be6a50358 ,
+		attack:kill-chain-phase-e40e1e4b-95a9-4b85-bff2-7608a08bd09f
+		;
+	stix:modified "2024-01-25T12:28:31.886283Z"^^xsd:dateTime ;
+	stix:name "ab5bf79274b6583a00be203256a4eacfa30a37bc889b5493da9456e2d5885c7f" ;
+	stix:pattern "[file:hashes.'SHA-256' = 'ab5bf79274b6583a00be203256a4eacfa30a37bc889b5493da9456e2d5885c7f']" ;
+	stix:pattern_type "stix" ;
+	stix:spec_version "2.1" ;
+	stix:type "indicator" ;
+	stix:valid_from "2024-01-25T00:00:00Z"^^xsd:dateTime ;
+	.
+
+attack:intrusion-set--11494a5b-a418-4808-ba13-4cc123707ab8
+	a stix:StixObject ;
+	stix:alias
+		"BlackEnergy (Group)" ,
+		"DEV-0960" ,
+		"ELECTRUM" ,
+		"Frozenbarents" ,
+		"Hades" ,
+		"IRIDIUM" ,
+		"IRON VIKING" ,
+		"Prestige ransomware crew" ,
+		"Prestige ranusomeware crew" ,
+		"Quedagh" ,
+		"Sandworm" ,
+		"Sandworm Team" ,
+		"Seashell Blizzard" ,
+		"Telebots" ,
+		"UAC-0082" ,
+		"VOODOO BEAR"
+		;
+	stix:attributed-to attack:threat-actor--e17e2be6-6b69-4b79-8f49-e287b7e682e4 ;
+	stix:created "2022-04-04T17:47:28.665235Z"^^xsd:dateTime ;
+	stix:description """Sandworm is a well known Russian-speaking threat actor responsible for destabilization campaigns by doing sabotage and leaking operations against occidental interests. This intrusion set has been attributed by several intelligence agencies to Russia's **[General Staff Main Intelligence Directorate (GRU)](/intelligence/objects/threat-actor--ca2f2a66-74c5-4c68-80a3-ec43478d8f50) Main Center for Special Technologies (GTsST) military unit 74455**. 
+
+According to open sources, **Sandworm has been active since at least 2008 when they had attempted Distributed Denial of Service attacks (DDoS)** by using the first version of the [BackEnergy malware](/intelligence/objects/malware--52de4136-9d17-453a-aba5-0b6c681a671d) during the Russo-Georgian war. Following this first appearance on the international scene, Sandworm made the headlines in several international crises implicating Russia such as in Ukraine, following the Euromaidan crisis (2013) by doing several **sabotage campaigns against the Ukrainian government, media, transports and energy sector**. 
+
+During the 2014-2022 cold confratation between Russian and Ukraine, Sandworm was also responsible for the creation of the [NotPetya worm](/intelligence/objects/malware--30a3a093-00e5-438f-a7ca-aa5d8ef92e03) that has been spread in hundreds of networks connected to Ukrainian entities. NotPetya, by mimicking ransomware, had sabotage capabilities **causing several billion dollars of damage for the infected companies**.
+
+Sandworm is known to have been implicated in other crises such as the 2018 Winter Olympics destabilization attempt with the infamous [Olympic Destroyer](/intelligence/objects/malware--2fa4b91a-7684-494d-a0f6-71215867833e) malware or the Skripal case, by trying to **compromise physically the Organization for the Prohibition of Chemical Weapons** and several laboratories working on this case (2018) via spear phishing campaigns. 
+
+One of the most famous destabilization attempts done by the Sandworm intrusion set is the **French “Macron Leaks” (2017)** when the operators compromised several mailboxes of Macron staff members to leak their content to Wikileaks and on the /pol/ board of the (now defunct) 4Chan forum. This operation was a small part of a much wider spear phishing campaign targeting many sectors and individuals, related by Google TAG in 2020.
+
+Even though Sandworm closely works with another GRU-linked intrusion set dubbed as [APT28](/intelligence/objects/intrusion-set--40479e35-a7ca-4c05-998d-2cf21ab751cc), their operators employ different TTPs. **Sandworm is more flexible and seems dedicated to special destabilization operations involving a smaller footprint in the targeted entities**. 
+
+**Sandworm is largely active since the beginning of the Russia-Ukraine war**, conducting campaigns for **intelligence collection**, **multiple destructive network attacks**, contributing to **information operations**, and even, according to Google, using “hack-for-hire” services to secure initial access to some targets. 
+Sandworn levareged multiple **straightforward** and **ready-to-use wipers** (HermeticWiper, AcidRain, Industroyer2, ZeroWipe, SwiftSlicer...) looking to [contribute](https://blog.sekoia.io/one-year-after-the-cyber-implications-of-the-russo-ukrainian-war/) to Russian intelligence to work faster, looking for more immediate effects  rather than complex and long-term planned destructive worms. 
+
+# TTPs
+
+One of the main characteristics of this intrusion set is to **use mostly open source tools for initial access ([Empire](/intelligence/objects/malware--43650dc8-980b-4b5f-9646-476cccbae2f7), [Meterpreter](/intelligence/objects/tool--38d6ece7-4244-4dcd-a4fe-5c150c561b8b), remote administration tools)** and **tailored and destructive malware to achieve their operations** such as [Industroyer](/intelligence/objects/malware--b0fab28c-b86a-4140-946e-0bd2a26e191c), [BadRabbit](/intelligence/objects/malware--461ca82d-640f-43b5-911a-97763e400899), NotPetya or even Olympic Destroyer. Sandworm intrusion set proven to master all of intrusion vectors from spear phishing to watering holes, frontal compromise and supply chain attacks. Moreover, they showed **their ability to develop their own modular implants for SOHO routers such as [VPN Filter](/intelligence/objects/malware--d9e9a85d-dbd9-471c-bb39-c70d122ada7f) and [Cyclops Blink](/intelligence/objects/malware--a76416d2-0551-4843-8c9f-fdf930a168e9) to constitute their own botnet**. 
+
+Regarding its infrastructure, Sandworm is using compromised websites and VPS servers. **The use of domain names by this intrusion set is very rare** and they rely mostly on IPv4 addresses in their malware configuration. Historically, they also set up TOR relays on their C2s. **This use of TOR relays can be related to an attempt to prevent SIGINT interception**.
+
+Since 2018, the Sandworm intrusion set operators have been subject to different lawsuits and public shaming from occidental authorities. In 2018, four sandworm operators were caught by the General Intelligence and Security Service of the Netherlands (AIVD) during a close access operation against the OPCW network. Following this raid, the identities of the GRU members and their attack methods were disclosed to the public.
+
+In October 2020, the US Department of Justice indicted six other operators working for the Sandworm instruction set. These GRU Unit 74455 officers were indicted for several cyber operations such as NotPetya attack, the Macron Leaks, Olympic Destroyer or the operation against the OPCW network. Some of these attacks were conducted with the assistance of GRU Unit 26165, which is also dubbed as APT28. 
+
+### 2022-2023 Russia-Ukraine war activity
+
+Despite the public shaming and the indictments, and after a quiet period in 2021, Sandworm came back to the stage with the beginning of the Russo-Ukrainian War, with multiple compromise and sabotage operations targeting Ukrainian and occidental entities (mainly coutries supporting Kiev)
+
+Sandworm was observed by many cybersecurity vendors using several kind of wipers impacting Ukraine entities.
+* [Acid Rain wiper](/intelligence/objects/malware--0a2df090-4065-4a9d-a21e-84b6f0e9694d), used in the VIA-SAT operation impacting satellite communication
+* [CaddyWiper](/intelligence/objects/malware--ab89b963-512f-41ca-be8b-3f77c0de651b) (used by APT28 as well), alongside Ar[guepatch d](/intelligence/objects/malware--b2016a76-1eaa-4367-808a-7cc2f4eb36cd)ropper
+* [Prestige Ransomware](/intelligence/objects/malware--7114b03e-ec78-4820-9009-7af893930a6c), used as a wiper to target transportation and logistics industries in Ukraine and Poland.
+* [AWFULSHRED](/intelligence/objects/malware--52eaa90b-aa36-4e09-bd6c-216d9b3ed463), used in a desctrutive operation impactive the Ukrainian Press Agency.
+* [ZeroWipe](/intelligence/objects/malware--30b81fbb-0109-4439-93e8-1d6d8a4dd502), used in a destructive operation impactive the Ukrainian Press Agency.
+* [SwiftSlicer](/intelligence/objects/malware--a04a6636-61b7-4390-8671-108937b74b8e)
+
+
+""" ;
+	stix:external_reference
+		attack:external-reference-01183b5b-27d0-48f7-81b3-63ab9cd063e8 ,
+		attack:external-reference-13f53bfe-0c60-4c69-8604-404ef3cb0063 ,
+		attack:external-reference-15f3829d-6c92-4c7e-b5f6-174b24794799 ,
+		attack:external-reference-24045b32-d69e-4595-8800-e496d9d569c3 ,
+		attack:external-reference-2db8b503-cbbf-4d06-acd2-b5a50fa44bcb ,
+		attack:external-reference-3e6f5bfc-b95c-46de-a43d-841e62885709 ,
+		attack:external-reference-40d20464-15ab-48d6-a6e4-c1dcdb992319 ,
+		attack:external-reference-47c124fd-4a5b-4caf-9470-156d1392c895 ,
+		attack:external-reference-48a7b568-2c23-44c3-a66f-bbf38916f446 ,
+		attack:external-reference-4c48ed72-be5b-4f47-904f-7921199f6900 ,
+		attack:external-reference-5121b539-ecfa-4ae4-96d9-35c1a01099dc ,
+		attack:external-reference-548ebe20-04ef-4d8a-853c-e58a35389b7a ,
+		attack:external-reference-54951242-5fe1-4c8e-bf70-aeb584e5f904 ,
+		attack:external-reference-63642f9e-4cc8-44cb-89c2-364e1ba78209 ,
+		attack:external-reference-64d963f2-389b-4662-9569-437168d83690 ,
+		attack:external-reference-70725767-a9a9-4649-9fb1-d6e7cb982bcd ,
+		attack:external-reference-83853b0c-c50d-4132-a4e2-5337cfcd4b12 ,
+		attack:external-reference-85e472a6-09e0-4f29-8c26-9cc30d0c7349 ,
+		attack:external-reference-9439dcc4-0ca6-4f42-94e2-176023c2dc3c ,
+		attack:external-reference-9bfa2c18-27c5-49d3-9259-15fb0e333d0f ,
+		attack:external-reference-ab4bd483-2adb-41d6-9090-e01eb2e8339f ,
+		attack:external-reference-b9f6d86f-e6b8-488e-a501-c9a012684344 ,
+		attack:external-reference-c452ae9b-bb60-4c89-8a57-23eaaab5a3df ,
+		attack:external-reference-d8e3fbb6-616c-4e46-82a2-8053c728698b ,
+		attack:external-reference-dc8e59f4-55c9-4d33-859e-fb34509a02bd ,
+		attack:external-reference-e17c907e-2bc9-4af9-9a25-26f4f8fd031a ,
+		attack:external-reference-e36fdd10-6797-4e7c-9342-6e73c2e07863 ,
+		attack:external-reference-e4dfccc7-a35d-4365-b108-832a653bb259 ,
+		attack:external-reference-e5d5d02c-1494-4c63-8043-2917901621ab ,
+		attack:external-reference-ef736ee8-04cc-4606-8218-cd15196ca6be ,
+		attack:external-reference-fabcc61b-5b46-45c3-969b-2abe918c1e05 ,
+		attack:external-reference-fe15ca83-e636-461d-9d61-1367de46a851
+		;
+	stix:first_seen "2008-01-01T00:00:00.000Z"^^xsd:dateTime ;
+	stix:goals
+		"Destabilisation" ,
+		"Espionage"
+		;
+	stix:id "intrusion-set--11494a5b-a418-4808-ba13-4cc123707ab8" ;
+	stix:modified "2024-01-25T11:21:38.293151Z"^^xsd:dateTime ;
+	stix:name "Sandworm" ;
+	stix:resource_level "government" ;
+	stix:spec_version "2.1" ;
+	stix:type "intrusion-set" ;
+	stix:uses attack:malware--85c19b24-1788-419b-9caa-cc64969d9e70 ;
+	.
+
+attack:intrusion-set--2c30f2e1-a0f5-46f5-be66-29209dbc9e08
+	a stix:StixObject ;
+	stix:alias
+		"APT3" ,
+		"Bronze Mayfair" ,
+		"Buckeye" ,
+		"Gothic Panda" ,
+		"Group 6" ,
+		"Pirpi" ,
+		"TG-0110" ,
+		"Threat Group-0110" ,
+		"UPS Team"
+		;
+	stix:created "2022-04-04T19:26:20.455817Z"^^xsd:dateTime ;
+	stix:description """
+[APT3](https://attack.mitre.org/groups/G0022) is an intrusion set that has been active from at least 2009 to 2019 and which is attributed by researchers to **[China’s Ministry of State Security](https://www.recordedfuture.com/chinese-mss-behind-apt3)** and the company **Boyusec.**
+
+It ran several campaigns that have succeeded. The first campaigns known in open source took place in 2014 with the **Operation Clandestine Fox** that infected users through a 0 day vulnerability affecting Internet Explorer. APT3 used spear phishing emails with malicious links leading to webpages exploiting this vulnerability.. This campaign was followed by **Operation Double Tap** in November 2014 which targeted multiple organizations also with spear phishing leading to a 0day exploitation. Then came **Operation Clandestine Wolf** in 2015 where the group exploited a zero-day vulnerability affecting Adobe flash, targeting Hong Kong and possibly other states. CrowdStrike reports showed that the group was active until 2019 during campaigns with other hacker groups such as Turbine Panda to steal intellectual property from 2010 to 2019 in aerospace companies in order to build Chinese C919 airplanes.
+
+**Reported victimology**
+
+This group has targeted the US, Europe, Asia (South Korea, India and Vietnam) and Hong Kong since 2015.
+Its targeted organizations are in different sectors such as aerospace and defense, energy, high technology, construction and engineering, telecommunications and transportation.
+
+**TTPs**
+
+APT3 used mainly **spear phishing campaigns** with malicious links leading to zero-day vulnerabilities affecting web browsers (such as Internet Explorer) and their plugins (Adobe Flash Player). APT3 was known to be very agile and use their own implants in the victim network such as Pirpi, their validator which was deployed following a successful exploitation and UPS their persistence backdoor, installed on specific assets inside the network.
+
+**Toolset**
+
+APT3 used its own implants inside the compromised networks, known as Pirpi and UPS.
+According to [Symantec](https://symantec-enterprise-blogs.security.com/blogs/threat-intelligence/buckeye-windows-zero-day-exploit), APT3 used Equation Group Tools a year before the Shadow Brokers Leak in 2017. However, it is likely possible that Equation Group used APT3 previous accesses via SIGINT interception on Filensfer or Pirpi backdoor to piggyback APT3.  . 
+The malwares used by APT3 were Pirpi Backdoor (also known as CookieCutter and [Shotput](https://app.sekoia.io/intelligence/objects/malware--6f2b63e9-2e1b-4407-86bd-1f7519a081e0)), UPSOSInfo, [RemoteCMD](https://app.sekoia.io/intelligence/objects/malware--09970f39-81e8-4dbb-a7fb-53a39135449c), and possibly [PlugX](https://app.sekoia.io/intelligence/objects/malware--1bd27a17-2c45-4864-bc7c-b2c77ddd17ac) (aka. Sogu).""" ;
+	stix:external_reference
+		attack:external-reference-014a1055-6aa6-4efb-8627-8c876b4bc810 ,
+		attack:external-reference-1d974d36-f996-4acb-af13-81fca06ccdaa ,
+		attack:external-reference-3773a475-f39c-49ea-9bc2-53293f8dffa1 ,
+		attack:external-reference-4ccc59fd-c539-46a2-8199-451c46dec3a6 ,
+		attack:external-reference-55095cb3-9509-4f67-a707-1f35b086a255 ,
+		attack:external-reference-5a8867dd-c812-42af-8790-c8be3f9d6d71 ,
+		attack:external-reference-676c51b5-bb57-4f92-b879-7e0ef0851bc7 ,
+		attack:external-reference-6c6e63e9-0849-45e1-b946-437e4c5c060d ,
+		attack:external-reference-7b424f6a-628f-4d65-80d9-015626da7080 ,
+		attack:external-reference-7eaaf865-0fb1-4792-bc7e-cf2f3c4a16d9 ,
+		attack:external-reference-815a9846-8c7e-46e2-9786-ad85b6f8c11d ,
+		attack:external-reference-8f5a1e20-c3b7-4543-a289-a97e0a8553a1 ,
+		attack:external-reference-ab6d311f-2cb4-4274-b632-fdf7346fb1fb ,
+		attack:external-reference-e878c904-51f1-44b5-9da5-984bd17f24ac ,
+		attack:external-reference-ecae79c7-e1ba-4dcd-88f8-5fa4fa028609
+		;
+	stix:goals
+		"espionage" ,
+		"intellectual property theft"
+		;
+	stix:id "intrusion-set--2c30f2e1-a0f5-46f5-be66-29209dbc9e08" ;
+	stix:modified "2024-01-25T07:01:37.838515Z"^^xsd:dateTime ;
+	stix:name "APT3" ;
+	stix:spec_version "2.1" ;
+	stix:type "intrusion-set" ;
+	.
+
+attack:intrusion-set--604abc33-5985-41b3-b72c-222131371916
+	a stix:StixObject ;
+	stix:alias
+		"APT 28" ,
+		"APT28" ,
+		"FROZENLAKE" ,
+		"Fancy Bear" ,
+		"Fighting Ursa" ,
+		"Forest Blizzard" ,
+		"GRU Unit 26165" ,
+		"Group 74" ,
+		"Pawn Storm" ,
+		"SNAKEMACKEREL" ,
+		"STRONTIUM" ,
+		"Sednit" ,
+		"Sofacy" ,
+		"Swallowtail" ,
+		"TA422" ,
+		"TG-4127" ,
+		"Threat Group-4127" ,
+		"Tsar Team" ,
+		"UAC-0028"
+		;
+	stix:attributed-to attack:threat-actor--e17e2be6-6b69-4b79-8f49-e287b7e682e4 ;
+	stix:created "2022-04-04T17:42:49.911488Z"^^xsd:dateTime ;
+	stix:description """**APT28** is a Russia-nexus intrusion set attributed by Western intelligence services to [Russia's General Staff Main Intelligence Directorate (GRU)](/intelligence/objects/threat-actor--ca2f2a66-74c5-4c68-80a3-ec43478d8f50**) 85th Main Special Service Center** (GTsSS) Military **Unit 26165**. This intrusion set, which started its operations in 2004 against occidental Military networks, is especially known for its hybrid operations on the sidelines of armed conflict and diplomatic crises related to Russia. 
+
+It was in 2014 with a report called \"Operation Pawn Storm\" released by Trend Micro that the  public became aware of this intrusion set. Since then, APT28 has made the headlines during several espionage, destabilization and sabotage operations.
+
+Its intrusion techniques are most often singular, such as spear phishing using a malicious attachment or leading to a watering hole, credentials theft by using malicious emails associated with domain typo-squatting or dns hijacking. APT28 is also known for achieving VPN / RDP frontal compromises and IOT compromises in order to get a foothold in the targeted networks. This intrusion set is also suspected to have achieved at least one attack by a supply chain in central Asia.
+
+The APT28 intrusion set was designated historically by its tools, that are for a large part developed internally, such as the malicious code X-TUNNEL, the X-AGENT backdoor, the UEFI rootkit dubbed “[LoJax](/intelligence/objects/malware--293bc1ee-5d2e-4d07-8e78-e2c31df62cf9)\", or the CORESHELL validator. Using these tools mostly during its operations, APT28 seems to have left them for the use of open source offensive tools.
+
+Other tools targeting different platforms have also been identified such as an [Android implant](/intelligence/objects/malware--4c8a56d1-4bb9-4827-ad2d-faa402cdefa4) spread to Ukrainian gunners on the Donbass Front as well as IOS and OSX versions of the X-AGENT implant.
+
+The operations of the APT28 intrusion set were closely linked to the operations of another threat actor dubbed \"[Sandworm](/intelligence/objects/intrusion-set--f29bd8cc-1cea-497c-ac3f-8d590b95c9d6)\", \"Blackenergy\" or \"Hades\". This second intrusion set has been attributed to another GRU unit, the unit 74455. It seems that these two threat actors worked together during several operations, APT28 giving the lead to Sandworm on some destabilization campaigns (Ukrainian crisis, US and French presidential elections). 
+
+The distinction between these two intrusion sets is most often done from the tools used, Sandworm preferring open source offensive tools such as [Empire](/intelligence/objects/malware--43650dc8-980b-4b5f-9646-476cccbae2f7) or [Metasploit](/intelligence/objects/tool--57f456d7-20b2-4609-859e-54d9238946f0) during its operations. Which is now harder to perform now since APT28 also switched to open source tools.
+
+### Campaigns
+
+APT28 has become famous for its destabilization campaigns during several crisis contexts since 2013. APT28 was customary in the creation of fake hacktivist groups to allow the spreading of stolen information (emails, documents) from its victims or the claim of successful attacks. APT28 is also known for modifying stolen documents before making them public to increase the impact of destabilization. Here is a non-exhaustive list of several false flags and hacktivist groups operated by APT28, sometimes with the support of the Sandworm intrusion set.
+
+|  Avatar/FalseFalg/Operation  | Context |  Use |  Attribution confidence |
+|----------|---------------|-------|----------|
+| CyberBerkut | Ukrainian crisis | Sabotage, leaks | High | 
+| YemeniCyberArmy | Yemeni crisis | Leaks | High | 
+| SyrianCyberArmy | Syrian crisis | DDoS attacks | High | 
+| CyberCaliphate | Russia-occident tensions | Sabotage, Leaks | High | 
+| Fancy Bear | Olympic Games doping ban | Leaks | High | 
+| DCLeaks | US presidential elections 2016 | Leaks | High | 
+| GUCCIFER 2.0 | US presidential elections 2016 | Leaks | High | 
+| MacronLeaks | FR presidential elections | Leaks | High (Sandworm) | 
+| OlympicDestroyer/Lazarus | Olympic Games doping ban, Pyeongchang. | Sabotage | Medium (Sandworm) | 
+| RANA Leaks | Undetermined | Leaks | Low (overlaps with APT28 infrastructure & TTPs) | 
+
+In its latest operations, APT28 seems to have gradually abandoned the creation of hacktivist avatars - which may have been judged too discriminating and heavy to implement - to give documents directly to journalists, influencers, or on several forums.
+
+Following some operational security mistakes carried out by its operators and lawsuits engaged by occidental countries, a public attribution was carried out against this intrusion set. The attribution led to the public designation of several operators working within Units 26165 and 74455.
+
+Following these lawsuits, the historical APT28 intrusion set (using its own tools, a discriminant infrastructure and carrying out false flags) seems to have mutated or disappeared. No more articles mentioning new attack campaigns associated with APT28 have been published since 2019.
+
+In 2021, CLUSTER25 reported the use of a backdoor dubbed \"[Skinny Boy](/intelligence/objects/malware--fa9a8c0d-1193-4bc1-8290-5c3a0dcbcc43)\" which had potential links with APT28. However, the analysis of the backdoor and the context (mainly the associated infrastructure) done by SEKOIA.IO could not link it with high confidence to an APT28 resurgence.
+
+The temporary end of the APT28 and Sandworm intrusion sets seem to have coincided with the resurgence of another Russian-speaking threat actor on the stage: [NOBELIUM](/intelligence/objects/intrusion-set--7dbe6e76-c59f-4dec-a7cf-c2a7e0210d16)/APT29, linked to the [SVR](/intelligence/objects/threat-actor--de741e1a-061d-449f-a7d8-8d8aee0069b1). This resurgence of APT29 could indicate the Kremlin preference for other intelligence services to engage in cyber operations. This choice could be directly linked to the past errors of APT28 and Sandworm.
+
+In 2022, Trellix attributed an attack to APT28 targeting Western Asia. Trellix found a new malware dubbed Graphite using Microsoft OneDrive as C2.
+
+A report from Cluster25 researchers described a phishing technique used by fancybear since at least February 2022. The group uses a PowerShell Slide Show (.pps) document which execute a PowerShell code contained in its 'HyperLinks' metadata when the user opens it in presentation mode and move its mouse over it.
+
+### New TTPs
+
+Over the current **Russia-Ukraine war**, APT28 conducted **widespread phishing campaigns** to collect information to **provide political and military advantage**, and relied on opportunistic access through historical compromise to conduct **destructive cyber attacks**.
+
+These recent attacks saw the emergence of new TTPs. APT28 today seems to prefer the use of disposable implants often developed in interpreted languages such as **Javascript**, **Powershell** or simple **bat scripts**, created specifically for each campaign. Their implants are not sophisticated at all and often linked to carrying out a single task such as creating a tunnel, recovering & exfiltrating passwords & co.
+
+APT28 also seems to have switched from registered VPS and domains to **Mockbin services**, **TOR (for tunneling)** and **compromised network appliances** to create their operational infrastructure. This prevent easy correlation from a Threat Intelligence perspective.""" ;
+	stix:external_reference
+		attack:external-reference-058d6de3-bd58-4ade-9c17-8c02dd3c34a1 ,
+		attack:external-reference-05dcd192-8f3d-4dbe-92bf-46e8e8adb27b ,
+		attack:external-reference-144a4934-f594-4e59-9f25-af209fc20fd4 ,
+		attack:external-reference-14e2cb3b-8843-46af-bfd2-b4031308cc45 ,
+		attack:external-reference-14ebbf4b-b7c3-4e58-9791-2c0eec907d32 ,
+		attack:external-reference-1782be4c-f0bf-4c6e-8295-1c1c24056644 ,
+		attack:external-reference-1a8222df-52a5-44fb-b362-91eb0dd10487 ,
+		attack:external-reference-1b789d87-52a8-443a-98a7-e96ed1aa4ebd ,
+		attack:external-reference-1fd85434-11ab-4a24-92f3-f9e6bea63ec8 ,
+		attack:external-reference-287e5235-d665-42e9-9b5a-2444119b0874 ,
+		attack:external-reference-2914e6fa-0e58-46da-a4c3-47c649cbec4f ,
+		attack:external-reference-31c03997-c813-41ac-b9b8-8525b802195a ,
+		attack:external-reference-3dfdd3ee-c9c4-47cf-9d57-bb097a0c472f ,
+		attack:external-reference-4a4b1b39-1ba5-4de5-b576-5cd917833f55 ,
+		attack:external-reference-4a6fea1d-8ee8-40ae-a95d-852664c48a52 ,
+		attack:external-reference-4b12f55e-fc7f-4e9d-a041-c6b26e0d3460 ,
+		attack:external-reference-510f5040-e2d8-4544-8a15-cd3c3d92e77b ,
+		attack:external-reference-5138b7ec-836c-4497-a5d7-e2c8b1c9b171 ,
+		attack:external-reference-54e13daf-1da6-4692-925f-24db5fd89943 ,
+		attack:external-reference-5d376b06-c588-47ec-b00b-5e7cbb3f3243 ,
+		attack:external-reference-66786ebb-8f5d-41c5-8189-6c5e87cf8132 ,
+		attack:external-reference-6863220d-fd6a-4f3b-a3a8-ddf34765b7ad ,
+		attack:external-reference-688d0790-5fae-44c5-94db-a5a980c31b66 ,
+		attack:external-reference-6b86dc17-8d70-4750-80ab-c87d98625ecf ,
+		attack:external-reference-6e79a871-df62-4ed4-933e-b25a4b316b66 ,
+		attack:external-reference-7029e451-4e31-4f12-9db5-642a49d1c47e ,
+		attack:external-reference-719ab9fd-5b56-4704-80ae-0834bd877628 ,
+		attack:external-reference-71e9dfc4-09fc-4f29-9a5d-128f0bbf6470 ,
+		attack:external-reference-7329c4e1-2e9a-43c2-bc49-396ffa0a256a ,
+		attack:external-reference-7889a3a5-777b-413b-9926-4173cfe4696a ,
+		attack:external-reference-7bb18fc5-68cb-4263-a594-1e3f8fe8410a ,
+		attack:external-reference-87c03191-643f-436e-ac49-6f9cc6ab9033 ,
+		attack:external-reference-90aec740-f8bf-4ba4-b392-d242993f5ca9 ,
+		attack:external-reference-94a19ec2-5509-4252-9c40-e6be41ddcac4 ,
+		attack:external-reference-95023eb8-b0be-467a-90f0-f1b828202f6d ,
+		attack:external-reference-9a72839b-edd2-4613-9f18-eb634a192157 ,
+		attack:external-reference-9bad3cf5-711c-47f0-8fb9-bc9aa71afc73 ,
+		attack:external-reference-a81c80d9-e32a-4c3e-8df6-ea6ff80e7e57 ,
+		attack:external-reference-ab417af7-c77c-40de-a84d-bf0aa17bfcd6 ,
+		attack:external-reference-ad822172-cb10-4a48-a60e-e5ad45ffc4ff ,
+		attack:external-reference-b711adc0-d9f1-48c3-9e2b-4227d2c63165 ,
+		attack:external-reference-c042024c-231a-4522-b100-e0760a4dc6c5 ,
+		attack:external-reference-d24b4343-cbd3-4c03-a6e6-faa23fc2e2bc ,
+		attack:external-reference-d2a6c956-ed0c-4d08-b4e2-a84aaa42fc75 ,
+		attack:external-reference-d2ad6b50-0063-46f1-be9b-0199090da0c1 ,
+		attack:external-reference-d58873d6-b348-4c2d-9e0e-aa9497ea260e ,
+		attack:external-reference-daa26990-033a-48e3-8473-5fd58561648c ,
+		attack:external-reference-de23cf49-a96c-4e54-bc6c-8b5cd72d35cc ,
+		attack:external-reference-e0e88c8e-0fec-49a7-b068-5ff36d6cd737 ,
+		attack:external-reference-e892065d-268e-4248-8f0c-79c103bf833e ,
+		attack:external-reference-ee57c6d6-9379-4df2-ae77-6858d8cc62e8 ,
+		attack:external-reference-f2d76bb2-53ea-4564-b96c-8bd9b9abea0a
+		;
+	stix:first_seen "2004-01-01T00:00:00.000Z"^^xsd:dateTime ;
+	stix:goals
+		"Destabilization" ,
+		"Espionage" ,
+		"Sabotage"
+		;
+	stix:id "intrusion-set--604abc33-5985-41b3-b72c-222131371916" ;
+	stix:modified "2024-01-25T11:30:41.081863Z"^^xsd:dateTime ;
+	stix:name "APT28" ;
+	stix:resource_level "government" ;
+	stix:spec_version "2.1" ;
+	stix:type "intrusion-set" ;
+	.
+
+attack:kill-chain-phase-02334ab4-97fc-4398-9ca1-e52e77e2563a
+	a stix:StixObject ;
+	stix:kill_chain_name "lockheed-martin-cyber-kill-chain" ;
+	stix:kill_chain_phase_name "actions-on-objectives" ;
+	.
+
+attack:kill-chain-phase-0642f06e-20e7-429f-89d8-b9ed3bc60e54
+	a stix:StixObject ;
+	stix:kill_chain_name "mitre-attack" ;
+	stix:kill_chain_phase_name "lateral-movement" ;
+	.
+
+attack:kill-chain-phase-16dd8e9a-f6ba-4d98-84fb-e05ec8d1a465
+	a stix:StixObject ;
+	stix:kill_chain_name "mitre-ics-attack" ;
+	stix:kill_chain_phase_name "inhibit-response-function" ;
+	.
+
+attack:kill-chain-phase-1ce24b9c-3346-4791-af41-f5b66f61ee13
+	a stix:StixObject ;
+	stix:kill_chain_name "lockheed-martin-cyber-kill-chain" ;
+	stix:kill_chain_phase_name "actions-on-objectives" ;
+	.
+
+attack:kill-chain-phase-216cbd3a-57d7-4b7c-a616-ef1bf07a6636
+	a stix:StixObject ;
+	stix:kill_chain_name "mitre-attack" ;
+	stix:kill_chain_phase_name "collection" ;
+	.
+
+attack:kill-chain-phase-29cf7552-ea1b-453f-a88b-7940de348d8c
+	a stix:StixObject ;
+	stix:kill_chain_name "mitre-attack" ;
+	stix:kill_chain_phase_name "execution" ;
+	.
+
+attack:kill-chain-phase-2c354d2d-1c52-4cc9-8314-0062b0df5c7e
+	a stix:StixObject ;
+	stix:kill_chain_name "lockheed-martin-cyber-kill-chain" ;
+	stix:kill_chain_phase_name "exploitation" ;
+	.
+
+attack:kill-chain-phase-2f0947b2-cb67-4cde-8f24-3f0392f905bc
+	a stix:StixObject ;
+	stix:kill_chain_name "lockheed-martin-cyber-kill-chain" ;
+	stix:kill_chain_phase_name "actions-on-objectives" ;
+	.
+
+attack:kill-chain-phase-40e32987-cb20-4c45-9265-3a976e509c73
+	a stix:StixObject ;
+	stix:kill_chain_name "mitre-attack" ;
+	stix:kill_chain_phase_name "credential-access" ;
+	.
+
+attack:kill-chain-phase-421dae65-78e9-472a-8477-7850b5a35ce4
+	a stix:StixObject ;
+	stix:kill_chain_name "mitre-attack" ;
+	stix:kill_chain_phase_name "privilege-escalation" ;
+	.
+
+attack:kill-chain-phase-4502b079-1a7c-4d27-9586-75714d1e1cf7
+	a stix:StixObject ;
+	stix:kill_chain_name "mitre-attack" ;
+	stix:kill_chain_phase_name "impact" ;
+	.
+
+attack:kill-chain-phase-49069175-57e2-4d6b-9873-4e97e1712630
+	a stix:StixObject ;
+	stix:kill_chain_name "lockheed-martin-cyber-kill-chain" ;
+	stix:kill_chain_phase_name "actions-on-objectives" ;
+	.
+
+attack:kill-chain-phase-491fde32-5314-4c06-a01d-ac5e358ad53a
+	a stix:StixObject ;
+	stix:kill_chain_name "mitre-attack" ;
+	stix:kill_chain_phase_name "credential-access" ;
+	.
+
+attack:kill-chain-phase-537291f3-3aa9-42fe-b2f1-0579796bfa32
+	a stix:StixObject ;
+	stix:kill_chain_name "mitre-attack" ;
+	stix:kill_chain_phase_name "lateral-movement" ;
+	.
+
+attack:kill-chain-phase-567728e4-1cdf-470e-9cb3-981be6a50358
+	a stix:StixObject ;
+	stix:kill_chain_name "lockheed-martin-cyber-kill-chain" ;
+	stix:kill_chain_phase_name "installation" ;
+	.
+
+attack:kill-chain-phase-57e0e44b-0d15-4f07-a2bb-738e99b44137
+	a stix:StixObject ;
+	stix:kill_chain_name "mitre-attack" ;
+	stix:kill_chain_phase_name "lateral-movement" ;
+	.
+
+attack:kill-chain-phase-62ff0f18-e005-4730-9180-99e43f183505
+	a stix:StixObject ;
+	stix:kill_chain_name "mitre-attack" ;
+	stix:kill_chain_phase_name "lateral-movement" ;
+	.
+
+attack:kill-chain-phase-689b8143-9b0d-4d5a-aa86-a2c13821bdcf
+	a stix:StixObject ;
+	stix:kill_chain_name "mitre-attack" ;
+	stix:kill_chain_phase_name "lateral-movement" ;
+	.
+
+attack:kill-chain-phase-6ad4689e-7c05-4be2-82bd-a75bd45a3dbd
+	a stix:StixObject ;
+	stix:kill_chain_name "mitre-attack" ;
+	stix:kill_chain_phase_name "impact" ;
+	.
+
+attack:kill-chain-phase-6f19ebbb-95c7-4783-9a14-96925a92f042
+	a stix:StixObject ;
+	stix:kill_chain_name "lockheed-martin-cyber-kill-chain" ;
+	stix:kill_chain_phase_name "actions-on-objectives" ;
+	.
+
+attack:kill-chain-phase-721f2a4f-aaa4-4a29-a140-1b022a12ac7b
+	a stix:StixObject ;
+	stix:kill_chain_name "mitre-attack" ;
+	stix:kill_chain_phase_name "impact" ;
+	.
+
+attack:kill-chain-phase-732d71b6-319b-4360-a17f-f44399ce69ea
+	a stix:StixObject ;
+	stix:kill_chain_name "mitre-attack" ;
+	stix:kill_chain_phase_name "execution" ;
+	.
+
+attack:kill-chain-phase-753b5384-f7de-46d9-b794-9bf468f6c670
+	a stix:StixObject ;
+	stix:kill_chain_name "lockheed-martin-cyber-kill-chain" ;
+	stix:kill_chain_phase_name "actions-on-objectives" ;
+	.
+
+attack:kill-chain-phase-75c5b7dc-2a23-4e96-94d4-349bd9b04f1d
+	a stix:StixObject ;
+	stix:kill_chain_name "lockheed-martin-cyber-kill-chain" ;
+	stix:kill_chain_phase_name "actions-on-objectives" ;
+	.
+
+attack:kill-chain-phase-8bc09f51-bb8b-4bfe-9b16-6495a429c503
+	a stix:StixObject ;
+	stix:kill_chain_name "mitre-attack" ;
+	stix:kill_chain_phase_name "lateral-movement" ;
+	.
+
+attack:kill-chain-phase-8c4c6fda-d260-482f-be77-85130a134758
+	a stix:StixObject ;
+	stix:kill_chain_name "mitre-attack" ;
+	stix:kill_chain_phase_name "execution" ;
+	.
+
+attack:kill-chain-phase-9e7fe3be-4014-4f05-8e59-5def9a7b72f3
+	a stix:StixObject ;
+	stix:kill_chain_name "mitre-attack" ;
+	stix:kill_chain_phase_name "impact" ;
+	.
+
+attack:kill-chain-phase-a0143bc9-99f4-476c-81fd-8e53cee25de9
+	a stix:StixObject ;
+	stix:kill_chain_name "mitre-attack" ;
+	stix:kill_chain_phase_name "impact" ;
+	.
+
+attack:kill-chain-phase-a0bf4350-fa83-4205-b859-824cc6831f59
+	a stix:StixObject ;
+	stix:kill_chain_name "mitre-attack" ;
+	stix:kill_chain_phase_name "execution" ;
+	.
+
+attack:kill-chain-phase-a14dedcb-4b41-4bb0-861a-598319d3e80c
+	a stix:StixObject ;
+	stix:kill_chain_name "mitre-attack" ;
+	stix:kill_chain_phase_name "impact" ;
+	.
+
+attack:kill-chain-phase-b51d397b-a48b-45f1-9440-9f3a046b0b3c
+	a stix:StixObject ;
+	stix:kill_chain_name "mitre-attack" ;
+	stix:kill_chain_phase_name "initial-access" ;
+	.
+
+attack:kill-chain-phase-c56e95bf-e5f1-4c47-a823-f24e4439631e
+	a stix:StixObject ;
+	stix:kill_chain_name "lockheed-martin-cyber-kill-chain" ;
+	stix:kill_chain_phase_name "installation" ;
+	.
+
+attack:kill-chain-phase-c7c2218d-ee47-4b50-a373-22dac7d5b864
+	a stix:StixObject ;
+	stix:kill_chain_name "lockheed-martin-cyber-kill-chain" ;
+	stix:kill_chain_phase_name "installation" ;
+	.
+
+attack:kill-chain-phase-cbfeed84-5a8e-4530-91ee-a56ce8ccfe6e
+	a stix:StixObject ;
+	stix:kill_chain_name "mitre-mobile-attack" ;
+	stix:kill_chain_phase_name "impact" ;
+	.
+
+attack:kill-chain-phase-ccb14826-1044-490a-8e20-f19bb2cc1cd7
+	a stix:StixObject ;
+	stix:kill_chain_name "lockheed-martin-cyber-kill-chain" ;
+	stix:kill_chain_phase_name "installation" ;
+	.
+
+attack:kill-chain-phase-ce1a1db1-748b-4247-9d39-1f681b52859e
+	a stix:StixObject ;
+	stix:kill_chain_name "mitre-ics-attack" ;
+	stix:kill_chain_phase_name "lateral-movement" ;
+	.
+
+attack:kill-chain-phase-d230fc05-848c-425f-b063-60544e33e800
+	a stix:StixObject ;
+	stix:kill_chain_name "lockheed-martin-cyber-kill-chain" ;
+	stix:kill_chain_phase_name "actions-on-objectives" ;
+	.
+
+attack:kill-chain-phase-d4b9dbb2-d2df-4d68-988f-211e564c1f64
+	a stix:StixObject ;
+	stix:kill_chain_name "lockheed-martin-cyber-kill-chain" ;
+	stix:kill_chain_phase_name "installation" ;
+	.
+
+attack:kill-chain-phase-d584bdae-780c-430d-a32f-647ecf467f01
+	a stix:StixObject ;
+	stix:kill_chain_name "lockheed-martin-cyber-kill-chain" ;
+	stix:kill_chain_phase_name "installation" ;
+	.
+
+attack:kill-chain-phase-dbd72a10-4fe0-4340-9413-6fb899a53f8b
+	a stix:StixObject ;
+	stix:kill_chain_name "mitre-attack" ;
+	stix:kill_chain_phase_name "persistence" ;
+	.
+
+attack:kill-chain-phase-de6e3f80-4279-422b-9abd-4c49a3bbc37e
+	a stix:StixObject ;
+	stix:kill_chain_name "mitre-mobile-attack" ;
+	stix:kill_chain_phase_name "initial-access" ;
+	.
+
+attack:kill-chain-phase-e40e1e4b-95a9-4b85-bff2-7608a08bd09f
+	a stix:StixObject ;
+	stix:kill_chain_name "lockheed-martin-cyber-kill-chain" ;
+	stix:kill_chain_phase_name "actions-on-objectives" ;
+	.
+
+attack:kill-chain-phase-ed2cc870-0518-4b66-b001-f56815a6511a
+	a stix:StixObject ;
+	stix:kill_chain_name "lockheed-martin-cyber-kill-chain" ;
+	stix:kill_chain_phase_name "actions-on-objectives" ;
+	.
+
+attack:kill-chain-phase-f19409d4-71da-4d6a-b7f0-701473f151be
+	a stix:StixObject ;
+	stix:kill_chain_name "lockheed-martin-cyber-kill-chain" ;
+	stix:kill_chain_phase_name "actions-on-objectives" ;
+	.
+
+attack:kill-chain-phase-fb4aef95-821f-49c2-b391-e98e17d749f4
+	a stix:StixObject ;
+	stix:kill_chain_name "lockheed-martin-cyber-kill-chain" ;
+	stix:kill_chain_phase_name "installation" ;
+	.
+
+attack:location--b9c12531-454c-44a9-8317-63a975993e11
+	a stix:StixObject ;
+	stix:created "2008-01-01T00:00:00.000Z"^^xsd:dateTime ;
+	stix:description "South Korea" ;
+	stix:id "location--b9c12531-454c-44a9-8317-63a975993e11" ;
+	stix:modified "2008-01-01T00:00:00.000Z"^^xsd:dateTime ;
+	stix:name "South Korea" ;
+	stix:spec_version "2.1" ;
+	stix:type "location" ;
+	.
+
+attack:malware--85c19b24-1788-419b-9caa-cc64969d9e70
+	a stix:StixObject ;
+	stix:alias
+		"Olympic Destroyer" ,
+		"OlympicDestroyer"
+		;
+	stix:authored-by attack:intrusion-set--11494a5b-a418-4808-ba13-4cc123707ab8 ;
+	stix:created "2022-04-04T17:42:25.804864Z"^^xsd:dateTime ;
+	stix:description """Olympic Destroyer is a worm and a wiper developed and operated by the Sandworm threat actor during the 2018 Winter Olympics in Pyeongchang, South Korea. Olympic Destroyer embeds several modules encrypted in AES in its PE resources such as:
+
+* Windows Account Password Stealer
+* A Destroyer / Wiper
+* Copy of PsExec
+* Browser Password Stealer
+* A Loader
+
+Two main variants of Olympic Destroyer have been seen ITW. The first version is a flawed version which spreads a OD binary which hasn't been patched with the stolen credentials, therefore, the impact is limited. The second variant isn’t flawed. It spread the patched versions of Olympic Destroyer containing stolen credentials, thus allowing better worming capabilities. 
+""" ;
+	stix:external_reference
+		attack:external-reference-bdfdbf7d-069a-4757-a1ad-910870a9fca8 ,
+		attack:external-reference-c0e0f080-df5f-4797-a7a1-3ced6a9bc692 ,
+		attack:external-reference-f7cf8fa3-f3b7-4a53-bbb4-50d1915a92fb
+		;
+	stix:first_seen "2018-02-09T00:00:00.000Z"^^xsd:dateTime ;
+	stix:id "malware--85c19b24-1788-419b-9caa-cc64969d9e70" ;
+	stix:kill_chain_phase
+		attack:kill-chain-phase-537291f3-3aa9-42fe-b2f1-0579796bfa32 ,
+		attack:kill-chain-phase-6f19ebbb-95c7-4783-9a14-96925a92f042 ,
+		attack:kill-chain-phase-732d71b6-319b-4360-a17f-f44399ce69ea ,
+		attack:kill-chain-phase-a14dedcb-4b41-4bb0-861a-598319d3e80c ,
+		attack:kill-chain-phase-c7c2218d-ee47-4b50-a373-22dac7d5b864
+		;
+	stix:malware_types
+		"wiper" ,
+		"worm"
+		;
+	stix:modified "2024-01-25T11:18:30.725027Z"^^xsd:dateTime ;
+	stix:name "OlympicDestroyer" ;
+	stix:spec_version "2.1" ;
+	stix:type "malware" ;
+	stix:uses
+		attack:attack-pattern--6ea86af9-a6d4-46c3-a61b-ec9be3a87db9 ,
+		attack:attack-pattern--7a335ae0-f3af-4c96-b03e-30b94f4fbf35 ,
+		attack:attack-pattern--9b3c3016-dab4-4295-b44c-fce53123c577 ,
+		attack:attack-pattern--e0540f19-0e19-4d23-89b2-a63ae4718e34 ,
+		attack:attack-pattern--f8410827-7556-4b26-93a5-bf1605c3f4a4
+		;
+	.
+
+attack:relationship--108de627-7994-4a4d-9199-5b160f17ec13
+	a stix:StixObject ;
+	stix:created "2024-01-25T10:38:37.693002Z"^^xsd:dateTime ;
+	stix:id "relationship--108de627-7994-4a4d-9199-5b160f17ec13" ;
+	stix:modified "2024-01-25T12:28:32.242027Z"^^xsd:dateTime ;
+	stix:relationship_type "attributed-to" ;
+	stix:source_ref attack:campaign--86b35633-78dc-4a03-90dd-9fc6a6b82e9d ;
+	stix:spec_version "2.1" ;
+	stix:target_ref attack:intrusion-set--604abc33-5985-41b3-b72c-222131371916 ;
+	stix:type "relationship" ;
+	.
+
+attack:relationship--235bd549-0bca-4ade-82d2-9656f8762963
+	a stix:StixObject ;
+	stix:created "2023-03-21T15:45:10.252709Z"^^xsd:dateTime ;
+	stix:id "relationship--235bd549-0bca-4ade-82d2-9656f8762963" ;
+	stix:modified "2024-01-25T12:28:32.288448Z"^^xsd:dateTime ;
+	stix:relationship_type "attributed-to" ;
+	stix:source_ref attack:intrusion-set--604abc33-5985-41b3-b72c-222131371916 ;
+	stix:spec_version "2.1" ;
+	stix:target_ref attack:threat-actor--e17e2be6-6b69-4b79-8f49-e287b7e682e4 ;
+	stix:type "relationship" ;
+	.
+
+attack:relationship--555c1011-1ea7-44f9-aed2-a9561acb6b7f
+	a stix:StixObject ;
+	stix:created "2024-01-25T10:37:03.806584Z"^^xsd:dateTime ;
+	stix:id "relationship--555c1011-1ea7-44f9-aed2-a9561acb6b7f" ;
+	stix:modified "2024-01-25T12:28:32.241988Z"^^xsd:dateTime ;
+	stix:relationship_type "uses" ;
+	stix:source_ref attack:campaign--86b35633-78dc-4a03-90dd-9fc6a6b82e9d ;
+	stix:spec_version "2.1" ;
+	stix:target_ref attack:malware--85c19b24-1788-419b-9caa-cc64969d9e70 ;
+	stix:type "relationship" ;
+	.
+
+attack:relationship--5bfab042-8d59-4aab-85ab-a01446231096
+	a stix:StixObject ;
+	stix:created "2024-01-25T10:47:20.017393Z"^^xsd:dateTime ;
+	stix:id "relationship--5bfab042-8d59-4aab-85ab-a01446231096" ;
+	stix:modified "2024-01-25T12:28:32.242083Z"^^xsd:dateTime ;
+	stix:relationship_type "uses" ;
+	stix:source_ref attack:campaign--86b35633-78dc-4a03-90dd-9fc6a6b82e9d ;
+	stix:spec_version "2.1" ;
+	stix:target_ref attack:attack-pattern--66d581ef-0821-451a-8650-dced303e0c79 ;
+	stix:type "relationship" ;
+	.
+
+attack:relationship--620c00cc-9552-4881-95d4-09f7a000a70d
+	a stix:StixObject ;
+	stix:created "2024-01-25T10:39:04.538754Z"^^xsd:dateTime ;
+	stix:id "relationship--620c00cc-9552-4881-95d4-09f7a000a70d" ;
+	stix:modified "2024-01-25T12:28:32.242046Z"^^xsd:dateTime ;
+	stix:relationship_type "targets" ;
+	stix:source_ref attack:campaign--86b35633-78dc-4a03-90dd-9fc6a6b82e9d ;
+	stix:spec_version "2.1" ;
+	stix:target_ref attack:location--b9c12531-454c-44a9-8317-63a975993e11 ;
+	stix:type "relationship" ;
+	.
+
+attack:relationship--6e303ab4-82b0-47b8-95ea-c843b0c91c80
+	a stix:StixObject ;
+	stix:created "2023-12-08T01:19:23.507138Z"^^xsd:dateTime ;
+	stix:description "[Olympic Destroyer](https://attack.mitre.org/software/S0365) attempts to copy itself to remote machines on the network.(Citation: Talos Olympic Destroyer 2018)" ;
+	stix:id "relationship--6e303ab4-82b0-47b8-95ea-c843b0c91c80" ;
+	stix:modified "2024-01-25T12:28:32.288416Z"^^xsd:dateTime ;
+	stix:relationship_type "uses" ;
+	stix:source_ref attack:malware--85c19b24-1788-419b-9caa-cc64969d9e70 ;
+	stix:spec_version "2.1" ;
+	stix:target_ref attack:attack-pattern--7a335ae0-f3af-4c96-b03e-30b94f4fbf35 ;
+	stix:type "relationship" ;
+	.
+
+attack:relationship--6fd6fc81-d4d6-41a4-870f-9b455680293a
+	a stix:StixObject ;
+	stix:created "2023-12-08T01:19:23.558592Z"^^xsd:dateTime ;
+	stix:description "(Citation: CrowdStrike GTR 2019)(Citation: Secureworks IRON VIKING )(Citation: US District Court Indictment GRU Unit 74455 October 2020)(Citation: UK NCSC Olympic Attacks October 2020)" ;
+	stix:id "relationship--6fd6fc81-d4d6-41a4-870f-9b455680293a" ;
+	stix:modified "2024-01-25T12:28:32.288433Z"^^xsd:dateTime ;
+	stix:relationship_type "uses" ;
+	stix:source_ref attack:intrusion-set--11494a5b-a418-4808-ba13-4cc123707ab8 ;
+	stix:spec_version "2.1" ;
+	stix:target_ref attack:malware--85c19b24-1788-419b-9caa-cc64969d9e70 ;
+	stix:type "relationship" ;
+	.
+
+attack:relationship--78c726e8-ba26-4e9e-bce4-e1dfa5c6b249
+	a stix:StixObject ;
+	stix:created "2024-01-25T10:42:00.310589Z"^^xsd:dateTime ;
+	stix:id "relationship--78c726e8-ba26-4e9e-bce4-e1dfa5c6b249" ;
+	stix:modified "2024-01-25T12:28:32.242065Z"^^xsd:dateTime ;
+	stix:relationship_type "uses" ;
+	stix:source_ref attack:malware--85c19b24-1788-419b-9caa-cc64969d9e70 ;
+	stix:spec_version "2.1" ;
+	stix:target_ref attack:attack-pattern--f8410827-7556-4b26-93a5-bf1605c3f4a4 ;
+	stix:type "relationship" ;
+	.
+
+attack:relationship--83637d4c-e2ba-4065-ae69-762509c6249c
+	a stix:StixObject ;
+	stix:created "2024-01-25T10:48:16.274221Z"^^xsd:dateTime ;
+	stix:id "relationship--83637d4c-e2ba-4065-ae69-762509c6249c" ;
+	stix:modified "2024-01-25T12:28:32.242103Z"^^xsd:dateTime ;
+	stix:relationship_type "uses" ;
+	stix:source_ref attack:campaign--86b35633-78dc-4a03-90dd-9fc6a6b82e9d ;
+	stix:spec_version "2.1" ;
+	stix:target_ref attack:tool--76dd1369-42b2-43dc-ba52-f403f59802bd ;
+	stix:type "relationship" ;
+	.
+
+attack:relationship--86a7245f-ff43-46c8-a44d-e5d1aeefb1ba
+	a stix:StixObject ;
+	stix:created "2023-12-08T10:17:11.079954Z"^^xsd:dateTime ;
+	stix:description "[Olympic Destroyer](https://attack.mitre.org/software/S0365) overwrites files locally and on remote shares.(Citation: Talos Olympic Destroyer 2018)(Citation: US District Court Indictment GRU Unit 74455 October 2020) " ;
+	stix:id "relationship--86a7245f-ff43-46c8-a44d-e5d1aeefb1ba" ;
+	stix:modified "2024-01-25T12:28:32.288368Z"^^xsd:dateTime ;
+	stix:relationship_type "uses" ;
+	stix:source_ref attack:malware--85c19b24-1788-419b-9caa-cc64969d9e70 ;
+	stix:spec_version "2.1" ;
+	stix:target_ref attack:attack-pattern--e0540f19-0e19-4d23-89b2-a63ae4718e34 ;
+	stix:type "relationship" ;
+	.
+
+attack:relationship--88abb261-7de1-40a3-ad2e-3404657f14b8
+	a stix:StixObject ;
+	stix:created "2024-01-25T12:25:02.929124Z"^^xsd:dateTime ;
+	stix:id "relationship--88abb261-7de1-40a3-ad2e-3404657f14b8" ;
+	stix:modified "2024-01-25T12:28:32.242176Z"^^xsd:dateTime ;
+	stix:relationship_type "indicates" ;
+	stix:source_ref attack:indicator--f7c9a115-ad93-483c-8859-8f7dcadcfbb2 ;
+	stix:spec_version "2.1" ;
+	stix:target_ref attack:malware--85c19b24-1788-419b-9caa-cc64969d9e70 ;
+	stix:type "relationship" ;
+	.
+
+attack:relationship--9e407f29-9a3a-432b-b195-341d2456bc76
+	a stix:StixObject ;
+	stix:created "2023-12-08T01:19:23.508393Z"^^xsd:dateTime ;
+	stix:description "[Olympic Destroyer](https://attack.mitre.org/software/S0365) uses the native Windows utilities <code>vssadmin</code>, <code>wbadmin</code>, and <code>bcdedit</code> to delete and disable operating system recovery features such as the Windows backup catalog and Windows Automatic Repair.(Citation: Talos Olympic Destroyer 2018)" ;
+	stix:id "relationship--9e407f29-9a3a-432b-b195-341d2456bc76" ;
+	stix:modified "2024-01-25T12:28:32.288407Z"^^xsd:dateTime ;
+	stix:relationship_type "uses" ;
+	stix:source_ref attack:malware--85c19b24-1788-419b-9caa-cc64969d9e70 ;
+	stix:spec_version "2.1" ;
+	stix:target_ref attack:attack-pattern--9b3c3016-dab4-4295-b44c-fce53123c577 ;
+	stix:type "relationship" ;
+	.
+
+attack:relationship--9fbd0624-1f36-493c-acee-e19ac8dad95f
+	a stix:StixObject ;
+	stix:created "2023-03-16T09:45:14.566407Z"^^xsd:dateTime ;
+	stix:id "relationship--9fbd0624-1f36-493c-acee-e19ac8dad95f" ;
+	stix:modified "2024-01-25T12:28:32.288441Z"^^xsd:dateTime ;
+	stix:relationship_type "attributed-to" ;
+	stix:source_ref attack:intrusion-set--11494a5b-a418-4808-ba13-4cc123707ab8 ;
+	stix:spec_version "2.1" ;
+	stix:target_ref attack:threat-actor--e17e2be6-6b69-4b79-8f49-e287b7e682e4 ;
+	stix:type "relationship" ;
+	.
+
+attack:relationship--a7085f75-9c9d-4149-a020-6ce66b14e915
+	a stix:StixObject ;
+	stix:created "2024-01-25T10:36:57.126563Z"^^xsd:dateTime ;
+	stix:id "relationship--a7085f75-9c9d-4149-a020-6ce66b14e915" ;
+	stix:modified "2024-01-25T12:28:32.241964Z"^^xsd:dateTime ;
+	stix:relationship_type "uses" ;
+	stix:source_ref attack:campaign--86b35633-78dc-4a03-90dd-9fc6a6b82e9d ;
+	stix:spec_version "2.1" ;
+	stix:target_ref attack:tool--91e8a302-bdaa-4b47-a837-72b6931c8663 ;
+	stix:type "relationship" ;
+	.
+
+attack:relationship--bb95a913-a97d-4659-bd0c-070ee84393d9
+	a stix:StixObject ;
+	stix:created "2024-01-25T12:24:28.697856Z"^^xsd:dateTime ;
+	stix:id "relationship--bb95a913-a97d-4659-bd0c-070ee84393d9" ;
+	stix:modified "2024-01-25T12:28:32.242158Z"^^xsd:dateTime ;
+	stix:relationship_type "indicates" ;
+	stix:source_ref attack:indicator--37c8138b-e93a-436e-8c3d-2ad4ee088672 ;
+	stix:spec_version "2.1" ;
+	stix:target_ref attack:malware--85c19b24-1788-419b-9caa-cc64969d9e70 ;
+	stix:type "relationship" ;
+	.
+
+attack:relationship--c2477074-39b9-45a9-9a4f-7201bd3b9742
+	a stix:StixObject ;
+	stix:created "2023-02-27T19:45:45.859286Z"^^xsd:dateTime ;
+	stix:id "relationship--c2477074-39b9-45a9-9a4f-7201bd3b9742" ;
+	stix:modified "2024-01-25T12:28:32.288425Z"^^xsd:dateTime ;
+	stix:relationship_type "authored-by" ;
+	stix:source_ref attack:malware--85c19b24-1788-419b-9caa-cc64969d9e70 ;
+	stix:spec_version "2.1" ;
+	stix:target_ref attack:intrusion-set--11494a5b-a418-4808-ba13-4cc123707ab8 ;
+	stix:type "relationship" ;
+	.
+
+attack:relationship--cca05b4b-e78c-4d1e-94af-5f0f08bb224c
+	a stix:StixObject ;
+	stix:created "2024-01-25T12:22:49.648915Z"^^xsd:dateTime ;
+	stix:id "relationship--cca05b4b-e78c-4d1e-94af-5f0f08bb224c" ;
+	stix:modified "2024-01-25T12:28:32.242139Z"^^xsd:dateTime ;
+	stix:relationship_type "indicates" ;
+	stix:source_ref attack:indicator--dcbe2279-fe76-4688-b380-8cd032c9c96f ;
+	stix:spec_version "2.1" ;
+	stix:target_ref attack:malware--85c19b24-1788-419b-9caa-cc64969d9e70 ;
+	stix:type "relationship" ;
+	.
+
+attack:relationship--d1ad6302-45ab-47d1-bc93-6b4b578c945c
+	a stix:StixObject ;
+	stix:created "2024-01-25T10:38:08.121702Z"^^xsd:dateTime ;
+	stix:id "relationship--d1ad6302-45ab-47d1-bc93-6b4b578c945c" ;
+	stix:modified "2024-01-25T12:28:32.242008Z"^^xsd:dateTime ;
+	stix:relationship_type "uses" ;
+	stix:source_ref attack:campaign--86b35633-78dc-4a03-90dd-9fc6a6b82e9d ;
+	stix:spec_version "2.1" ;
+	stix:target_ref attack:tool--2ca94e36-d452-4f69-963e-016c1600524f ;
+	stix:type "relationship" ;
+	.
+
+attack:relationship--e70bf248-ce47-43de-9af7-c0dfcb0a148e
+	a stix:StixObject ;
+	stix:created "2024-01-25T12:21:52.274938Z"^^xsd:dateTime ;
+	stix:id "relationship--e70bf248-ce47-43de-9af7-c0dfcb0a148e" ;
+	stix:modified "2024-01-25T12:28:32.242121Z"^^xsd:dateTime ;
+	stix:relationship_type "indicates" ;
+	stix:source_ref attack:indicator--fc44bed3-e193-4a84-8974-db9f0ff6bdd7 ;
+	stix:spec_version "2.1" ;
+	stix:target_ref attack:malware--85c19b24-1788-419b-9caa-cc64969d9e70 ;
+	stix:type "relationship" ;
+	.
+
+attack:relationship--f0eb8c92-854b-4552-83ce-3bd5ae10fcf2
+	a stix:StixObject ;
+	stix:created "2023-12-08T01:19:23.524211Z"^^xsd:dateTime ;
+	stix:description "[Olympic Destroyer](https://attack.mitre.org/software/S0365) will shut down the compromised system after it is done modifying system configuration settings.(Citation: Talos Olympic Destroyer 2018)(Citation: US District Court Indictment GRU Unit 74455 October 2020)" ;
+	stix:id "relationship--f0eb8c92-854b-4552-83ce-3bd5ae10fcf2" ;
+	stix:modified "2024-01-25T12:28:32.288395Z"^^xsd:dateTime ;
+	stix:relationship_type "uses" ;
+	stix:source_ref attack:malware--85c19b24-1788-419b-9caa-cc64969d9e70 ;
+	stix:spec_version "2.1" ;
+	stix:target_ref attack:attack-pattern--6ea86af9-a6d4-46c3-a61b-ec9be3a87db9 ;
+	stix:type "relationship" ;
+	.
+
+attack:relationship--f41b14b7-0681-48d6-a562-bfcafc2c2d3b
+	a stix:StixObject ;
+	stix:created "2023-12-07T19:58:27.225323Z"^^xsd:dateTime ;
+	stix:id "relationship--f41b14b7-0681-48d6-a562-bfcafc2c2d3b" ;
+	stix:modified "2024-01-25T12:28:32.288456Z"^^xsd:dateTime ;
+	stix:relationship_type "indicates" ;
+	stix:source_ref attack:indicator--44fa003b-f177-4788-a141-fc41feb725c0 ;
+	stix:spec_version "2.1" ;
+	stix:target_ref attack:malware--85c19b24-1788-419b-9caa-cc64969d9e70 ;
+	stix:type "relationship" ;
+	.
+
+attack:threat-actor--e17e2be6-6b69-4b79-8f49-e287b7e682e4
+	a stix:StixObject ;
+	stix:alias "GRU" ;
+	stix:created "2022-04-04T17:51:03.570706Z"^^xsd:dateTime ;
+	stix:description """<br>The **General Staff of the Armed Forces** of the Russian Federation (Glavnoye Razvedyvatelnoye Upravlenie) is a military intelligence service which aim is to provide intelligence to the Ministry of Defense, the military leadership and Russian armed forces as a whole. This institution has been **reformed in 2010** and presents now a new acronym, **GU**, but is **still widely known under the GRU acronym** that we use in this description. 
+
+Unlike Russia's other security and intelligence agencies such as the FSB and the SVR, which report to the president of the Russian Federation, the **head of the GRU is subordinate to the Russian military command**, reporting to the Minister of Defense. The Main Directorate controls the military intelligence service and maintains its own Special Forces units known as Spetsnaz. Although its missions are supposed to focus on intelligence collection to support military decision-making, the **GRU is in fact Russia's largest foreign-intelligence agency** conducting covert operations to **support foreign policy objectives**.
+
+Since 2004, the GRU has **developed significant cyber capabilities**, mixing it with its historical experience in conducting **psychological and information operations** inherited from the Soviet propaganda era. Russian military doctrine now includes a **new view of warfare** where the line between peace and conflict is blurred. In order to exploit this situation, the GRU considers that non-violent tools are important, thus **cyber operations as an effective and cheap tool** to **undermine, subvert, and manipulate** an adversary. This doctrine is the reason why, among classic espionage purposes, cyber operations detected from **GRU subgroups show deception, manipulation and sabotage objectives** when the FSB and the SVR operations are more silent and covert spying-oriented cyber operations.
+
+In line with the Russian government goals, the GRU seeks to manipulate domestic audiences and **undermine faith in democratic systems of government**. For example, in the context of the 2016 US presidential election, the Democratic National Committee (DNC) has been targeted in order to leak information with the purpose of undermining candidate Clinton. A GRU's operation has been exposed targeting the 2017 French presidential election where operatives leaked information from Macron’s EM! party. Instead of seeking a particular candidate (as it was assumed for Trump), **the goal for Russian information operations focuses more on causing chaos and weakening the domestic legitimacy** of an adversary’s government.<br>
+
+![](https://app.sekoia.io/api/v2/inthreat/images/b9645ad13412fcb8701240fda9844c6ef9f99bdbebd8486d0555fb9b1b36c92f.png)
+### GRU Cyber Units and APTs
+
+<br>
+
+* **Unit 26165** aka 85th Main Special Service Center
+
+Unit 26165 **operates the intrusion set [APT 28](/intelligence/objects/intrusion-set--40479e35-a7ca-4c05-998d-2cf21ab751cc)** (aka Fancy Bear aka Sofacy). Unit 26165 is a **SIGINT unit** that collects information for various customers, including other GRU units responsible for covert operations. The unit, which is also known as the GRU 85 Main Special Service Center, is located at 20 Komsomolskiy Prospekt, Moscow. Unit 26165 conducted the **operation to exfiltrate emails** associated with **Hillary Clinton**’s presidential election campaign and the Democratic National Committee in 2016, **then gave it to Unit 74455 to organize the  DCLeaks campaign** in parallel to the creation of Guccifer 2.0 avatar. The GRU officers arrested in the Netherlands while conducting a close access operation against the OPCW network were also from Unit 26165.
+
+* **Unit 74455** aka Main Center for Special Technologies (GTsST)
+
+Unit 74455 **operates the intrusion set [Sandworm](/intelligence/objects/intrusion-set--f29bd8cc-1cea-497c-ac3f-8d590b95c9d6)** (aka Telebots aka IRIDIUM). Unit 74455 appears to be a recent unit created to help support and expand the GRU’s cyber operation and information warfare. Unit 74455, is also known as the Main Center for Special Technologies, and is commonly referred to by media reports and the U.S. government as Sandworm. Located in the Moscow suburbs, Unit 74455 is suspected to have built and manipulated the **Guccifer 2.0 avatar** used to leak information from the **2016 DNC hack**. 
+This unit is **specialized into hybrid, destructive and destabilization operations** such as the MacronLeaks, the 2017 NotPetya attack or the Industroyer campaigns against the Ukrainian power grid.
+
+* **Unit 54777** aka 72nd Special Service Center
+
+The Special Service Center is reportedly responsible for the **GRU’s psychological operations** that maintain front organizations, including **InfoRos** and the Institute of the Russian Diaspora. 
+InfoRos was named in the 2021 US sanctions as an **organization that spreads false conspiracy narratives** and disinformation promoted by GRU officials (COVID-19  spreading through OTAN soldiers disinformation campaigns). According to open-source publications, GRU’s InfoRos has registered about 1,300 online « news websites » including in the domestic web (attached to cities, towns, districts, or even villages) in order to amplify that broadcast the Russian government’s narrative. **There is no known intrusion set linked to this unit**.
+
+* **Unknown GRU unit** 
+
+Not enough technical clues or open-sources publications attribute **the intrusion set [Ember Bear](/intelligence/objects/intrusion-set--545e1e88-42d7-43ec-816e-0702bef0dacd)** (aka Lorec53 aka UAC-0056) to a specific GRU unit. Howerver, according to Crowdstrike, **Ember Bear TTPs are consistent with other GRU cyber operations**. This group has operated against government and military organizations in Eastern Europe since early 2021, likely to **collect intelligence** from target networks. Crowdstrike attributes the WhisperGate sabotage campaign to Ember Bear with moderate confidence. On January 31, 2022, CERT-UA publicly attributed to Ember Bear an attack targeting an energy organization in Ukraine. 
+
+* The **Central Scientific Institute of Chemistry and Mechanics** 
+
+This institution, which is a research organization part of the Russian Ministry of Defence, but is not under direct GRU administration, **operates the intrustion set [XENOTIME](/intelligence/objects/intrusion-set--7b3fddaf-ee4d-4009-bd04-fccfdbeeee43)** (aka TEMP.Veles aka Triton).  XENOTIME operators associated with the Institute have **developed destructive ICS malware** known as **Triton** (also called HatMan and TRISIS) which has been exposed and sanctioned by the U.S. Department of the Treasury and by the UK Foreign, Commonwealth, and Development Office (FCDO) for a 2017 incident that involved safety override controls in a foreign oil refinery.
+
+### GRU’s most exposed cyber operations (not exclusive)
+
+<br>
+
+* **CyberBerkut ([APT 28](/intelligence/objects/intrusion-set--40479e35-a7ca-4c05-998d-2cf21ab751cc))** – During the 2014 Ukrainian presidential election, a series of malicious activities against Kyiv electoral institutions - including destructive operations,  data leak and DDoS attack, where performed under the CyberBerkut avatar, in an attempt to undermine and/or influence election resultats.
+* **TV5 Monde (APT28)** – A 2015 false flag destructive cyberattack that shut down every broadcast channel of the French international TV network while diffusing fake Islamic State propaganda. The attack was conducted by APT28 in retaliation from the French position on the 2014 Crimean Invasion and for the delivery cancellation of two French Mistral-class helicopter carriers ordered in 2010 by Russia.
+* **Ukraine power grid hack ([Sandworm](/intelligence/objects/intrusion-set--f29bd8cc-1cea-497c-ac3f-8d590b95c9d6))** – December 2015 destructive attacks on Ukraine’s electrical infrastructure, Ministry of Finance, and State Treasury Service.
+* **DCLeaks (APT28 and Sandworm)** – During the 2016 US presidential election, APT28 and Sandworm targeted DNC’s email network (among other targets such as voting machines), and dumped emails from Democratic Party leaders. The leak was orchestrated with the creation of Guccifer 2.0 and DCLeaks websites in order to mess with the election and undermine US institutions.
+* **MacronLeaks (APT28 and Sandworm)** – 2017 hack-and-leak operation targeting French President Emmanuel Macron’s emails and interference in France’s presidential election.
+* **[NotPetya](/intelligence/objects/campaign--595f55b5-0e99-412b-9a0c-5a5cecd9cd2d) ransomware (Sandworm)** – 2017 ransomware attack initially targeting Ukraine but which infected computers globally and caused an estimated $10 billion in damage.
+* **[Olympic Destroyer](/intelligence/objects/campaign--c7bb8f6b-0092-49a7-8b88-d356c0ef61ff) (Sandworm)** – 2018 false flag destructive cyber operation against the PyeongChang Winter Olympics in South Korea. Operators tried to disguise themselves as North Korean operatives by using known TTPs attributed to the Lazarus intrusion set.
+* **OPCW close access operation (Sandworm)** – In 2018, in a global cyber offensive campaign against UK and European institutions, GRU officers have been arrested in the Netherlands trying to access the Organization for the Prohibition of Chemical Weapons investigating the nerve agent attack against Sergei Skripal.
+
+<br>
+
+""" ;
+	stix:external_reference
+		attack:external-reference-25866919-d70e-4e2f-942b-fd0b378eccd9 ,
+		attack:external-reference-3dc9d8c4-7f02-4630-a065-898c310a49ff ,
+		attack:external-reference-661fa1f3-c81c-4781-97f3-c0c914847199 ,
+		attack:external-reference-96a84c6b-669f-4381-bd32-64cdf7b1531b ,
+		attack:external-reference-a3fe848e-6166-41ae-86a6-b72ada65509d ,
+		attack:external-reference-a583109a-4b88-4eab-913d-8c563e397bc3
+		;
+	stix:goals
+		"Destabilization" ,
+		"Disinformation" ,
+		"Espionage" ,
+		"Sabotage"
+		;
+	stix:id "threat-actor--e17e2be6-6b69-4b79-8f49-e287b7e682e4" ;
+	stix:modified "2023-12-07T13:45:59.906367Z"^^xsd:dateTime ;
+	stix:name "GRU" ;
+	stix:resource_level "government" ;
+	stix:sophistication "innovator" ;
+	stix:spec_version "2.1" ;
+	stix:type "threat-actor" ;
+	.
+
+attack:tool--2ca94e36-d452-4f69-963e-016c1600524f
+	a stix:StixObject ;
+	stix:alias
+		"Mimikatz" ,
+		"sekurlsa"
+		;
+	stix:created "2022-04-04T17:41:12.920051Z"^^xsd:dateTime ;
+	stix:description """**Mimikatz** is an open-source post-exploitation framework created in 2008 by security researcher Benjamin Delpy as a proof of concept to show vulnerabilities on how Microsoft Windows handles authentication credentials.
+
+Mimikatz has many functionalities, and is **widely used by Intrusion Sets (cybercriminal and State-nexus) to steal credentials** - extract plaintext passwords from memory, password hashes, PIN codes and cryptographic attributes **to forge Kerberos tickets**.
+
+Although originally written in C, as its source code is available publicly, many people refactored it in other languages such as .NET, Python and Powershell to avoid detection or facilitate the integration of part of its modules in other tools.
+
+""" ;
+	stix:external_reference
+		attack:external-reference-59d191c0-8f71-4884-80b7-aeac0119cc7d ,
+		attack:external-reference-682f4538-a86e-4286-a59d-fe9ff7867ad7 ,
+		attack:external-reference-92aa2212-7673-4dcb-80b6-4117022c53a9
+		;
+	stix:id "tool--2ca94e36-d452-4f69-963e-016c1600524f" ;
+	stix:kill_chain_phase
+		attack:kill-chain-phase-1ce24b9c-3346-4791-af41-f5b66f61ee13 ,
+		attack:kill-chain-phase-216cbd3a-57d7-4b7c-a616-ef1bf07a6636 ,
+		attack:kill-chain-phase-2c354d2d-1c52-4cc9-8314-0062b0df5c7e ,
+		attack:kill-chain-phase-40e32987-cb20-4c45-9265-3a976e509c73 ,
+		attack:kill-chain-phase-421dae65-78e9-472a-8477-7850b5a35ce4
+		;
+	stix:modified "2022-10-20T08:45:17.178316Z"^^xsd:dateTime ;
+	stix:name "Mimikatz" ;
+	stix:spec_version "2.1" ;
+	stix:tool_types
+		"credential-exploitation" ,
+		"exploitation" ,
+		"information-gathering" ,
+		"remote-access"
+		;
+	stix:type "tool" ;
+	.
+
+attack:tool--76dd1369-42b2-43dc-ba52-f403f59802bd
+	a stix:StixObject ;
+	stix:alias "Meterpreter" ;
+	stix:created "2022-04-04T17:41:27.291914Z"^^xsd:dateTime ;
+	stix:description """Meterpreter is an advanced, dynamically extensible payload that uses in-memory DLL injection stagers and is extended over the network at runtime. It communicates over the stager socket and provides a comprehensive client-side Ruby API. It features command history, tab completion, channels, and more.
+
+Metepreter was originally written by skape for Metasploit 2.x, common extensions were merged for 3.x and is currently undergoing an overhaul for Metasploit 3.3
+
+**How Meterpreter Works**
+* The target executes the initial stager. This is usually one of bind, reverse, findtag, passivex, etc.
+* The stager loads the DLL prefixed with Reflective. The Reflective stub handles the loading/injection of the DLL.
+* The Metepreter core initializes, establishes a TLS/1.0 link over the socket and sends a GET. Metasploit receives this GET and configures the client.
+* Lastly, Meterpreter loads extensions. It will always load stdapi and will load priv if the module gives administrative rights. All of these extensions are loaded over TLS/1.0 using a TLV protocol.
+
+ 
+**Meterpreter Design Goals**
+* Meterpreter resides entirely in memory and writes nothing to disk.
+* No new processes are created as Meterpreter injects itself into the compromised process and can migrate to other running processes easily.
+* By default, Meterpreter uses encrypted communications.
+* All of these provide limited forensic evidence and impact on the victim machine.
+
+""" ;
+	stix:id "tool--76dd1369-42b2-43dc-ba52-f403f59802bd" ;
+	stix:kill_chain_phase
+		attack:kill-chain-phase-75c5b7dc-2a23-4e96-94d4-349bd9b04f1d ,
+		attack:kill-chain-phase-8bc09f51-bb8b-4bfe-9b16-6495a429c503 ,
+		attack:kill-chain-phase-8c4c6fda-d260-482f-be77-85130a134758 ,
+		attack:kill-chain-phase-ccb14826-1044-490a-8e20-f19bb2cc1cd7 ,
+		attack:kill-chain-phase-dbd72a10-4fe0-4340-9413-6fb899a53f8b
+		;
+	stix:modified "2022-04-04T17:41:27.291924Z"^^xsd:dateTime ;
+	stix:name "Meterpreter" ;
+	stix:spec_version "2.1" ;
+	stix:tool_types "remote-access" ;
+	stix:type "tool" ;
+	.
+
+attack:tool--91e8a302-bdaa-4b47-a837-72b6931c8663
+	a stix:StixObject ;
+	stix:alias "PsExec" ;
+	stix:created "2022-04-04T17:41:12.920366Z"^^xsd:dateTime ;
+	stix:description """PsExec is a light-weight telnet-replacement that lets you execute processes on other systems, complete with full interactivity for console applications, without having to manually install client software. PsExec's most powerful uses include launching interactive command-prompts on remote systems and remote-enabling tools like IpConfig that otherwise do not have the ability to show information about remote systems.
+
+**Even if PSExec is a legitimate executable signed by Microsoft, this tool is used by a bunch of attackers and ransomware operators for their lateral movement/ransomware spreading. If you don't use PSExec during your daily administration tasks (which is not recommended) and you have detected abnormal PSExec execution in your environment, please investigate.**""" ;
+	stix:external_reference
+		attack:external-reference-a6fb9784-faeb-48ef-aac3-7f1a20da06cb ,
+		attack:external-reference-abe5f931-dbb8-4331-a504-19df4755e62e ,
+		attack:external-reference-fcc9dabd-faa3-473c-a4ca-483b9a372d66
+		;
+	stix:id "tool--91e8a302-bdaa-4b47-a837-72b6931c8663" ;
+	stix:kill_chain_phase
+		attack:kill-chain-phase-49069175-57e2-4d6b-9873-4e97e1712630 ,
+		attack:kill-chain-phase-689b8143-9b0d-4d5a-aa86-a2c13821bdcf
+		;
+	stix:modified "2024-01-25T10:55:00.169997Z"^^xsd:dateTime ;
+	stix:name "PsExec" ;
+	stix:spec_version "2.1" ;
+	stix:tool_types "remote-access" ;
+	stix:type "tool" ;
+	.
+
+stix:alias
+	a owl:DatatypeProperty ;
+	.
+
+stix:created
+	a owl:DatatypeProperty ;
+	.
+
+stix:description
+	a owl:DatatypeProperty ;
+	.
+
+stix:external-id
+	a owl:DatatypeProperty ;
+	.
+
+stix:external_reference
+	a owl:ObjectProperty ;
+	.
+
+stix:first_seen
+	a owl:DatatypeProperty ;
+	.
+
+stix:goals
+	a owl:DatatypeProperty ;
+	.
+
+stix:id
+	a owl:DatatypeProperty ;
+	.
+
+stix:identity_class
+	a owl:DatatypeProperty ;
+	.
+
+stix:indicates
+	a owl:ObjectProperty ;
+	.
+
+stix:indicator_types
+	a owl:DatatypeProperty ;
+	.
+
+stix:kill_chain_name
+	a owl:DatatypeProperty ;
+	.
+
+stix:kill_chain_phase
+	a owl:ObjectProperty ;
+	.
+
+stix:kill_chain_phase_name
+	a owl:DatatypeProperty ;
+	.
+
+stix:kill_chain_phases
+	a owl:DatatypeProperty ;
+	.
+
+stix:malware_types
+	a owl:DatatypeProperty ;
+	.
+
+stix:modified
+	a owl:DatatypeProperty ;
+	.
+
+stix:name
+	a owl:DatatypeProperty ;
+	.
+
+stix:objective
+	a owl:DatatypeProperty ;
+	.
+
+stix:pattern
+	a owl:DatatypeProperty ;
+	.
+
+stix:pattern_type
+	a owl:DatatypeProperty ;
+	.
+
+stix:primary_motivation
+	a owl:DatatypeProperty ;
+	.
+
+stix:relationship_type
+	a owl:DatatypeProperty ;
+	.
+
+stix:resource_level
+	a owl:DatatypeProperty ;
+	.
+
+stix:roles
+	a owl:DatatypeProperty ;
+	.
+
+stix:secondary_motivations
+	a owl:DatatypeProperty ;
+	.
+
+stix:sectors
+	a owl:DatatypeProperty ;
+	.
+
+stix:sophistication
+	a owl:DatatypeProperty ;
+	.
+
+stix:source_name
+	a owl:DatatypeProperty ;
+	.
+
+stix:source_ref
+	a owl:ObjectProperty ;
+	.
+
+stix:spec_version
+	a owl:DatatypeProperty ;
+	.
+
+stix:target_ref
+	a owl:ObjectProperty ;
+	.
+
+stix:tool_types
+	a owl:DatatypeProperty ;
+	.
+
+stix:type
+	a owl:DatatypeProperty ;
+	.
+
+stix:url
+	a owl:DatatypeProperty ;
+	.
+
+stix:uses
+	a owl:ObjectProperty ;
+	.
+
+stix:valid_from
+	a owl:DatatypeProperty ;
+	.
+
